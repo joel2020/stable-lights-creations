@@ -88,6 +88,8 @@ function Home() {
             features={["Chrome-style border", "Neon glow ring", "Quartz movement", "On/off neon switch", "Pick from 7 neon colors"]}
             badge="Best Seller"
             color="orange"
+            image={heroClocks[1]}
+            imageGlow="blue"
           />
           <ProductCard
             title="Custom Neon Stable Clock"
@@ -97,7 +99,10 @@ function Home() {
             badge="Custom"
             color="red"
             highlight
+            image={heroClocks[0]}
+            imageGlow="red"
           />
+
         </div>
         <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. Shipping calculated at checkout.</p>
       </section>
@@ -225,19 +230,30 @@ const FAQ_HOME = [
 ];
 
 function ProductCard({
-  title, price, tagline, features, badge, color, highlight,
-}: { title: string; price: number; tagline: string; features: string[]; badge: string; color: "red" | "orange"; highlight?: boolean }) {
+  title, price, tagline, features, badge, color, highlight, image, imageGlow,
+}: {
+  title: string; price: number; tagline: string; features: string[]; badge: string;
+  color: "red" | "orange"; highlight?: boolean;
+  image: string; imageGlow: "red" | "orange" | "blue" | "green" | "yellow" | "purple" | "white";
+}) {
   return (
-    <div className={`relative rounded-2xl border bg-card p-6 md:p-8 ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10"}`}>
+    <div className={`group relative overflow-hidden rounded-2xl border bg-card p-6 md:p-8 transition ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10 hover:border-white/30"}`}>
       <div className={`absolute -top-3 left-6 rounded-full px-3 py-0.5 text-xs font-bold ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
-      <h3 className="font-display text-3xl md:text-4xl">{title}</h3>
-      <div className="mt-2 flex items-baseline gap-2">
-        <span className="font-display text-5xl chrome-text">${price}</span>
-        <span className="text-sm text-muted-foreground">plus shipping</span>
+      <div className="grid sm:grid-cols-[180px,1fr] gap-5 md:gap-6 items-center">
+        <div className={`relative mx-auto aspect-square w-40 sm:w-full overflow-hidden rounded-full border-2 border-white/10 bg-black ring-glow-${imageGlow}`}>
+          <img src={image} alt={`${title} example`} loading="eager" className="h-full w-full object-cover scale-110 transition-transform duration-500 group-hover:scale-125" />
+        </div>
+        <div>
+          <h3 className="font-display text-3xl md:text-4xl">{title}</h3>
+          <div className="mt-1 flex items-baseline gap-2">
+            <span className="font-display text-5xl chrome-text">${price}</span>
+            <span className="text-sm text-muted-foreground">plus shipping</span>
+          </div>
+          <p className="mt-2 text-muted-foreground text-sm">{tagline}</p>
+        </div>
       </div>
-      <p className="mt-3 text-muted-foreground">{tagline}</p>
-      <ul className="mt-4 space-y-2 text-sm">
-        {features.map((f) => <li key={f} className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-[var(--neon-orange)]" />{f}</li>)}
+      <ul className="mt-5 grid gap-2 text-sm sm:grid-cols-2">
+        {features.map((f) => <li key={f} className="flex items-start gap-2"><Check className="h-4 w-4 mt-0.5 text-[var(--neon-orange)] shrink-0" />{f}</li>)}
       </ul>
       <Button asChild size="lg" className="mt-6 w-full bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
         <Link to="/shop" search={{ type: price === 99 ? "regular" : "custom" } as never}>Order Now</Link>
@@ -245,3 +261,49 @@ function ProductCard({
     </div>
   );
 }
+
+function HeroClockShowcase() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setI((n) => (n + 1) % HERO_ROTATION.length), 2600);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <div className="relative mx-auto aspect-square w-full max-w-[520px]">
+      {/* ambient bloom */}
+      <div className="pointer-events-none absolute inset-[-12%] rounded-full opacity-70 blur-3xl"
+        style={{ background: "radial-gradient(circle, var(--neon-orange) 0%, transparent 60%)" }} />
+      {/* chrome ring */}
+      <div className="absolute inset-0 rounded-full p-[6px]"
+        style={{ background: "conic-gradient(from 220deg, #2a2a31, #f4f6fa, #8a8f99, #e8eaf0, #2a2a31)" }}>
+        <div className="relative h-full w-full overflow-hidden rounded-full bg-black p-[10px]">
+          {/* neon ring */}
+          <div className={`relative h-full w-full overflow-hidden rounded-full bg-black ring-glow-${HERO_ROTATION[i].color} transition-shadow duration-700`}>
+            {HERO_ROTATION.map((h, idx) => (
+              <img
+                key={idx}
+                src={h.src}
+                alt="Custom neon stable clock with glowing neon ring"
+                loading="eager"
+                className={`absolute inset-0 h-full w-full object-cover scale-110 transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* thumbs */}
+      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-2 rounded-full border border-white/10 bg-black/70 backdrop-blur px-3 py-2">
+        {HERO_ROTATION.map((h, idx) => (
+          <button
+            key={idx}
+            onClick={() => setI(idx)}
+            aria-label={`Show ${h.color} clock`}
+            className={`h-3 w-3 rounded-full transition ring-glow-${h.color} ${idx === i ? "scale-125" : "opacity-60 hover:opacity-100"}`}
+            style={{ backgroundColor: `var(--neon-${h.color})` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
