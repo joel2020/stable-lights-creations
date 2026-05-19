@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,14 @@ import { galleryClocks, heroClocks } from "@/lib/clocks";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({ component: Home });
+
+const HERO_ROTATION = [
+  { src: heroClocks[0], color: "red" },
+  { src: heroClocks[1], color: "blue" },
+  { src: heroClocks[2], color: "yellow" },
+  { src: heroClocks[3], color: "green" },
+  { src: heroClocks[4], color: "orange" },
+] as const;
 
 function Home() {
   return (
@@ -43,18 +52,7 @@ function Home() {
             </div>
           </div>
           <div className="relative">
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
-              {heroClocks.slice(0, 4).map((src, i) => (
-                <div
-                  key={i}
-                  className={`relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-black ${
-                    ["ring-glow-red","ring-glow-blue","ring-glow-yellow","ring-glow-green"][i]
-                  }`}
-                >
-                  <img src={src} alt="Custom neon stable clock" className="h-full w-full object-cover" loading={i < 2 ? "eager" : "lazy"} />
-                </div>
-              ))}
-            </div>
+            <HeroClockShowcase />
           </div>
         </div>
         {/* ticker */}
