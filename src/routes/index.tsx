@@ -4,6 +4,10 @@ import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "luc
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
+import hollandLit from "@/assets/clock-holland-blue.jpg";
+import hollandUnlit from "@/assets/clock-holland-white.jpg";
+import beckwithLit from "@/assets/clock-beckwith-red.jpg";
+import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({ component: Home });
