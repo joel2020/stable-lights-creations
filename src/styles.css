@@ -97,13 +97,13 @@
   .text-glow-purple { text-shadow: 0 0 8px oklch(0.65 0.28 305 / 0.9), 0 0 24px oklch(0.65 0.28 305 / 0.6); }
   .text-glow-white { text-shadow: 0 0 8px oklch(0.98 0.005 250 / 0.9), 0 0 24px oklch(0.98 0.005 250 / 0.6); }
 
-  .ring-glow-red { box-shadow: 0 0 18px 2px oklch(0.68 0.27 25 / 0.7), 0 0 40px 8px oklch(0.68 0.27 25 / 0.25); }
-  .ring-glow-orange { box-shadow: 0 0 18px 2px oklch(0.78 0.2 55 / 0.75), 0 0 40px 8px oklch(0.78 0.2 55 / 0.25); }
-  .ring-glow-yellow { box-shadow: 0 0 18px 2px oklch(0.92 0.2 100 / 0.7), 0 0 40px 8px oklch(0.92 0.2 100 / 0.25); }
-  .ring-glow-green { box-shadow: 0 0 18px 2px oklch(0.85 0.27 145 / 0.7), 0 0 40px 8px oklch(0.85 0.27 145 / 0.25); }
-  .ring-glow-blue { box-shadow: 0 0 18px 2px oklch(0.7 0.22 250 / 0.75), 0 0 40px 8px oklch(0.7 0.22 250 / 0.25); }
-  .ring-glow-purple { box-shadow: 0 0 18px 2px oklch(0.65 0.28 305 / 0.7), 0 0 40px 8px oklch(0.65 0.28 305 / 0.25); }
-  .ring-glow-white { box-shadow: 0 0 18px 2px oklch(0.98 0.005 250 / 0.7), 0 0 40px 8px oklch(0.98 0.005 250 / 0.25); }
+  .ring-glow-red { box-shadow: inset 0 0 22px 2px oklch(0.68 0.27 25 / 0.5), 0 0 28px 4px oklch(0.68 0.27 25 / 0.85), 0 0 70px 18px oklch(0.68 0.27 25 / 0.4); }
+  .ring-glow-orange { box-shadow: inset 0 0 22px 2px oklch(0.78 0.2 55 / 0.5), 0 0 28px 4px oklch(0.78 0.2 55 / 0.85), 0 0 70px 18px oklch(0.78 0.2 55 / 0.4); }
+  .ring-glow-yellow { box-shadow: inset 0 0 22px 2px oklch(0.92 0.2 100 / 0.5), 0 0 28px 4px oklch(0.92 0.2 100 / 0.85), 0 0 70px 18px oklch(0.92 0.2 100 / 0.4); }
+  .ring-glow-green { box-shadow: inset 0 0 22px 2px oklch(0.85 0.27 145 / 0.5), 0 0 28px 4px oklch(0.85 0.27 145 / 0.85), 0 0 70px 18px oklch(0.85 0.27 145 / 0.4); }
+  .ring-glow-blue { box-shadow: inset 0 0 22px 2px oklch(0.7 0.22 250 / 0.5), 0 0 28px 4px oklch(0.7 0.22 250 / 0.85), 0 0 70px 18px oklch(0.7 0.22 250 / 0.4); }
+  .ring-glow-purple { box-shadow: inset 0 0 22px 2px oklch(0.65 0.28 305 / 0.5), 0 0 28px 4px oklch(0.65 0.28 305 / 0.85), 0 0 70px 18px oklch(0.65 0.28 305 / 0.4); }
+  .ring-glow-white { box-shadow: inset 0 0 22px 2px oklch(0.98 0.005 250 / 0.5), 0 0 28px 4px oklch(0.98 0.005 250 / 0.85), 0 0 70px 18px oklch(0.98 0.005 250 / 0.4); }
 
   .chrome-text {
     background: linear-gradient(180deg, #fff 0%, #d5d8de 45%, #8a8f99 55%, #f4f6fa 100%);
@@ -113,10 +113,17 @@
     background-image: repeating-linear-gradient(135deg, oklch(1 0 0 / 0.04) 0 12px, transparent 12px 24px);
   }
   @keyframes neon-pulse {
-    0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
-    50% { opacity: 0.85; filter: drop-shadow(0 0 14px currentColor); }
+    0%, 100% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.92; filter: brightness(1.15); }
   }
-  .neon-pulse { animation: neon-pulse 2.4s ease-in-out infinite; }
+  .neon-pulse { animation: neon-pulse 2.6s ease-in-out infinite; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .ticker { animation: ticker 28s linear infinite; }
+  @keyframes chrome-spin { to { transform: rotate(360deg); } }
+  .chrome-spin { animation: chrome-spin 22s linear infinite; }
+  @keyframes bloom-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50% { opacity: 0.95; transform: scale(1.08); }
+  }
+  .bloom-pulse { animation: bloom-pulse 3.4s ease-in-out infinite; }
 }
