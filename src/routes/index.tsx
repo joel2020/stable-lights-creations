@@ -108,14 +108,18 @@ function Home() {
           <h2 className="font-display text-3xl md:text-4xl chrome-text">RECENT BUILDS</h2>
           <Link to="/gallery" className="text-sm font-semibold text-[var(--neon-orange)] hover:underline">View gallery →</Link>
         </div>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {galleryClocks.slice(0, 5).map((c) => (
-            <div key={c.caption} className={`relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-black ring-glow-${c.color}`}>
-              <img src={c.src} alt={c.alt} className="h-full w-full object-cover" loading="lazy" />
-            </div>
+            <figure key={c.caption} className="group flex flex-col items-center">
+              <div className={`relative aspect-square w-full overflow-hidden rounded-full border-2 border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
+                <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-cover scale-110" />
+              </div>
+              <figcaption className="mt-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{c.caption.split(" · ")[0]}</figcaption>
+            </figure>
           ))}
         </div>
       </section>
+
 
       {/* HOW IT WORKS */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
