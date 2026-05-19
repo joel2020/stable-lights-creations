@@ -92,7 +92,8 @@ function Home() {
             features={["Chrome-style border", "Neon glow ring", "Quartz movement", "On/off neon switch", "Pick from 7 neon colors"]}
             badge="Best Seller"
             color="orange"
-            image={heroClocks[1]}
+            image={hollandLit}
+            imageUnlit={hollandUnlit}
             imageGlow="blue"
           />
           <ProductCard
@@ -103,7 +104,8 @@ function Home() {
             badge="Custom"
             color="red"
             highlight
-            image={heroClocks[0]}
+            image={beckwithLit}
+            imageUnlit={beckwithUnlit}
             imageGlow="red"
           />
 
