@@ -8,9 +8,39 @@ import hollandLit from "@/assets/clock-holland-blue.jpg";
 import hollandUnlit from "@/assets/clock-holland-white.jpg";
 import beckwithLit from "@/assets/clock-beckwith-red.jpg";
 import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
+import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
+import lifestyleTackroom from "@/assets/lifestyle-tackroom.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  component: Home,
+  head: () => ({
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Product",
+              name: "Regular Neon Stable Clock",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Built for harness racing barns, tack rooms, and stables.",
+              brand: { "@type": "Brand", name: "Light Me Up Productions" },
+              offers: { "@type": "Offer", price: "99.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+            },
+            {
+              "@type": "Product",
+              name: "Custom Neon Stable Clock",
+              description: "Fully personalized neon wall clock featuring your stable name, horse, trainer or driver name, racing colors, and optional photo. Handmade for the harness racing community.",
+              brand: { "@type": "Brand", name: "Light Me Up Productions" },
+              offers: { "@type": "Offer", price: "125.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+            },
+          ],
+        }),
+      },
+    ],
+  }),
+});
 
 const HERO_ROTATION = [
   { src: heroClocks[0], color: "red" },
