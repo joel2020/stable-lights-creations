@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
+import { LiveClockPreview } from "@/components/LiveClockPreview";
 import { Upload, Phone, Mail, Check } from "lucide-react";
 
 type Search = { type?: "regular" | "custom" };
@@ -25,7 +26,13 @@ function Shop() {
   const [productType, setProductType] = useState<"regular" | "custom">(type ?? "custom");
   const [neonColor, setNeonColor] = useState<string>("orange");
   const [photoName, setPhotoName] = useState<string>("");
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [stable, setStable] = useState("");
+  const [horse, setHorse] = useState("");
+  const [trainer, setTrainer] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
 
   const price = productType === "regular" ? 99 : 125;
 
@@ -114,9 +121,9 @@ function Shop() {
           {/* Design */}
           <Card title="3. Design Details">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Stable / Barn / Farm Name" name="stable" required />
-              <Field label="Horse Name" name="horse" />
-              <Field label="Trainer / Driver Name" name="trainer" />
+              <Field label="Stable / Barn / Farm Name" name="stable" required value={stable} onChange={setStable} placeholder="Beckwith Racing" />
+              <Field label="Horse Name" name="horse" value={horse} onChange={setHorse} />
+              <Field label="Trainer / Driver Name" name="trainer" value={trainer} onChange={setTrainer} />
               <Field label="Racing Colors" name="colors" placeholder="e.g. green & gold" />
             </div>
 
@@ -143,7 +150,12 @@ function Shop() {
                 <Upload className="h-5 w-5" />
                 {photoName || "Tap to upload a photo (JPG, PNG)"}
               </label>
-              <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => setPhotoName(e.target.files?.[0]?.name ?? "")} />
+              <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
+                const f = e.target.files?.[0];
+                setPhotoName(f?.name ?? "");
+                if (photoUrl) URL.revokeObjectURL(photoUrl);
+                setPhotoUrl(f ? URL.createObjectURL(f) : null);
+              }} />
             </div>
 
             <div className="mt-5">
@@ -173,8 +185,13 @@ function Shop() {
           </Card>
         </form>
 
-        {/* Sticky summary */}
+        {/* Sticky live preview + summary */}
         <aside className="lg:sticky lg:top-24 space-y-4">
+          <div className="rounded-2xl border border-white/10 bg-card p-6">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-4 text-center">Live Preview</div>
+            <LiveClockPreview stable={stable} horse={horse} trainer={trainer} neonColor={neonColor} photoUrl={photoUrl} size={300} />
+            <p className="mt-6 text-center text-xs text-muted-foreground">Type your details — the clock updates as you go. Final design is hand-built and may vary.</p>
+          </div>
           <div className="rounded-2xl border border-white/10 bg-card p-6">
             <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Order Summary</div>
             <div className="mt-2 font-display text-2xl">{summary.product}</div>
@@ -212,11 +229,20 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-function Field({ label, name, type = "text", required, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+function Field({ label, name, type = "text", required, placeholder, value, onChange }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; value?: string; onChange?: (v: string) => void }) {
   return (
     <div>
       <Label htmlFor={name} className="text-sm">{label}{required && <span className="text-[var(--neon-orange)]"> *</span>}</Label>
-      <Input id={name} name={name} type={type} required={required} placeholder={placeholder} className="mt-1.5 bg-black/30 border-white/15" />
+      <Input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        className="mt-1.5 bg-black/30 border-white/15"
+      />
     </div>
   );
 }
