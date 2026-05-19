@@ -379,6 +379,20 @@ const FAQ_HOME = [
   { q: "Can I use my own racing colors?", a: "Yes — just tell us the colors in the customizer or text Joe with details." },
 ];
 
+function FragmentRow({ label, reg, cus }: { label: string; reg: boolean; cus: boolean }) {
+  return (
+    <>
+      <div className="p-4 md:p-5 border-t border-white/10 text-sm">{label}</div>
+      <div className="p-4 md:p-5 border-t border-l border-white/10 text-center">
+        {reg ? <Check className="inline h-5 w-5 text-[var(--neon-green)]" /> : <span className="text-muted-foreground/40">—</span>}
+      </div>
+      <div className="p-4 md:p-5 border-t border-l border-white/10 text-center bg-[var(--neon-orange)]/5">
+        {cus ? <Check className="inline h-5 w-5 text-[var(--neon-orange)]" /> : <span className="text-muted-foreground/40">—</span>}
+      </div>
+    </>
+  );
+}
+
 function ProductCard({
   title, price, tagline, features, badge, color, highlight, image, imageUnlit, imageGlow,
 }: {
