@@ -236,18 +236,38 @@ const FAQ_HOME = [
 ];
 
 function ProductCard({
-  title, price, tagline, features, badge, color, highlight, image, imageGlow,
+  title, price, tagline, features, badge, color, highlight, image, imageUnlit, imageGlow,
 }: {
   title: string; price: number; tagline: string; features: string[]; badge: string;
   color: "red" | "orange"; highlight?: boolean;
-  image: string; imageGlow: "red" | "orange" | "blue" | "green" | "yellow" | "purple" | "white";
+  image: string; imageUnlit?: string;
+  imageGlow: "red" | "orange" | "blue" | "green" | "yellow" | "purple" | "white";
 }) {
+  const [lit, setLit] = useState(true);
   return (
     <div className={`group relative overflow-hidden rounded-2xl border bg-card p-6 md:p-8 transition ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10 hover:border-white/30"}`}>
       <div className={`absolute -top-3 left-6 rounded-full px-3 py-0.5 text-xs font-bold ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
-      <div className="grid sm:grid-cols-[180px,1fr] gap-5 md:gap-6 items-center">
-        <div className={`relative mx-auto aspect-square w-40 sm:w-full overflow-hidden rounded-full border-2 border-white/10 bg-black ring-glow-${imageGlow}`}>
-          <img src={image} alt={`${title} example`} loading="eager" className="h-full w-full object-cover scale-110 transition-transform duration-500 group-hover:scale-125" />
+      <div className="grid sm:grid-cols-[200px,1fr] gap-5 md:gap-6 items-center">
+        <div className="relative mx-auto w-44 sm:w-full">
+          {/* ambient glow */}
+          <div
+            className={`pointer-events-none absolute inset-[-22%] rounded-full blur-2xl transition-opacity duration-500 ${lit ? "opacity-80" : "opacity-0"}`}
+            style={{ background: `radial-gradient(circle, var(--neon-${imageGlow}) 0%, transparent 65%)` }}
+          />
+          <div className={`relative aspect-square w-full overflow-hidden rounded-full border-2 border-white/10 bg-black transition-shadow duration-500 ${lit ? `ring-glow-${imageGlow}` : ""}`}>
+            {imageUnlit && (
+              <img src={imageUnlit} alt="" loading="eager" className={`absolute inset-0 h-full w-full object-cover scale-110 transition-opacity duration-500 ${lit ? "opacity-0" : "opacity-100"}`} />
+            )}
+            <img src={image} alt={`${title} example`} loading="eager" className={`absolute inset-0 h-full w-full object-cover scale-110 transition-all duration-500 ${lit ? "opacity-100 group-hover:scale-125" : "opacity-0"}`} />
+          </div>
+          {imageUnlit && (
+            <div className="mt-3 flex justify-center">
+              <div className="inline-flex rounded-full border border-white/10 bg-black/70 p-0.5 text-[10px] font-bold uppercase tracking-widest">
+                <button onClick={() => setLit(false)} className={`px-3 py-1 rounded-full transition ${!lit ? "bg-white/10 text-white" : "text-muted-foreground"}`}>Off</button>
+                <button onClick={() => setLit(true)} className={`px-3 py-1 rounded-full transition ${lit ? `bg-[var(--neon-${imageGlow})] text-black` : "text-muted-foreground"}`}>Lit</button>
+              </div>
+            </div>
+          )}
         </div>
         <div>
           <h3 className="font-display text-3xl md:text-4xl">{title}</h3>
