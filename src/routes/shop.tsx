@@ -121,9 +121,9 @@ function Shop() {
           {/* Design */}
           <Card title="3. Design Details">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Stable / Barn / Farm Name" name="stable" required />
-              <Field label="Horse Name" name="horse" />
-              <Field label="Trainer / Driver Name" name="trainer" />
+              <Field label="Stable / Barn / Farm Name" name="stable" required value={stable} onChange={setStable} placeholder="Beckwith Racing" />
+              <Field label="Horse Name" name="horse" value={horse} onChange={setHorse} />
+              <Field label="Trainer / Driver Name" name="trainer" value={trainer} onChange={setTrainer} />
               <Field label="Racing Colors" name="colors" placeholder="e.g. green & gold" />
             </div>
 
