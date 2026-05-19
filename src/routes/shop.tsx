@@ -150,7 +150,12 @@ function Shop() {
                 <Upload className="h-5 w-5" />
                 {photoName || "Tap to upload a photo (JPG, PNG)"}
               </label>
-              <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => setPhotoName(e.target.files?.[0]?.name ?? "")} />
+              <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
+                const f = e.target.files?.[0];
+                setPhotoName(f?.name ?? "");
+                if (photoUrl) URL.revokeObjectURL(photoUrl);
+                setPhotoUrl(f ? URL.createObjectURL(f) : null);
+              }} />
             </div>
 
             <div className="mt-5">
