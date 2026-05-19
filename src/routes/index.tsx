@@ -161,6 +161,120 @@ function Home() {
         </div>
       </section>
 
+      {/* LIFESTYLE SHOWCASE */}
+      <section className="border-y border-white/10 bg-black/40">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">In the Wild</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">BUILT TO BE SEEN</h2>
+            <p className="mt-3 text-muted-foreground">From the barn to the tack room — these clocks own every wall they hang on.</p>
+          </div>
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+            {[
+              { src: lifestyleBarn, label: "Barn Wall · Red Neon", alt: "Custom red neon clock mounted on rustic barn wall next to harness" },
+              { src: lifestyleTackroom, label: "Tack Room · Orange Neon", alt: "Orange neon clock in tack room with racing silks and trophies" },
+            ].map((s) => (
+              <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
+                <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                <figcaption className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                  <span className="font-display text-xl md:text-2xl">{s.label}</span>
+                  <Link to="/shop" className="rounded-full bg-[var(--neon-orange)] px-4 py-2 text-xs font-bold text-black hover:bg-[var(--neon-orange)]/90">Build Yours →</Link>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMPARE */}
+      <section className="mx-auto max-w-5xl px-4 md:px-6 py-16 md:py-20">
+        <div className="text-center">
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Regular vs Custom</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">Which One's Yours?</h2>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-card">
+          <div className="grid grid-cols-3 text-sm md:text-base">
+            <div className="p-4 md:p-5 border-b border-white/10" />
+            <div className="p-4 md:p-5 border-b border-l border-white/10 text-center">
+              <div className="font-display text-2xl">Regular</div>
+              <div className="font-display text-3xl chrome-text">$99</div>
+              <div className="text-xs text-muted-foreground">+ shipping</div>
+            </div>
+            <div className="p-4 md:p-5 border-b border-l border-white/10 text-center bg-[var(--neon-orange)]/10">
+              <div className="font-display text-2xl text-[var(--neon-orange)]">Custom</div>
+              <div className="font-display text-3xl chrome-text">$125</div>
+              <div className="text-xs text-muted-foreground">+ shipping</div>
+            </div>
+            {[
+              ["Chrome-style border", true, true],
+              ["Quartz movement", true, true],
+              ["Neon on/off switch", true, true],
+              ["7 neon glow colors", true, true],
+              ["Your stable / barn name", false, true],
+              ["Your horse, trainer, driver", false, true],
+              ["Your racing colors", false, true],
+              ["Custom photo on the face", false, true],
+              ["Memorial editions", false, true],
+            ].map(([label, r, c]) => (
+              <FragmentRow key={label as string} label={label as string} reg={r as boolean} cus={c as boolean} />
+            ))}
+          </div>
+          <div className="grid grid-cols-3 border-t border-white/10">
+            <div className="p-4 md:p-5" />
+            <div className="p-4 md:p-5 border-l border-white/10">
+              <Button asChild className="w-full bg-white/10 hover:bg-white/15 font-bold">
+                <Link to="/shop" search={{ type: "regular" } as never}>Order Regular</Link>
+              </Button>
+            </div>
+            <div className="p-4 md:p-5 border-l border-white/10 bg-[var(--neon-orange)]/5">
+              <Button asChild className="w-full bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
+                <Link to="/shop" search={{ type: "custom" } as never}>Build Custom</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="border-y border-white/10 bg-black/30">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
+          <div className="text-center">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">From the Backstretch</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl">Horsemen Talk.</h2>
+          </div>
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {[
+              { q: "Hung it in the tack room and every owner who walks in stops dead. Joe nailed our colors.", n: "Beckwith Racing Stable", c: "red" },
+              { q: "Best gift I've ever given my trainer. He almost cried. Almost.", n: "Holland Family · Owner", c: "blue" },
+              { q: "Memorial clock for our horse hangs over the office desk. Worth every penny.", n: "Hunter Myers Family", c: "green" },
+            ].map((t) => (
+              <figure key={t.n} className="rounded-2xl border border-white/10 bg-card p-6 flex flex-col">
+                <div className="flex gap-1 text-[var(--neon-yellow)]">{[1,2,3,4,5].map((i)=><Star key={i} className="h-4 w-4 fill-current" />)}</div>
+                <blockquote className="mt-3 text-sm md:text-base leading-relaxed">"{t.q}"</blockquote>
+                <figcaption className="mt-4 flex items-center gap-3 pt-4 border-t border-white/10">
+                  <div className={`h-9 w-9 rounded-full ring-glow-${t.c} bg-black grid place-items-center text-[10px] font-bold uppercase`} style={{ color: `var(--neon-${t.c})` }}>★</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">{t.n}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Built for Tracks & Barns Across North America</div>
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
+          {["Meadowlands","Yonkers","Red Mile","Hoosier Park","Pocono Downs","Mohawk"].map((t) => (
+            <div key={t} className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text">
+              {t.toUpperCase()}
+            </div>
+          ))}
+        </div>
+      </section>
+
+
 
       {/* HOW IT WORKS */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
