@@ -219,11 +219,20 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-function Field({ label, name, type = "text", required, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+function Field({ label, name, type = "text", required, placeholder, value, onChange }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; value?: string; onChange?: (v: string) => void }) {
   return (
     <div>
       <Label htmlFor={name} className="text-sm">{label}{required && <span className="text-[var(--neon-orange)]"> *</span>}</Label>
-      <Input id={name} name={name} type={type} required={required} placeholder={placeholder} className="mt-1.5 bg-black/30 border-white/15" />
+      <Input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        className="mt-1.5 bg-black/30 border-white/15"
+      />
     </div>
   );
 }
