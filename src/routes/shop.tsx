@@ -185,8 +185,13 @@ function Shop() {
           </Card>
         </form>
 
-        {/* Sticky summary */}
+        {/* Sticky live preview + summary */}
         <aside className="lg:sticky lg:top-24 space-y-4">
+          <div className="rounded-2xl border border-white/10 bg-card p-6">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-4 text-center">Live Preview</div>
+            <LiveClockPreview stable={stable} horse={horse} trainer={trainer} neonColor={neonColor} photoUrl={photoUrl} size={300} />
+            <p className="mt-6 text-center text-xs text-muted-foreground">Type your details — the clock updates as you go. Final design is hand-built and may vary.</p>
+          </div>
           <div className="rounded-2xl border border-white/10 bg-card p-6">
             <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Order Summary</div>
             <div className="mt-2 font-display text-2xl">{summary.product}</div>
