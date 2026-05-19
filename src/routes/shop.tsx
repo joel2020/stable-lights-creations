@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
+import { LiveClockPreview } from "@/components/LiveClockPreview";
 import { Upload, Phone, Mail, Check } from "lucide-react";
 
 type Search = { type?: "regular" | "custom" };
