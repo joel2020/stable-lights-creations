@@ -26,7 +26,13 @@ function Shop() {
   const [productType, setProductType] = useState<"regular" | "custom">(type ?? "custom");
   const [neonColor, setNeonColor] = useState<string>("orange");
   const [photoName, setPhotoName] = useState<string>("");
+  const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [stable, setStable] = useState("");
+  const [horse, setHorse] = useState("");
+  const [trainer, setTrainer] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
 
   const price = productType === "regular" ? 99 : 125;
 
