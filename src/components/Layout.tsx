@@ -22,8 +22,8 @@ export function Header() {
             <Zap className="h-5 w-5 text-[var(--neon-orange)]" />
           </span>
           <div className="leading-tight">
-            <div className="font-display text-xl tracking-wider chrome-text">LIGHT ME UP</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--neon-orange)] text-glow-orange">Productions</div>
+            <div className="font-display text-xl tracking-wider chrome-text">itslitneon<span className="text-[var(--neon-orange)] text-glow-orange">.com</span></div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">by Light Me Up Productions</div>
           </div>
         </Link>
         <nav className="hidden lg:flex items-center gap-6">
