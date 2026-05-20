@@ -173,7 +173,7 @@ function Shop() {
               </label>
               <label className="flex items-start gap-3 text-sm">
                 <Checkbox name="refund" id="refund" className="mt-0.5" />
-                <span>I understand custom clocks are personalized and may not be refundable once production begins.</span>
+                <span>I understand that <strong>all sales are final</strong> — clocks are handmade to order and are <strong>non-refundable, non-returnable, and non-cancellable</strong>. See our <Link to="/terms" className="text-[var(--neon-orange)] underline">Terms &amp; No-Refund Policy</Link>.</span>
               </label>
             </div>
             <Button type="submit" disabled={submitting} size="lg" className="mt-6 w-full bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
