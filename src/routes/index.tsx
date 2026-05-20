@@ -4,8 +4,8 @@ import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "luc
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
-import regularLit from "@/assets/clock-regular-plain.jpg";
-import regularUnlit from "@/assets/clock-regular-plain.jpg";
+import regularLit from "@/assets/clock-holland-blue.jpg";
+import regularUnlit from "@/assets/clock-holland-white.jpg";
 import beckwithLit from "@/assets/clock-beckwith-red.jpg";
 import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
 import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
