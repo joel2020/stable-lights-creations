@@ -447,8 +447,8 @@ function ProductCard({
 }) {
   const [lit, setLit] = useState(true);
   return (
-    <div className={`group relative overflow-hidden rounded-2xl border bg-card p-6 md:p-8 transition ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10 hover:border-white/30"}`}>
-      <div className={`absolute -top-3 left-6 whitespace-nowrap rounded-full px-3 py-0.5 text-xs font-bold ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
+    <div className={`group relative overflow-hidden rounded-2xl border bg-card p-6 pt-11 md:p-8 md:pt-12 transition ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10 hover:border-white/30"}`}>
+      <div className={`absolute top-4 left-6 z-20 max-w-[calc(100%-3rem)] whitespace-nowrap rounded-full px-3 py-1 text-xs font-bold leading-none ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
       <div className="grid sm:grid-cols-[200px,1fr] gap-5 md:gap-6 items-center">
         <div className="relative mx-auto w-44 sm:w-full">
           {/* ambient glow */}
