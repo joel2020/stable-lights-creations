@@ -161,6 +161,27 @@ function Home() {
         </div>
       </section>
 
+      {/* VIDEO SHOWCASE */}
+      <section className="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">See It In Action</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">LIT UP & RUNNING</h2>
+          <p className="mt-3 text-muted-foreground">Watch one of our custom builds glow.</p>
+        </div>
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 ring-glow-orange bg-black">
+          <video
+            src="/videos/showcase.mp4"
+            className="w-full h-auto aspect-video object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            preload="metadata"
+          />
+        </div>
+      </section>
+
       {/* LIFESTYLE SHOWCASE */}
       <section className="border-y border-white/10 bg-black/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
