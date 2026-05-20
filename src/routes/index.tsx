@@ -4,8 +4,8 @@ import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "luc
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
-import regularLit from "@/assets/clock-holland-blue.jpg";
-import regularUnlit from "@/assets/clock-holland-white.jpg";
+import regularLit from "@/assets/clock-regular-plain.jpg";
+import regularUnlit from "@/assets/clock-regular-plain.jpg";
 import beckwithLit from "@/assets/clock-beckwith-red.jpg";
 import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
 import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
@@ -124,7 +124,7 @@ function Home() {
             color="orange"
             image={regularLit}
             imageUnlit={regularUnlit}
-            imageGlow="blue"
+            imageGlow="red"
           />
           <ProductCard
             title="Custom Neon Stable Clock"
@@ -448,7 +448,7 @@ function ProductCard({
   const [lit, setLit] = useState(true);
   return (
     <div className={`group relative overflow-hidden rounded-2xl border bg-card p-6 md:p-8 transition ${highlight ? "border-[var(--neon-red)]/50 ring-glow-red" : "border-white/10 hover:border-white/30"}`}>
-      <div className={`absolute -top-3 left-6 rounded-full px-3 py-0.5 text-xs font-bold ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
+      <div className={`absolute -top-3 left-6 whitespace-nowrap rounded-full px-3 py-0.5 text-xs font-bold ${color === "red" ? "bg-[var(--neon-red)] text-white" : "bg-[var(--neon-orange)] text-black"}`}>{badge}</div>
       <div className="grid sm:grid-cols-[200px,1fr] gap-5 md:gap-6 items-center">
         <div className="relative mx-auto w-44 sm:w-full">
           {/* ambient glow */}
