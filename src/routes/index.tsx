@@ -4,8 +4,8 @@ import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "luc
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
-import hollandLit from "@/assets/clock-holland-blue.jpg";
-import hollandUnlit from "@/assets/clock-holland-white.jpg";
+import regularLit from "@/assets/clock-regular-orange.jpg";
+import regularUnlit from "@/assets/clock-regular-unlit.jpg";
 import beckwithLit from "@/assets/clock-beckwith-red.jpg";
 import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
 import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
@@ -122,9 +122,9 @@ function Home() {
             features={["Chrome-style border", "Neon glow ring", "Quartz movement", "On/off neon switch", "Pick from 7 neon colors"]}
             badge="Best Seller"
             color="orange"
-            image={hollandLit}
-            imageUnlit={hollandUnlit}
-            imageGlow="blue"
+            image={regularLit}
+            imageUnlit={regularUnlit}
+            imageGlow="orange"
           />
           <ProductCard
             title="Custom Neon Stable Clock"
