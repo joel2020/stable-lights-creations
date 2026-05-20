@@ -4,8 +4,8 @@ import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "luc
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
-import regularLit from "@/assets/clock-regular-plain.jpg";
-import regularUnlit from "@/assets/clock-regular-plain.jpg";
+import regularLit from "@/assets/clock-holland-blue.jpg";
+import regularUnlit from "@/assets/clock-holland-white.jpg";
 import beckwithLit from "@/assets/clock-beckwith-red.jpg";
 import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
 import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
@@ -120,18 +120,18 @@ function Home() {
             price={99}
             tagline="Pre-designed neon clock with chrome border and your choice of glow color."
             features={["Chrome-style border", "Neon glow ring", "Quartz movement", "On/off neon switch", "Pick from 7 neon colors"]}
-            badge="Best Seller"
+            badge="Classic"
             color="orange"
             image={regularLit}
             imageUnlit={regularUnlit}
-            imageGlow="red"
+            imageGlow="blue"
           />
           <ProductCard
             title="Custom Neon Stable Clock"
             price={125}
             tagline="Fully personalized — your stable name, horse, driver, colors, and photo on the face."
             features={["Everything in Regular", "Custom face artwork", "Stable / barn / farm name", "Horse, trainer, driver name", "Upload your racing photo"]}
-            badge="Custom"
+            badge="Best Seller"
             color="red"
             highlight
             image={beckwithLit}
