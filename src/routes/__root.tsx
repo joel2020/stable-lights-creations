@@ -73,14 +73,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Light Me Up Productions · Custom Neon Stable Clocks for Harness Racing" },
+      { title: "ItsLitNeon · Custom Neon Stable Clocks for Harness Racing" },
       { name: "description", content: "Custom neon stable clocks designed with your barn name, horse, trainer, driver and racing colors. Built for harness racing barns, tack rooms, and the winner's circle." },
       { name: "keywords", content: "custom neon stable clocks, harness racing clocks, personalized horse racing clock, custom barn clock, horse racing gifts, custom horse clock, racing stable gifts, personalized tack room clock, standardbred racing gifts, custom racing colors clock" },
       { name: "author", content: "Light Me Up Productions" },
       { name: "theme-color", content: "#0a0a14" },
-      { property: "og:title", content: "Light Me Up Productions · Custom Neon Stable Clocks" },
+      { property: "og:site_name", content: "ItsLitNeon" },
+      { property: "og:title", content: "ItsLitNeon · Custom Neon Stable Clocks" },
       { property: "og:description", content: "Put your stable name in lights. Custom neon clocks for harness racing." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://itslitneon.com" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
