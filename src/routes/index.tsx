@@ -124,7 +124,7 @@ function Home() {
             color="orange"
             image={regularLit}
             imageUnlit={regularUnlit}
-            imageGlow="orange"
+            imageGlow="red"
           />
           <ProductCard
             title="Custom Neon Stable Clock"
