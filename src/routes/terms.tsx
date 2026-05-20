@@ -67,7 +67,7 @@ function Terms() {
           link), the design is final and you waive any claim arising from errors that were present in the approved design.
         </p>
 
-        <h2 className="font-django text-2xl mt-6">5. Shipping, Title &amp; Risk of Loss</h2>
+        <h2 className="font-display text-2xl mt-6">5. Shipping, Title &amp; Risk of Loss</h2>
         <p>
           Stated lead times are estimates only and are not guaranteed. Title and risk of loss pass to you upon our delivery of the
           Product to the common carrier (F.O.B. Origin). We are not responsible for carrier delays, lost, stolen, or damaged shipments
