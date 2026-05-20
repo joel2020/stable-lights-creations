@@ -153,7 +153,7 @@ function Home() {
           {galleryClocks.slice(0, 5).map((c) => (
             <figure key={c.caption} className="group flex flex-col items-center">
               <div className={`relative aspect-square w-full overflow-hidden rounded-full border-2 border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
-                <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-cover scale-110" />
+                <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-cover object-center" />
               </div>
               <figcaption className="mt-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{c.caption.split(" · ")[0]}</figcaption>
             </figure>
@@ -458,9 +458,9 @@ function ProductCard({
           />
           <div className={`relative aspect-square w-full overflow-hidden rounded-full border-2 border-white/10 bg-black transition-shadow duration-500 ${lit ? `ring-glow-${imageGlow}` : ""}`}>
             {imageUnlit && (
-              <img src={imageUnlit} alt="" loading="eager" className={`absolute inset-0 h-full w-full object-cover scale-110 transition-opacity duration-500 ${lit ? "opacity-0" : "opacity-100"}`} />
+              <img src={imageUnlit} alt="" loading="eager" className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-500 ${lit ? "opacity-0" : "opacity-100"}`} />
             )}
-            <img src={image} alt={`${title} example`} loading="eager" className={`absolute inset-0 h-full w-full object-cover scale-110 transition-all duration-500 ${lit ? "opacity-100 group-hover:scale-125" : "opacity-0"}`} />
+            <img src={image} alt={`${title} example`} loading="eager" className={`absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ${lit ? "opacity-100 group-hover:scale-125" : "opacity-0"}`} />
           </div>
           {imageUnlit && (
             <div className="mt-3 flex justify-center">
@@ -519,7 +519,7 @@ function HeroClockShowcase() {
                   src={h.src}
                   alt="Custom neon stable clock with glowing neon ring"
                   loading="eager"
-                  className={`absolute inset-0 h-full w-full object-cover scale-110 transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
                 />
               ))}
               {/* glass highlight */}
