@@ -162,7 +162,7 @@ function Home() {
       </section>
 
       {/* VIDEO SHOWCASE */}
-      <section className="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16">
+      <section className="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16" id="video-showcase">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">See It In Action</div>
           <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">LIT UP & RUNNING</h2>
@@ -179,6 +179,29 @@ function Home() {
             controls
             preload="metadata"
           />
+        </div>
+        <div className="mt-8 flex flex-col items-center gap-4 text-center">
+          <p className="text-muted-foreground max-w-md">Ready to put your stable name in lights? Build your clock now.</p>
+          <Button
+            asChild
+            size="lg"
+            className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12 px-8 shadow-[0_0_20px_rgba(251,146,60,0.35)]"
+          >
+            <Link
+              to="/shop"
+              data-track="video-cta-customize"
+              onClick={() => {
+                if (typeof window !== "undefined" && "gtag" in window) {
+                  (window as any).gtag?.("event", "click", {
+                    event_category: "engagement",
+                    event_label: "video_cta_customize",
+                  });
+                }
+              }}
+            >
+              Customize Your Clock →
+            </Link>
+          </Button>
         </div>
       </section>
 
