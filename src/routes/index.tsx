@@ -105,7 +105,7 @@ function Home() {
 
       {/* COUPON BANNER */}
       <section className="relative z-20 mx-4 md:mx-6 mt-6 mb-6 max-w-7xl lg:mx-auto">
-        <div className="coupon-banner rounded-2xl border-2 border-[var(--neon-orange)]/60 bg-black/60 px-6 py-4 text-center backdrop-blur">
+        <div className="coupon-banner rounded-2xl border-2 border-[var(--neon-orange)]/80 bg-[var(--neon-orange)]/15 px-6 py-4 text-center backdrop-blur">
           <div className="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-3">
             <span className="text-sm font-bold uppercase tracking-widest text-[var(--neon-orange)]">Limited Time Offer</span>
             <span className="hidden sm:inline text-white/30">|</span>
