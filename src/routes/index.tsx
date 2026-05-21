@@ -110,7 +110,7 @@ function Home() {
             <span className="text-sm font-bold uppercase tracking-widest text-[var(--neon-orange)]">Limited Time Offer</span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="flash-coupon font-display text-2xl tracking-wide text-[var(--neon-orange)] text-glow-orange sm:text-3xl">
-              Code: BECKWIITH — $5 Off
+              Code: BECKWITH — $5 Off
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="text-xs uppercase tracking-wider text-muted-foreground">Applied at checkout</span>
