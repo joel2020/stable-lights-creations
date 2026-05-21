@@ -568,7 +568,7 @@ function HeroClockShowcase() {
                 <img
                   key={idx}
                   src={h.src}
-                  alt="Custom neon stable clock with glowing neon ring"
+                  alt="Custom neon wall clock with chrome border and glowing neon ring"
                   loading="eager"
                   className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
                 />
