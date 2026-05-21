@@ -69,7 +69,7 @@ export function Header() {
                 <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
               </Button>
               <Button asChild className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-                <Link to="/shop" onClick={() => setOpen(false)}>Order Now</Link>
+                <Link to="/shop" onClick={() => setOpen(false)}>Start Your Custom Clock</Link>
               </Button>
             </div>
           </div>
