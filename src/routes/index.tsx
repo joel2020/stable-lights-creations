@@ -134,9 +134,9 @@ function Home() {
             badge="Best Seller"
             color="red"
             highlight
-            image={beckwithLit}
-            imageUnlit={beckwithUnlit}
-            imageGlow="red"
+            image={vegasLit}
+            imageUnlit={cocacolaLit}
+            imageGlow="blue"
           />
 
         </div>
@@ -241,20 +241,20 @@ function Home() {
         </div>
       </section>
 
-      {/* RACING & STABLE COLLECTION (featured use case) */}
+      {/* FEATURED BUILDS */}
       <section className="border-y border-white/10 bg-black/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Featured Collection</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">RACING, STABLE & BARN NEON CLOCKS</h2>
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Featured Builds</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">CUSTOM NEON CLOCKS IN ACTION</h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              From harness racing barns and tack rooms to raceway lounges and stable offices, our custom neon clocks help owners, trainers, drivers, and racing fans showcase their name, colors, horses, and legacy in a bold illuminated design.
+              Real clocks we've built for bars, garages, game rooms, businesses, and gift moments. Each one is hand-crafted to order and built to be the focal point of the room.
             </p>
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { src: lifestyleBarn, label: "Barn Wall · Red Neon", alt: "Custom red neon stable clock mounted on rustic barn wall next to harness" },
-              { src: lifestyleTackroom, label: "Tack Room · Orange Neon", alt: "Orange neon racing clock in tack room with racing silks and trophies" },
+              { src: vegasLit, label: "Las Vegas · Blue Neon", alt: "Custom blue neon Las Vegas clock on wall" },
+              { src: cocacolaLit, label: "Coca-Cola · Green Neon", alt: "Custom green neon Coca-Cola themed clock" },
             ].map((s) => (
               <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
                 <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
