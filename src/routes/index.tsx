@@ -241,18 +241,20 @@ function Home() {
         </div>
       </section>
 
-      {/* LIFESTYLE SHOWCASE */}
+      {/* RACING & STABLE COLLECTION (featured use case) */}
       <section className="border-y border-white/10 bg-black/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">In the Wild</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">BUILT TO BE SEEN</h2>
-            <p className="mt-3 text-muted-foreground">From the barn to the tack room — these clocks own every wall they hang on.</p>
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Featured Collection</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">RACING, STABLE & BARN NEON CLOCKS</h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              From harness racing barns and tack rooms to raceway lounges and stable offices, our custom neon clocks help owners, trainers, drivers, and racing fans showcase their name, colors, horses, and legacy in a bold illuminated design.
+            </p>
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { src: lifestyleBarn, label: "Barn Wall · Red Neon", alt: "Custom red neon clock mounted on rustic barn wall next to harness" },
-              { src: lifestyleTackroom, label: "Tack Room · Orange Neon", alt: "Orange neon clock in tack room with racing silks and trophies" },
+              { src: lifestyleBarn, label: "Barn Wall · Red Neon", alt: "Custom red neon stable clock mounted on rustic barn wall next to harness" },
+              { src: lifestyleTackroom, label: "Tack Room · Orange Neon", alt: "Orange neon racing clock in tack room with racing silks and trophies" },
             ].map((s) => (
               <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
                 <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
