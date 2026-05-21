@@ -115,7 +115,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Light Me Up Productions. Built for the harness racing community.
+        © {new Date().getFullYear()} It's Lit Neon · Light Me Up Productions. Custom neon clocks for any space, brand, or gift.
       </div>
     </footer>
   );
