@@ -23,15 +23,15 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "Product",
-              name: "Regular Neon Stable Clock",
-              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Built for harness racing barns, tack rooms, and stables.",
+              name: "Regular Neon Clock",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, man caves, and barns.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "99.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
             {
               "@type": "Product",
-              name: "Custom Neon Stable Clock",
-              description: "Fully personalized neon wall clock featuring your stable name, horse, trainer or driver name, racing colors, and optional photo. Handmade for the harness racing community.",
+              name: "Custom Neon Clock",
+              description: "Fully personalized neon wall clock featuring your name, business, logo, photo, or memorial design. Handmade one at a time.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "125.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
@@ -59,17 +59,17 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 md:px-6 md:pt-20 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/10 px-3 py-1 text-xs uppercase tracking-widest text-[var(--neon-orange)]">
-              <Zap className="h-3.5 w-3.5" /> Built for Harness Racing
+              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks
             </div>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
               <span className="chrome-text">PUT YOUR</span>
               <br />
-              <span className="text-[var(--neon-orange)] text-glow-orange">STABLE NAME</span>
+              <span className="text-[var(--neon-orange)] text-glow-orange">NAME</span>
               <br />
               <span className="chrome-text">IN LIGHTS</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Custom neon clocks designed with your horse, barn name, racing colors, trainer, or driver. Built to stand out in the barn, tack room, or winner's circle.
+              Custom neon clocks designed around you — your name, business, logo, photo, or memorial. Built one at a time to light up any wall, room, garage, or barn.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
@@ -94,7 +94,7 @@ function Home() {
           <div className="flex whitespace-nowrap ticker py-3 text-sm font-bold uppercase tracking-[0.3em] text-[var(--neon-orange)]">
             {Array.from({ length: 2 }).map((_, k) => (
               <div key={k} className="flex shrink-0">
-                {["Standardbred Owned", "Custom Built", "Made in the USA Spirit", "Quartz Movement", "Neon On/Off Switch", "Chrome Border", "Ships Worldwide"].map((t) => (
+                {["Handmade in the USA", "Custom Built", "Quartz Movement", "Neon On/Off Switch", "Chrome Border", "Ships Worldwide", "One of a Kind"].map((t) => (
                   <span key={t} className="flex items-center gap-4 px-6"><Zap className="h-4 w-4" />{t}</span>
                 ))}
               </div>
@@ -106,10 +106,10 @@ function Home() {
       {/* CUSTOM CLOCKS FOR HORSEMEN */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl">
-          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">For the Racing Community</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl">Custom Clocks for Horsemen & Horsewomen</h2>
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">One of a Kind</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">Custom Clocks for Anyone, Anything</h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Every clock is built one at a time — designed with your barn, your horse, your colors. Whether it's a gift for a trainer, a tribute to a favorite racehorse, or a centerpiece for the tack room, we light it up.
+            Every clock is built one at a time — designed around your name, business, logo, photo, or favorite memory. Birthdays, anniversaries, memorials, businesses, garages, racing stables — if you can dream it, we can light it up.
           </p>
         </div>
 
@@ -127,10 +127,10 @@ function Home() {
             imageGlow="red"
           />
           <ProductCard
-            title="Custom Neon Stable Clock"
+            title="Custom Neon Clock"
             price={125}
-            tagline="Fully personalized — your stable name, horse, driver, colors, and photo on the face."
-            features={["Everything in Regular", "Custom face artwork", "Stable / barn / farm name", "Horse, trainer, driver name", "Upload your racing photo"]}
+            tagline="Fully personalized — your name, business, logo, photo, or memorial design on the face."
+            features={["Everything in Regular", "Custom face artwork", "Your name, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
             badge="Best Seller"
             color="red"
             highlight
@@ -255,9 +255,9 @@ function Home() {
               ["Quartz movement", true, true],
               ["Neon on/off switch", true, true],
               ["7 neon glow colors", true, true],
-              ["Your stable / barn name", false, true],
-              ["Your horse, trainer, driver", false, true],
-              ["Your racing colors", false, true],
+              ["Your name, business, or logo", false, true],
+              ["Custom artwork & text", false, true],
+              ["Your colors", false, true],
               ["Custom photo on the face", false, true],
               ["Memorial editions", false, true],
             ].map(([label, r, c]) => (
@@ -284,14 +284,17 @@ function Home() {
       <section className="border-y border-white/10 bg-black/30">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
           <div className="text-center">
-            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">From the Backstretch</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl">Horsemen Talk.</h2>
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">What People Are Saying</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl">Lit Up Everywhere.</h2>
           </div>
-          <div className="mt-10 grid md:grid-cols-3 gap-5">
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { q: "Hung it in the tack room and every owner who walks in stops dead. Joe nailed our colors.", n: "Beckwith Racing Stable", c: "red" },
-              { q: "Best gift I've ever given my trainer. He almost cried. Almost.", n: "Holland Family · Owner", c: "blue" },
-              { q: "Memorial clock for our horse hangs over the office desk. Worth every penny.", n: "Hunter Myers Family", c: "green" },
+              { q: "Joe builds a beautiful clock. The detail and the glow are unreal — looks even better in person.", n: "David Miller", c: "orange" },
+              { q: "Hands down the coolest piece of memorabilia I own. Quality is top-shelf.", n: "Tim Tetrick", c: "yellow" },
+              { q: "Custom from top to bottom. Joe nailed every detail we asked for.", n: "Holland Family", c: "blue" },
+              { q: "Best gift I've ever gotten. It's the first thing everyone notices when they walk in.", n: "Burke Stable", c: "red" },
+              { q: "Hung it in the office and every visitor stops dead. Worth every penny.", n: "Beckwith Racing", c: "red" },
+              { q: "We've got Joe's clocks all over the property. They're a fan favorite.", n: "The Meadowlands", c: "green" },
             ].map((t) => (
               <figure key={t.n} className="rounded-2xl border border-white/10 bg-card p-6 flex flex-col">
                 <div className="flex gap-1 text-[var(--neon-yellow)]">{[1,2,3,4,5].map((i)=><Star key={i} className="h-4 w-4 fill-current" />)}</div>
@@ -308,7 +311,7 @@ function Home() {
 
       {/* TRUST STRIP */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
-        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Built for Tracks & Barns Across North America</div>
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Garages, Businesses & Barns Across North America</div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
           {["Meadowlands","Yonkers","Red Mile","Hoosier Park","Pocono Downs","Mohawk"].map((t) => (
             <div key={t} className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text">
