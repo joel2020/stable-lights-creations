@@ -94,7 +94,7 @@ function Home() {
           <div className="flex whitespace-nowrap ticker py-3 text-sm font-bold uppercase tracking-[0.3em] text-[var(--neon-orange)]">
             {Array.from({ length: 2 }).map((_, k) => (
               <div key={k} className="flex shrink-0">
-                {["Handmade in the USA", "Custom Built", "Quartz Movement", "Neon On/Off Switch", "Chrome Border", "Ships Worldwide", "One of a Kind"].map((t) => (
+                {["Custom Built", "Quartz Movement", "Neon On/Off Switch", "Chrome Border", "Personalized for You", "Ships Worldwide", "One of a Kind"].map((t) => (
                   <span key={t} className="flex items-center gap-4 px-6"><Zap className="h-4 w-4" />{t}</span>
                 ))}
               </div>
