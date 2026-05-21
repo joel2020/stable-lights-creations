@@ -23,15 +23,15 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "Product",
-              name: "Regular Neon Stable Clock",
-              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Built for harness racing barns, tack rooms, and stables.",
+              name: "Regular Neon Clock",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, man caves, and barns.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "99.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
             {
               "@type": "Product",
-              name: "Custom Neon Stable Clock",
-              description: "Fully personalized neon wall clock featuring your stable name, horse, trainer or driver name, racing colors, and optional photo. Handmade for the harness racing community.",
+              name: "Custom Neon Clock",
+              description: "Fully personalized neon wall clock featuring your name, business, logo, photo, or memorial design. Handmade one at a time.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "125.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
