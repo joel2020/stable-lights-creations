@@ -137,10 +137,10 @@ function Shop() {
           {/* Design */}
           <Card title="3. Design Details">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Stable / Barn / Farm Name" name="stable" required value={stable} onChange={setStable} placeholder="Beckwith Racing" />
-              <Field label="Horse Name" name="horse" value={horse} onChange={setHorse} />
-              <Field label="Trainer / Driver Name" name="trainer" value={trainer} onChange={setTrainer} />
-              <Field label="Racing Colors" name="colors" placeholder="e.g. green & gold" />
+              <Field label="Name, Business, Stable or Logo Text" name="stable" required value={stable} onChange={setStable} placeholder="e.g. Miller's Garage, Beckwith Racing, The Smiths" />
+              <Field label="Subtitle (optional)" name="horse" value={horse} onChange={setHorse} placeholder="e.g. Est. 1987, horse name, location" />
+              <Field label="Tagline (optional)" name="trainer" value={trainer} onChange={setTrainer} placeholder="e.g. owner name, driver, slogan" />
+              <Field label="Your Colors" name="colors" placeholder="e.g. brand colors, racing colors, team colors" />
             </div>
 
             <div className="mt-5">
