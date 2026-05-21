@@ -22,7 +22,7 @@ export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Design Your Custom Neon Clock · It's Lit Neon" },
-      { name: "description", content: "Build your custom neon clock — upload your logo or photo, pick your colors and neon glow, and see a live preview. For homes, businesses, garages, bars, race teams, stables, and gifts." },
+      { name: "description", content: "Build your custom neon clock — upload your logo or photo, pick your colors and neon glow, and see a live preview. For homes, businesses, garages, bars, and gifts." },
       { property: "og:title", content: "Design Your Custom Neon Clock · It's Lit Neon" },
       { property: "og:description", content: "Customize a one-of-a-kind neon wall clock with your name, logo, photo, or design." },
       { property: "og:url", content: "https://itslitneon.com/shop" },
@@ -137,10 +137,10 @@ function Shop() {
           {/* Design */}
           <Card title="3. Design Details">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Name, Business, Stable or Logo Text" name="stable" required value={stable} onChange={setStable} placeholder="e.g. Miller's Garage, Beckwith Racing, The Smiths" />
-              <Field label="Subtitle (optional)" name="horse" value={horse} onChange={setHorse} placeholder="e.g. Est. 1987, horse name, location" />
-              <Field label="Tagline (optional)" name="trainer" value={trainer} onChange={setTrainer} placeholder="e.g. owner name, driver, slogan" />
-              <Field label="Your Colors" name="colors" placeholder="e.g. brand colors, racing colors, team colors" />
+              <Field label="Name, Business, or Logo Text" name="stable" required value={stable} onChange={setStable} placeholder="e.g. Miller's Garage, The Smiths, Joe's Bar" />
+              <Field label="Subtitle (optional)" name="horse" value={horse} onChange={setHorse} placeholder="e.g. Est. 1987, location, tagline" />
+              <Field label="Tagline (optional)" name="trainer" value={trainer} onChange={setTrainer} placeholder="e.g. slogan, owner name, year" />
+              <Field label="Your Colors" name="colors" placeholder="e.g. brand colors, team colors, favorite combos" />
             </div>
 
             <div className="mt-5">
