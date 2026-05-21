@@ -104,8 +104,8 @@ function Shop() {
           <Card title="1. Choose Your Clock">
             <RadioGroup value={productType} onValueChange={(v) => setProductType(v as "regular" | "custom")} className="grid sm:grid-cols-2 gap-3">
               {[
-                { v: "regular", t: "Regular Neon Clock", p: 99, d: "Pre-designed face, chrome border, your choice of neon glow." },
-                { v: "custom", t: "Custom Neon Stable Clock", p: 125, d: "Fully personalized face with your stable, horse, photo and colors." },
+                { v: "regular", t: "Regular Neon Clock", p: 99, d: "Pre-designed face, chrome border, your choice of neon glow color." },
+                { v: "custom", t: "Custom Neon Clock", p: 125, d: "Fully personalized face — name, logo, photo, business, team, or memorial design." },
               ].map((o) => (
                 <label
                   key={o.v}
