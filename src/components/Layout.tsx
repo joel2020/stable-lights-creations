@@ -84,15 +84,15 @@ export function Footer() {
     <footer className="mt-20 border-t border-white/10 bg-background/60">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="font-display text-2xl chrome-text">LIGHT ME UP PRODUCTIONS</div>
+          <div className="font-display text-2xl chrome-text">IT'S LIT NEON</div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Custom neon stable clocks built for harness racing barns, tack rooms, and winner's circles.
+            Premium custom neon clocks for homes, businesses, garages, bars, restaurants, race teams, stables, gifts, and collectors. Built one at a time by Light Me Up Productions.
           </p>
         </div>
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Shop</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Customize Your Clock</Link></li>
+            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Start a Custom Order</Link></li>
             <li><Link to="/gallery" className="hover:text-[var(--neon-orange)]">Gallery</Link></li>
             <li><Link to="/how-it-works" className="hover:text-[var(--neon-orange)]">How It Works</Link></li>
             <li><Link to="/faq" className="hover:text-[var(--neon-orange)]">FAQ</Link></li>
