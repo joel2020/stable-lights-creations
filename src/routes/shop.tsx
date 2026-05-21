@@ -19,6 +19,16 @@ export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): Search => ({
     type: s.type === "custom" ? "custom" : s.type === "regular" ? "regular" : undefined,
   }),
+  head: () => ({
+    meta: [
+      { title: "Design Your Custom Neon Clock · It's Lit Neon" },
+      { name: "description", content: "Build your custom neon clock — upload your logo or photo, pick your colors and neon glow, and see a live preview. For homes, businesses, garages, bars, race teams, stables, and gifts." },
+      { property: "og:title", content: "Design Your Custom Neon Clock · It's Lit Neon" },
+      { property: "og:description", content: "Customize a one-of-a-kind neon wall clock with your name, logo, photo, or design." },
+      { property: "og:url", content: "https://itslitneon.com/shop" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/shop" }],
+  }),
 });
 
 function Shop() {
