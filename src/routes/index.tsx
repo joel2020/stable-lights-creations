@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check } from "lucide-react";
+import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check, Building2, Wine, Wrench, Gamepad2, Trophy, Gift } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
