@@ -255,9 +255,9 @@ function Home() {
               ["Quartz movement", true, true],
               ["Neon on/off switch", true, true],
               ["7 neon glow colors", true, true],
-              ["Your stable / barn name", false, true],
-              ["Your horse, trainer, driver", false, true],
-              ["Your racing colors", false, true],
+              ["Your name, business, or logo", false, true],
+              ["Custom artwork & text", false, true],
+              ["Your colors", false, true],
               ["Custom photo on the face", false, true],
               ["Memorial editions", false, true],
             ].map(([label, r, c]) => (
