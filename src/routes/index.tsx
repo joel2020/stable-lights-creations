@@ -41,11 +41,13 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO_ROTATION = [
-  { src: heroClocks[0], color: "red" },
-  { src: heroClocks[1], color: "blue" },
-  { src: heroClocks[2], color: "yellow" },
-  { src: heroClocks[3], color: "green" },
-  { src: heroClocks[4], color: "orange" },
+  { src: heroClocks[0], color: "blue" },
+  { src: heroClocks[1], color: "green" },
+  { src: heroClocks[2], color: "red" },
+  { src: heroClocks[3], color: "red" },
+  { src: heroClocks[4], color: "green" },
+  { src: heroClocks[5], color: "red" },
+  { src: heroClocks[6], color: "blue" },
 ] as const;
 
 function Home() {
