@@ -59,24 +59,24 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 md:px-6 md:pt-20 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/10 px-3 py-1 text-xs uppercase tracking-widest text-[var(--neon-orange)]">
-              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks
+              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks · Built One at a Time
             </div>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
-              <span className="chrome-text">PUT YOUR</span>
+              <span className="chrome-text">CUSTOM NEON CLOCKS</span>
               <br />
-              <span className="text-[var(--neon-orange)] text-glow-orange">NAME</span>
+              <span className="text-[var(--neon-orange)] text-glow-orange">MADE TO LIGHT UP</span>
               <br />
-              <span className="chrome-text">IN LIGHTS</span>
+              <span className="chrome-text">ANY SPACE</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Custom neon clocks designed around you — your name, business, logo, photo, or memorial. Built one at a time to light up any wall, room, garage, or barn.
+              Personalized neon clocks built around your name, logo, photo, business, team, stable, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
-                <Link to="/shop">Customize Your Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
+                <Link to="/shop">Start Your Custom Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 border-white/20 hover:bg-white/5 font-bold">
-                <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Text Joe to Order</a>
+                <Link to="/gallery">See Design Ideas</Link>
               </Button>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
