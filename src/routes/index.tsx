@@ -6,10 +6,8 @@ import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
-import beckwithLit from "@/assets/clock-beckwith-red.jpg";
-import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
-import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
-import lifestyleTackroom from "@/assets/lifestyle-tackroom.jpg";
+import vegasLit from "@/assets/clock-vegas.jpg";
+import cocacolaLit from "@/assets/clock-cocacola.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
