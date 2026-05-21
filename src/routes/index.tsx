@@ -103,6 +103,21 @@ function Home() {
         </div>
       </section>
 
+      {/* COUPON BANNER */}
+      <section className="relative z-20 mx-4 md:mx-6 mt-6 mb-6 max-w-7xl lg:mx-auto">
+        <div className="coupon-banner rounded-2xl border-2 border-[var(--neon-orange)]/80 bg-[var(--neon-orange)]/15 px-6 py-4 text-center backdrop-blur">
+          <div className="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-3">
+            <span className="text-sm font-bold uppercase tracking-widest text-[var(--neon-orange)]">Limited Time Offer</span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span className="flash-coupon font-display text-2xl tracking-wide text-[var(--neon-orange)] text-glow-orange sm:text-3xl">
+              Code: BECKWITH — $5 Off
+            </span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span className="text-xs uppercase tracking-wider text-muted-foreground">Applied at checkout</span>
+          </div>
+        </div>
+      </section>
+
       {/* PRODUCTS */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl">
