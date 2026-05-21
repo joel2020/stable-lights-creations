@@ -47,7 +47,7 @@ function Shop() {
   const price = productType === "regular" ? 99 : 125;
 
   const summary = useMemo(() => ({
-    product: productType === "regular" ? "Regular Neon Clock" : "Custom Neon Stable Clock",
+    product: productType === "regular" ? "Regular Neon Clock" : "Custom Neon Clock",
     price,
   }), [productType, price]);
 
