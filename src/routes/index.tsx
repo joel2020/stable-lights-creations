@@ -106,10 +106,10 @@ function Home() {
       {/* CUSTOM CLOCKS FOR HORSEMEN */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl">
-          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">For the Racing Community</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl">Custom Clocks for Horsemen & Horsewomen</h2>
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">One of a Kind</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">Custom Clocks for Anyone, Anything</h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Every clock is built one at a time — designed with your barn, your horse, your colors. Whether it's a gift for a trainer, a tribute to a favorite racehorse, or a centerpiece for the tack room, we light it up.
+            Every clock is built one at a time — designed around your name, business, logo, photo, or favorite memory. Birthdays, anniversaries, memorials, businesses, garages, racing stables — if you can dream it, we can light it up.
           </p>
         </div>
 
