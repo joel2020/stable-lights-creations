@@ -3,13 +3,25 @@ import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Zap, Upload, Palette, Truck, Phone } from "lucide-react";
 
-export const Route = createFileRoute("/how-it-works")({ component: HowItWorks });
+export const Route = createFileRoute("/how-it-works")({
+  component: HowItWorks,
+  head: () => ({
+    meta: [
+      { title: "How Custom Neon Clocks Are Made · It's Lit Neon" },
+      { name: "description", content: "Our 4-step custom neon clock process: send your idea, we create the design, you approve the look, then we hand-build and ship your one-of-a-kind clock." },
+      { property: "og:title", content: "How Custom Neon Clocks Are Made · It's Lit Neon" },
+      { property: "og:description", content: "Send your idea, get a custom mockup, approve, and we build your one-of-a-kind neon wall clock." },
+      { property: "og:url", content: "https://itslitneon.com/how-it-works" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/how-it-works" }],
+  }),
+});
 
 const STEPS = [
-  { i: Zap, t: "Choose Regular or Custom", d: "Regular Neon Clock ($99) comes pre-designed with your pick of neon color. Custom Neon Stable Clock ($125) is fully personalized." },
-  { i: Upload, t: "Upload Your Photo & Details", d: "Send your horse, rider, trainer, or barn photo. Tell us your stable, horse, trainer/driver and racing colors." },
-  { i: Palette, t: "Pick Colors & Notes", d: "Choose your neon glow — red, orange, yellow, green, blue, purple, or white. Add any special design notes." },
-  { i: Truck, t: "We Build & Ship", d: "Joe designs your clock, confirms with you, then builds and ships it right to your barn." },
+  { i: Zap, t: "Send Us Your Idea", d: "Tell us what you want — your name, business, logo, photo, team, stable, or memorial concept. Send pictures, sketches, or just describe it." },
+  { i: Upload, t: "We Create the Design", d: "Joe builds a custom mockup of your clock face — artwork, text layout, photo placement, background, and neon glow color." },
+  { i: Palette, t: "Approve Your Custom Look", d: "Review the design, request tweaks, lock in your colors, and give the green light. Nothing goes into production until you love it." },
+  { i: Truck, t: "Your Clock Gets Built & Delivered", d: "Joe hand-builds your one-of-a-kind clock — chrome border, neon ring, quartz movement — and ships it right to your door." },
 ];
 
 function HowItWorks() {
@@ -18,7 +30,7 @@ function HowItWorks() {
       <section className="mx-auto max-w-5xl px-4 md:px-6 pt-10 pb-6">
         <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">How It Works</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl">From Idea to <span className="text-[var(--neon-orange)] text-glow-orange">Lit Up</span></h1>
-        <p className="mt-3 max-w-2xl text-muted-foreground">Every clock is hand-built. Here's the simple 4-step process from order to delivery.</p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">Every clock is hand-built. Here's the simple 4-step process from your first message to delivery.</p>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 md:px-6 pb-16">
@@ -39,12 +51,13 @@ function HowItWorks() {
 
         <div className="mt-10 rounded-2xl border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/5 p-6 md:p-8 text-center">
           <h2 className="font-display text-3xl md:text-4xl">Ready to start?</h2>
+          <p className="mt-2 text-muted-foreground">Send us your name, logo, or photo and we'll turn it into a clock that glows.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
             <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <Link to="/shop">Customize Your Clock</Link>
+              <Link to="/shop">Start Your Custom Clock</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/20 font-bold">
-              <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Text Joe to Order</a>
+              <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Get a Custom Quote</a>
             </Button>
           </div>
         </div>
