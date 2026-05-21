@@ -8,9 +8,9 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Custom Neon Clock Gallery · Designs & Inspiration · It's Lit Neon" },
-      { name: "description", content: "Browse custom neon clocks built for businesses, garages, bars, game rooms, race teams, stables, and personalized gifts. Get design ideas for your one-of-a-kind clock." },
+      { name: "description", content: "Browse custom neon clocks built for businesses, garages, bars, game rooms, and personalized gifts. Get design ideas for your one-of-a-kind clock." },
       { property: "og:title", content: "Custom Neon Clock Gallery · It's Lit Neon" },
-      { property: "og:description", content: "Real custom neon clocks we've built — logos, photos, racing stables, bars, and gifts. See what's possible." },
+      { property: "og:description", content: "Real custom neon clocks we've built — logos, photos, bars, and gifts. See what's possible." },
       { property: "og:url", content: "https://itslitneon.com/gallery" },
     ],
     links: [{ rel: "canonical", href: "https://itslitneon.com/gallery" }],
@@ -23,7 +23,7 @@ function Gallery() {
       <section className="mx-auto max-w-7xl px-4 md:px-6 pt-10 pb-6">
         <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Gallery</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl chrome-text">DESIGN IDEAS</h1>
-        <p className="mt-3 max-w-2xl text-muted-foreground">A look at custom neon clocks we've built — businesses, bars, garages, racing stables, gifts, and more. Yours is next.</p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">A look at custom neon clocks we've built — businesses, bars, garages, gifts, and more. Yours is next.</p>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 md:px-6 pb-16">

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "Custom Neon Clock FAQ · It's Lit Neon" },
-      { name: "description", content: "Answers about custom neon clocks — turnaround time, photo and logo requirements, neon colors, shipping, and ordering for businesses, gifts, garages, bars, stables, and more." },
+      { name: "description", content: "Answers about custom neon clocks — turnaround time, photo and logo requirements, neon colors, shipping, and ordering for businesses, gifts, garages, bars, and more." },
       { property: "og:title", content: "Custom Neon Clock FAQ · It's Lit Neon" },
       { property: "og:description", content: "Everything you need to know before ordering a custom neon clock — design, build time, shipping, and personalization options." },
       { property: "og:url", content: "https://itslitneon.com/faq" },
@@ -32,17 +32,17 @@ export const Route = createFileRoute("/faq")({
 });
 
 const FAQS = [
-  { q: "What's the difference between the Regular and Custom clock?", a: "The Regular Neon Clock ($99 + shipping) is pre-designed with your choice of neon glow color. The Custom Neon Clock ($125 + shipping) is fully personalized — your name, logo, photo, business, team, stable, or memorial design on the face." },
-  { q: "What can I personalize on a custom clock?", a: "Names, logos, photos, business branding, racing graphics, stable names, custom artwork, text, background imagery, your colors, and the neon glow style. If you can describe it, we can usually build it." },
-  { q: "Who are these clocks for?", a: "Businesses, bars, restaurants, cafés, garages, auto shops, dealerships, race teams, stables, raceways, game rooms, man caves, home bars, offices, salons, gyms, families buying personalized gifts, and collectors of retro neon decor." },
+  { q: "What's the difference between the Regular and Custom clock?", a: "The Regular Neon Clock ($99 + shipping) is pre-designed with your choice of neon glow color. The Custom Neon Clock ($125 + shipping) is fully personalized — your name, logo, photo, business, team, or memorial design on the face." },
+  { q: "What can I personalize on a custom clock?", a: "Names, logos, photos, business branding, team graphics, custom artwork, text, background imagery, your colors, and the neon glow style. If you can describe it, we can usually build it." },
+  { q: "Who are these clocks for?", a: "Businesses, bars, restaurants, cafés, garages, auto shops, dealerships, game rooms, man caves, home bars, offices, salons, gyms, families buying personalized gifts, and collectors of retro neon decor." },
   { q: "How much does shipping cost?", a: "Shipping is calculated at checkout based on your address. Joe will confirm the total before charging." },
   { q: "How long until I get my clock?", a: "Regular clocks typically ship within a few business days. Custom builds usually take 2-3 weeks from when the design is finalized." },
   { q: "What neon colors can I choose?", a: "Red, orange, yellow, green, blue, purple, and white." },
   { q: "Does the clock keep running if I turn the neon off?", a: "Yes — there's an on/off switch for the neon light. The quartz clock movement runs independently." },
-  { q: "What kind of photo or logo file should I send?", a: "Anything sharp and well-lit works best — high-res logos, product photos, race photos, family photos, headshots, or vector files. We'll let you know if anything needs to be re-sent before production." },
+  { q: "What kind of photo or logo file should I send?", a: "Anything sharp and well-lit works best — high-res logos, product photos, family photos, headshots, or vector files. We'll let you know if anything needs to be re-sent before production." },
   { q: "Can I do a memorial or gift clock?", a: "Absolutely. We've built memorial, anniversary, wedding, and birthday editions before — just include the wording and any photos in your custom notes." },
-  { q: "Is the clock indoor or outdoor?", a: "Designed for indoor display — homes, offices, bars, garages, game rooms, tack rooms, race shops, retail spaces, and showrooms." },
-  { q: "Can I order multiple clocks for my business or team?", a: "Yes. Text Joe at 702-460-9190 for multi-clock and bulk pricing for businesses, race teams, dealerships, and gift orders." },
+  { q: "Is the clock indoor or outdoor?", a: "Designed for indoor display — homes, offices, bars, garages, game rooms, retail spaces, and showrooms." },
+  { q: "Can I order multiple clocks for my business or team?", a: "Yes. Text Joe at 702-460-9190 for multi-clock and bulk pricing for businesses, teams, dealerships, and gift orders." },
   { q: "Refunds?", a: "Custom clocks are personalized and generally not refundable once production begins. See our Terms & Refund Policy for details, or reach out to Joe with any concerns." },
   { q: "Where are you based?", a: "It's Lit Neon is run by Joe Dakuras at Light Me Up Productions. Reach Joe by text at 702-460-9190 or email at lightmeupvegas@yahoo.com." },
 ];

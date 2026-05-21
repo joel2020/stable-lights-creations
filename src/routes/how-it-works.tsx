@@ -18,7 +18,7 @@ export const Route = createFileRoute("/how-it-works")({
 });
 
 const STEPS = [
-  { i: Zap, t: "Send Us Your Idea", d: "Tell us what you want — your name, business, logo, photo, team, stable, or memorial concept. Send pictures, sketches, or just describe it." },
+  { i: Zap, t: "Send Us Your Idea", d: "Tell us what you want — your name, business, logo, photo, team, or memorial concept. Send pictures, sketches, or just describe it." },
   { i: Upload, t: "We Create the Design", d: "Joe builds a custom mockup of your clock face — artwork, text layout, photo placement, background, and neon glow color." },
   { i: Palette, t: "Approve Your Custom Look", d: "Review the design, request tweaks, lock in your colors, and give the green light. Nothing goes into production until you love it." },
   { i: Truck, t: "Your Clock Gets Built & Delivered", d: "Joe hand-builds your one-of-a-kind clock — chrome border, neon ring, quartz movement — and ships it right to your door." },

@@ -6,10 +6,8 @@ import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
-import beckwithLit from "@/assets/clock-beckwith-red.jpg";
-import beckwithUnlit from "@/assets/clock-beckwith-white.jpg";
-import lifestyleBarn from "@/assets/lifestyle-barn-wall.jpg";
-import lifestyleTackroom from "@/assets/lifestyle-tackroom.jpg";
+import vegasLit from "@/assets/clock-vegas.jpg";
+import cocacolaLit from "@/assets/clock-cocacola.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
@@ -24,7 +22,7 @@ export const Route = createFileRoute("/")({
             {
               "@type": "Product",
               name: "Regular Neon Clock",
-              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, man caves, and barns.",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, and man caves.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "99.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
@@ -43,11 +41,13 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO_ROTATION = [
-  { src: heroClocks[0], color: "red" },
-  { src: heroClocks[1], color: "blue" },
-  { src: heroClocks[2], color: "yellow" },
-  { src: heroClocks[3], color: "green" },
-  { src: heroClocks[4], color: "orange" },
+  { src: heroClocks[0], color: "blue" },
+  { src: heroClocks[1], color: "green" },
+  { src: heroClocks[2], color: "red" },
+  { src: heroClocks[3], color: "red" },
+  { src: heroClocks[4], color: "green" },
+  { src: heroClocks[5], color: "red" },
+  { src: heroClocks[6], color: "blue" },
 ] as const;
 
 function Home() {
@@ -69,7 +69,7 @@ function Home() {
               <span className="chrome-text">ANY SPACE</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Personalized neon clocks built around your name, logo, photo, business, team, stable, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
+              Personalized neon clocks built around your name, logo, photo, business, team, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
@@ -134,9 +134,9 @@ function Home() {
             badge="Best Seller"
             color="red"
             highlight
-            image={beckwithLit}
-            imageUnlit={beckwithUnlit}
-            imageGlow="red"
+            image={vegasLit}
+            imageUnlit={cocacolaLit}
+            imageGlow="blue"
           />
 
         </div>
@@ -159,7 +159,7 @@ function Home() {
               { i: Wine, c: "red", t: "Bars, Restaurants & Cafés", d: "Statement pieces for bars, lounges, diners, breweries, and coffee shops." },
               { i: Wrench, c: "yellow", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
               { i: Gamepad2, c: "purple", t: "Game Rooms, Man Caves & Home Bars", d: "Personalized clocks for basements, dens, pool rooms, and home theaters." },
-              { i: Trophy, c: "green", t: "Racing, Barn & Stable Clocks", d: "Stable names, raceway logos, horses, drivers — featured collection for the racing world." },
+              { i: Trophy, c: "green", t: "Sports Teams, Clubs & Hobbies", d: "Team logos, club names, hobby shops, and collectibles that show off your passion." },
               { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, weddings, and tribute pieces that last a lifetime." },
             ].map((u) => (
               <div key={u.t} className="rounded-2xl border border-white/10 bg-card p-5 hover:border-white/30 transition">
@@ -241,20 +241,20 @@ function Home() {
         </div>
       </section>
 
-      {/* RACING & STABLE COLLECTION (featured use case) */}
+      {/* FEATURED BUILDS */}
       <section className="border-y border-white/10 bg-black/40">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
           <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Featured Collection</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">RACING, STABLE & BARN NEON CLOCKS</h2>
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Featured Builds</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">CUSTOM NEON CLOCKS IN ACTION</h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              From harness racing barns and tack rooms to raceway lounges and stable offices, our custom neon clocks help owners, trainers, drivers, and racing fans showcase their name, colors, horses, and legacy in a bold illuminated design.
+              Real clocks we've built for bars, garages, game rooms, businesses, and gift moments. Each one is hand-crafted to order and built to be the focal point of the room.
             </p>
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { src: lifestyleBarn, label: "Barn Wall · Red Neon", alt: "Custom red neon stable clock mounted on rustic barn wall next to harness" },
-              { src: lifestyleTackroom, label: "Tack Room · Orange Neon", alt: "Orange neon racing clock in tack room with racing silks and trophies" },
+              { src: vegasLit, label: "Las Vegas · Blue Neon", alt: "Custom blue neon Las Vegas clock on wall" },
+              { src: cocacolaLit, label: "Coca-Cola · Green Neon", alt: "Custom green neon Coca-Cola themed clock" },
             ].map((s) => (
               <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
                 <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -327,12 +327,12 @@ function Home() {
           </div>
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { q: "Joe builds a beautiful clock. The detail and the glow are unreal — looks even better in person.", n: "David Miller", c: "orange" },
-              { q: "Hands down the coolest piece of memorabilia I own. Quality is top-shelf.", n: "Tim Tetrick", c: "yellow" },
-              { q: "Custom from top to bottom. Joe nailed every detail we asked for.", n: "Holland Family", c: "blue" },
-              { q: "Best gift I've ever gotten. It's the first thing everyone notices when they walk in.", n: "Burke Stable", c: "red" },
-              { q: "Hung it in the office and every visitor stops dead. Worth every penny.", n: "Beckwith Racing", c: "red" },
-              { q: "We've got Joe's clocks all over the property. They're a fan favorite.", n: "The Meadowlands", c: "green" },
+              { q: "Joe builds a beautiful clock. The detail and the glow are unreal — looks even better in person.", n: "D.M. Hollywood, FL", c: "orange" },
+              { q: "Hands down the coolest piece of memorabilia I own. Quality is top-shelf.", n: "T.T. Las Vegas, NV", c: "yellow" },
+              { q: "Custom from top to bottom. Joe nailed every detail we asked for.", n: "J.H. Miami, FL", c: "blue" },
+              { q: "Best gift I've ever gotten. It's the first thing everyone notices when they walk in.", n: "M.R. Chicago, IL", c: "red" },
+              { q: "Hung it in the office and every visitor stops dead. Worth every penny.", n: "S.B. Austin, TX", c: "red" },
+              { q: "We've got Joe's clocks all over the property. They're a fan favorite.", n: "K.P. Denver, CO", c: "green" },
             ].map((t) => (
               <figure key={t.n} className="rounded-2xl border border-white/10 bg-card p-6 flex flex-col">
                 <div className="flex gap-1 text-[var(--neon-yellow)]">{[1,2,3,4,5].map((i)=><Star key={i} className="h-4 w-4 fill-current" />)}</div>
@@ -349,9 +349,9 @@ function Home() {
 
       {/* TRUST STRIP */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
-        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Bars, Garages, Businesses & Race Tracks Across North America</div>
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Bars, Garages & Businesses Across North America</div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
-          {["Meadowlands","Yonkers","Red Mile","Hoosier Park","Pocono Downs","Mohawk"].map((t) => (
+          {["Las Vegas","Los Angeles","Chicago","Miami","Houston","Denver"].map((t) => (
             <div key={t} className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text">
               {t.toUpperCase()}
             </div>
@@ -395,7 +395,7 @@ function Home() {
                 "Names & personal text",
                 "Business logos & branding",
                 "Photos (people, pets, places)",
-                "Racing graphics & stable names",
+                "Sports teams & club logos",
                 "Custom artwork & themes",
                 "Your colors & color combos",
                 "Background imagery",
@@ -426,7 +426,7 @@ function Home() {
         </div>
         <h2 className="mt-4 font-display text-4xl md:text-5xl chrome-text">THE FOCAL POINT OF EVERY ROOM</h2>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-          Premium custom neon clocks that turn any wall into a statement — perfect for businesses, garages, bars, game rooms, stables, offices, and giftable moments people remember.
+          Premium custom neon clocks that turn any wall into a statement — perfect for businesses, garages, bars, game rooms, offices, and giftable moments people remember.
         </p>
       </section>
 
@@ -470,8 +470,8 @@ function Home() {
 
 const FAQ_HOME = [
   { q: "How long does it take to get my clock?", a: "Regular clocks ship within a few business days. Custom builds typically take 2-3 weeks once we finalize the design with you." },
-  { q: "Can I send my logo or a photo?", a: "Absolutely — logos, photos, artwork, business branding, racing graphics, memorial photos. Higher resolution gives the cleanest result, and we'll let you know if anything needs to be re-sent before production." },
-  { q: "Can I use my own colors?", a: "Yes. Send us your brand colors, racing colors, team colors, or favorite combos and we'll work them into the design." },
+  { q: "Can I send my logo or a photo?", a: "Absolutely — logos, photos, artwork, business branding, team graphics, memorial photos. Higher resolution gives the cleanest result, and we'll let you know if anything needs to be re-sent before production." },
+  { q: "Can I use my own colors?", a: "Yes. Send us your brand colors, team colors, or favorite combos and we'll work them into the design." },
 ];
 
 function FragmentRow({ label, reg, cus }: { label: string; reg: boolean; cus: boolean }) {

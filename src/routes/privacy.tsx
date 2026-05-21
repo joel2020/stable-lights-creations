@@ -32,7 +32,7 @@ function Privacy() {
         <p>We collect the following categories of information:</p>
         <ul>
           <li><strong>Identifiers &amp; Contact Information</strong>: name, email address, mailing/shipping address, telephone number.</li>
-          <li><strong>Commercial Information</strong>: products purchased or considered, order history, customization details (stable, horse, trainer/driver name, racing colors, design notes).</li>
+          <li><strong>Commercial Information</strong>: products purchased or considered, order history, customization details (names, colors, design notes).</li>
           <li><strong>Buyer-Supplied Content</strong>: photographs, logos, or other images you upload for use on your Product.</li>
           <li><strong>Payment Information</strong>: payment-card data is collected directly by our third-party payment processor (e.g., Stripe). <strong>We do not store full payment-card numbers or CVV codes on our servers.</strong> We may receive limited transaction metadata (last 4 digits, brand, authorization status).</li>
           <li><strong>Technical &amp; Usage Data</strong>: IP address, browser type, device identifiers, operating system, referring URL, pages viewed, timestamps, and similar log data collected automatically via cookies, pixels, and analytics tools.</li>
