@@ -161,10 +161,10 @@ function Shop() {
             </div>
 
             <div className="mt-5">
-              <Label htmlFor="photo" className="text-sm font-semibold uppercase tracking-wider">Upload Photo (horse, rider, barn)</Label>
+              <Label htmlFor="photo" className="text-sm font-semibold uppercase tracking-wider">Upload Photo or Logo</Label>
               <label htmlFor="photo" className="mt-2 flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-white/20 bg-black/30 p-6 text-sm text-muted-foreground hover:border-[var(--neon-orange)] hover:text-foreground">
                 <Upload className="h-5 w-5" />
-                {photoName || "Tap to upload a photo (JPG, PNG)"}
+                {photoName || "Tap to upload your logo, photo, or artwork (JPG, PNG)"}
               </label>
               <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
                 const f = e.target.files?.[0];
