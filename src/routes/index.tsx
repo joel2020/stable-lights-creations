@@ -103,13 +103,13 @@ function Home() {
         </div>
       </section>
 
-      {/* CUSTOM CLOCKS FOR HORSEMEN */}
+      {/* PRODUCTS */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl">
-          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">One of a Kind</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl">Custom Clocks for Anyone, Anything</h2>
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Two Ways to Light It Up</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">Pick Your Clock. Make It Yours.</h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Every clock is built one at a time — designed around your name, business, logo, photo, or favorite memory. Birthdays, anniversaries, memorials, businesses, garages, racing stables — if you can dream it, we can light it up.
+            Every clock is hand-built one at a time. Start with a clean classic or go fully custom — your name, logo, photo, or design on the face.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ function Home() {
           <ProductCard
             title="Custom Neon Clock"
             price={125}
-            tagline="Fully personalized — your name, business, logo, photo, or memorial design on the face."
+            tagline="Fully personalized — your name, logo, photo, business, team, or memorial design on the face."
             features={["Everything in Regular", "Custom face artwork", "Your name, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
             badge="Best Seller"
             color="red"
@@ -141,6 +141,42 @@ function Home() {
 
         </div>
         <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. Shipping calculated at checkout.</p>
+      </section>
+
+      {/* USE CASES / WHO IT'S FOR */}
+      <section className="border-y border-white/10 bg-black/30">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+          <div className="max-w-3xl">
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Who It's For</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl">A Clock for Every Wall, Brand & Occasion</h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              From boardrooms to barrooms, garages to game rooms. If you've got a wall, we've got a clock for it.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { i: Building2, c: "orange", t: "Business & Logo Clocks", d: "Branded wall decor for offices, studios, salons, barbershops, gyms, and retail floors." },
+              { i: Wine, c: "red", t: "Bars, Restaurants & Cafés", d: "Statement pieces for bars, lounges, diners, breweries, and coffee shops." },
+              { i: Wrench, c: "yellow", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
+              { i: Gamepad2, c: "purple", t: "Game Rooms, Man Caves & Home Bars", d: "Personalized clocks for basements, dens, pool rooms, and home theaters." },
+              { i: Trophy, c: "green", t: "Racing, Barn & Stable Clocks", d: "Stable names, raceway logos, horses, drivers — featured collection for the racing world." },
+              { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, weddings, and tribute pieces that last a lifetime." },
+            ].map((u) => (
+              <div key={u.t} className="rounded-2xl border border-white/10 bg-card p-5 hover:border-white/30 transition">
+                <div className={`grid h-10 w-10 place-items-center rounded-full ring-glow-${u.c} bg-black`}>
+                  <u.i className="h-5 w-5" style={{ color: `var(--neon-${u.c})` }} />
+                </div>
+                <h3 className="mt-3 font-display text-xl md:text-2xl">{u.t}</h3>
+                <p className="mt-1.5 text-sm text-muted-foreground">{u.d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
+              <Link to="/shop">Design My Clock</Link>
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* GALLERY STRIP */}
