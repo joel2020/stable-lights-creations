@@ -59,17 +59,17 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 md:px-6 md:pt-20 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/10 px-3 py-1 text-xs uppercase tracking-widest text-[var(--neon-orange)]">
-              <Zap className="h-3.5 w-3.5" /> Built for Harness Racing
+              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks
             </div>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
               <span className="chrome-text">PUT YOUR</span>
               <br />
-              <span className="text-[var(--neon-orange)] text-glow-orange">STABLE NAME</span>
+              <span className="text-[var(--neon-orange)] text-glow-orange">NAME</span>
               <br />
               <span className="chrome-text">IN LIGHTS</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Custom neon clocks designed with your horse, barn name, racing colors, trainer, or driver. Built to stand out in the barn, tack room, or winner's circle.
+              Custom neon clocks designed around you — your name, business, logo, photo, or memorial. Built one at a time to light up any wall, room, garage, or barn.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
