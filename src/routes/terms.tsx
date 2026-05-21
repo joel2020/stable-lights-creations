@@ -140,7 +140,7 @@ function Terms() {
           laws. You may not copy, reproduce, modify, distribute, or create derivative works without our prior written consent.
         </p>
         <p>
-          By submitting any image, photograph, logo, name, color scheme, racing silks, or other content (&ldquo;Buyer Content&rdquo;) to
+          By submitting any image, photograph, logo, name, color scheme, or other content (&ldquo;Buyer Content&rdquo;) to
           us in connection with an order, you represent and warrant that you own or have all necessary rights, licenses, and
           permissions to use that content and to authorize us to reproduce it on a Product, and that the Buyer Content does not
           infringe, misappropriate, or violate any third party&rsquo;s intellectual-property, privacy, publicity, or other rights. You
