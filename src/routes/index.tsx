@@ -451,14 +451,15 @@ function Home() {
         <div className="absolute inset-0 stripe-track opacity-50" />
         <div className="relative mx-auto max-w-4xl px-4 md:px-6 py-20 text-center">
           <h2 className="font-display text-4xl md:text-6xl">
-            Ready to see your <span className="text-[var(--neon-orange)] text-glow-orange">stable name</span> in lights?
+            Ready to build a clock that <span className="text-[var(--neon-orange)] text-glow-orange">glows like nothing else?</span>
           </h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Send us your idea — your name, logo, photo, or business — and we'll turn it into a one-of-a-kind neon clock.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold h-12">
-              <Link to="/shop">Customize Your Clock</Link>
+              <Link to="/shop">Start Your Custom Clock</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="h-12 border-white/20 hover:bg-white/5 font-bold">
-              <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Text Joe 702-460-9190</a>
+              <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Get a Custom Quote</a>
             </Button>
           </div>
         </div>
@@ -469,8 +470,8 @@ function Home() {
 
 const FAQ_HOME = [
   { q: "How long does it take to get my clock?", a: "Regular clocks ship within a few business days. Custom builds typically take 2-3 weeks once we finalize the design with you." },
-  { q: "Do I need to send a high-res photo?", a: "Higher resolution gives the cleanest result, but we'll let you know if anything needs to be re-sent before production." },
-  { q: "Can I use my own racing colors?", a: "Yes — just tell us the colors in the customizer or text Joe with details." },
+  { q: "Can I send my logo or a photo?", a: "Absolutely — logos, photos, artwork, business branding, racing graphics, memorial photos. Higher resolution gives the cleanest result, and we'll let you know if anything needs to be re-sent before production." },
+  { q: "Can I use my own colors?", a: "Yes. Send us your brand colors, racing colors, team colors, or favorite combos and we'll work them into the design." },
 ];
 
 function FragmentRow({ label, reg, cus }: { label: string; reg: boolean; cus: boolean }) {
