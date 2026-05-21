@@ -19,6 +19,16 @@ export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): Search => ({
     type: s.type === "custom" ? "custom" : s.type === "regular" ? "regular" : undefined,
   }),
+  head: () => ({
+    meta: [
+      { title: "Design Your Custom Neon Clock · It's Lit Neon" },
+      { name: "description", content: "Build your custom neon clock — upload your logo or photo, pick your colors and neon glow, and see a live preview. For homes, businesses, garages, bars, race teams, stables, and gifts." },
+      { property: "og:title", content: "Design Your Custom Neon Clock · It's Lit Neon" },
+      { property: "og:description", content: "Customize a one-of-a-kind neon wall clock with your name, logo, photo, or design." },
+      { property: "og:url", content: "https://itslitneon.com/shop" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/shop" }],
+  }),
 });
 
 function Shop() {
@@ -37,7 +47,7 @@ function Shop() {
   const price = productType === "regular" ? 99 : 125;
 
   const summary = useMemo(() => ({
-    product: productType === "regular" ? "Regular Neon Clock" : "Custom Neon Stable Clock",
+    product: productType === "regular" ? "Regular Neon Clock" : "Custom Neon Clock",
     price,
   }), [productType, price]);
 
@@ -58,10 +68,10 @@ function Shop() {
       `Phone: ${fd.get("phone")}`,
       `Shipping: ${fd.get("address")}`,
       "",
-      `Stable / Barn / Farm: ${fd.get("stable")}`,
-      `Horse Name: ${fd.get("horse")}`,
-      `Trainer / Driver: ${fd.get("trainer")}`,
-      `Racing Colors: ${fd.get("colors")}`,
+      `Name / Business / Stable: ${fd.get("stable")}`,
+      `Subtitle: ${fd.get("horse")}`,
+      `Tagline: ${fd.get("trainer")}`,
+      `Colors: ${fd.get("colors")}`,
       `Neon Color: ${neonColor}`,
       `Photo: ${photoName || "(none attached — will email separately)"}`,
       "",
@@ -77,9 +87,9 @@ function Shop() {
   return (
     <PageShell>
       <section className="mx-auto max-w-6xl px-4 md:px-6 pt-10 pb-6">
-        <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Customize Your Clock</div>
+        <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Design Your Custom Clock</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl">Build It. <span className="text-[var(--neon-orange)] text-glow-orange">Light It Up.</span></h1>
-        <p className="mt-3 text-muted-foreground max-w-2xl">Fill out the form below. Joe will confirm your design and send a payment link before production begins.</p>
+        <p className="mt-3 text-muted-foreground max-w-2xl">Tell us what you want — name, logo, photo, business, team, or memorial — and watch your one-of-a-kind clock come together. Joe confirms the final design before production begins.</p>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 md:px-6 pb-20 grid lg:grid-cols-[1fr,360px] gap-8 items-start">
@@ -94,8 +104,8 @@ function Shop() {
           <Card title="1. Choose Your Clock">
             <RadioGroup value={productType} onValueChange={(v) => setProductType(v as "regular" | "custom")} className="grid sm:grid-cols-2 gap-3">
               {[
-                { v: "regular", t: "Regular Neon Clock", p: 99, d: "Pre-designed face, chrome border, your choice of neon glow." },
-                { v: "custom", t: "Custom Neon Stable Clock", p: 125, d: "Fully personalized face with your stable, horse, photo and colors." },
+                { v: "regular", t: "Regular Neon Clock", p: 99, d: "Pre-designed face, chrome border, your choice of neon glow color." },
+                { v: "custom", t: "Custom Neon Clock", p: 125, d: "Fully personalized face — name, logo, photo, business, team, or memorial design." },
               ].map((o) => (
                 <label
                   key={o.v}
@@ -127,10 +137,10 @@ function Shop() {
           {/* Design */}
           <Card title="3. Design Details">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Stable / Barn / Farm Name" name="stable" required value={stable} onChange={setStable} placeholder="Beckwith Racing" />
-              <Field label="Horse Name" name="horse" value={horse} onChange={setHorse} />
-              <Field label="Trainer / Driver Name" name="trainer" value={trainer} onChange={setTrainer} />
-              <Field label="Racing Colors" name="colors" placeholder="e.g. green & gold" />
+              <Field label="Name, Business, Stable or Logo Text" name="stable" required value={stable} onChange={setStable} placeholder="e.g. Miller's Garage, Beckwith Racing, The Smiths" />
+              <Field label="Subtitle (optional)" name="horse" value={horse} onChange={setHorse} placeholder="e.g. Est. 1987, horse name, location" />
+              <Field label="Tagline (optional)" name="trainer" value={trainer} onChange={setTrainer} placeholder="e.g. owner name, driver, slogan" />
+              <Field label="Your Colors" name="colors" placeholder="e.g. brand colors, racing colors, team colors" />
             </div>
 
             <div className="mt-5">
@@ -151,10 +161,10 @@ function Shop() {
             </div>
 
             <div className="mt-5">
-              <Label htmlFor="photo" className="text-sm font-semibold uppercase tracking-wider">Upload Photo (horse, rider, barn)</Label>
+              <Label htmlFor="photo" className="text-sm font-semibold uppercase tracking-wider">Upload Photo or Logo</Label>
               <label htmlFor="photo" className="mt-2 flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-white/20 bg-black/30 p-6 text-sm text-muted-foreground hover:border-[var(--neon-orange)] hover:text-foreground">
                 <Upload className="h-5 w-5" />
-                {photoName || "Tap to upload a photo (JPG, PNG)"}
+                {photoName || "Tap to upload your logo, photo, or artwork (JPG, PNG)"}
               </label>
               <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
                 const f = e.target.files?.[0];

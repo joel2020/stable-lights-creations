@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/shop", label: "Customize" },
+  { to: "/shop", label: "Custom Clocks" },
   { to: "/gallery", label: "Gallery" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/faq", label: "FAQ" },
@@ -43,7 +43,7 @@ export function Header() {
             <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
           </Button>
           <Button asChild size="sm" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-            <Link to="/shop">Order Now</Link>
+            <Link to="/shop">Start Your Custom Clock</Link>
           </Button>
         </div>
         <button className="lg:hidden p-2 -mr-2" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -69,7 +69,7 @@ export function Header() {
                 <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
               </Button>
               <Button asChild className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-                <Link to="/shop" onClick={() => setOpen(false)}>Order Now</Link>
+                <Link to="/shop" onClick={() => setOpen(false)}>Start Your Custom Clock</Link>
               </Button>
             </div>
           </div>
@@ -84,15 +84,15 @@ export function Footer() {
     <footer className="mt-20 border-t border-white/10 bg-background/60">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="font-display text-2xl chrome-text">LIGHT ME UP PRODUCTIONS</div>
+          <div className="font-display text-2xl chrome-text">IT'S LIT NEON</div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Custom neon stable clocks built for harness racing barns, tack rooms, and winner's circles.
+            Premium custom neon clocks for homes, businesses, garages, bars, restaurants, race teams, stables, gifts, and collectors. Built one at a time by Light Me Up Productions.
           </p>
         </div>
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Shop</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Customize Your Clock</Link></li>
+            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Start a Custom Order</Link></li>
             <li><Link to="/gallery" className="hover:text-[var(--neon-orange)]">Gallery</Link></li>
             <li><Link to="/how-it-works" className="hover:text-[var(--neon-orange)]">How It Works</Link></li>
             <li><Link to="/faq" className="hover:text-[var(--neon-orange)]">FAQ</Link></li>
@@ -115,7 +115,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Light Me Up Productions. Built for the harness racing community.
+        © {new Date().getFullYear()} It's Lit Neon · Light Me Up Productions. Custom neon clocks for any space, brand, or gift.
       </div>
     </footer>
   );
