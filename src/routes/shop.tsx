@@ -87,9 +87,9 @@ function Shop() {
   return (
     <PageShell>
       <section className="mx-auto max-w-6xl px-4 md:px-6 pt-10 pb-6">
-        <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Customize Your Clock</div>
+        <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Design Your Custom Clock</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl">Build It. <span className="text-[var(--neon-orange)] text-glow-orange">Light It Up.</span></h1>
-        <p className="mt-3 text-muted-foreground max-w-2xl">Fill out the form below. Joe will confirm your design and send a payment link before production begins.</p>
+        <p className="mt-3 text-muted-foreground max-w-2xl">Tell us what you want — name, logo, photo, business, team, or memorial — and watch your one-of-a-kind clock come together. Joe confirms the final design before production begins.</p>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 md:px-6 pb-20 grid lg:grid-cols-[1fr,360px] gap-8 items-start">
