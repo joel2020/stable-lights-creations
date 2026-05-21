@@ -40,18 +40,18 @@ function Terms() {
         <h2 className="font-display text-2xl mt-6">2. Products; Made-to-Order Nature</h2>
         <p>
           All clocks sold by Light Me Up Productions are <strong>handcrafted, made-to-order items personalized to the buyer&rsquo;s
-          specifications</strong>, including but not limited to stable name, horse name, trainer/driver name, racing colors, photos, and
+          specifications</strong>, including but not limited to names, logos, photos, colors, and
           neon glow color. You acknowledge that:
         </p>
         <ul>
           <li>Each Product is hand-built and may contain minor variations in color, glow intensity, glass shape, weld lines, and overall finish that are inherent to handmade neon work and do not constitute defects.</li>
           <li>Photographs on the Site are representative; actual Products may differ slightly in appearance due to lighting, monitor calibration, and the nature of neon.</li>
-          <li>Neon tubing is fragile. You assume all risk of damage caused by improper handling, installation, dropping, voltage spikes, exposure to moisture, or use outside indoor residential or barn environments.</li>
+          <li>Neon tubing is fragile. You assume all risk of damage caused by improper handling, installation, dropping, voltage spikes, exposure to moisture, or use outside indoor residential environments.</li>
         </ul>
 
         <h2 className="font-display text-2xl mt-6">3. Orders, Pricing &amp; Payment</h2>
         <p>
-          Listed prices are: <strong>Regular Neon Clock $99 plus shipping</strong> and <strong>Custom Neon Stable Clock $125 plus
+          Listed prices are: <strong>Regular Neon Clock $99 plus shipping</strong> and <strong>Custom Neon Clock $125 plus
           shipping</strong>, in U.S. Dollars, exclusive of any applicable taxes and shipping fees, which are calculated at checkout or
           quoted by us in writing. We reserve the right to correct pricing errors, refuse or cancel any order, and limit quantities at
           any time prior to shipment. Submission of an order is an offer to buy; no contract is formed until we accept your order in
@@ -83,11 +83,11 @@ function Terms() {
           <strong>ALL SALES ARE FINAL. ALL PRODUCTS ARE NON-REFUNDABLE, NON-RETURNABLE, AND NON-EXCHANGEABLE.</strong> Because every
           Product is custom-made and personalized to the buyer&rsquo;s specifications, we do not accept returns, do not issue refunds,
           do not provide store credit, and do not accept cancellations once an order has been submitted and payment has been received.
-          This policy applies to both Regular Neon Clocks and Custom Neon Stable Clocks and applies regardless of the reason for the
+          This policy applies to both Regular Neon Clocks and Custom Neon Clocks and applies regardless of the reason for the
           requested refund, including but not limited to:
         </p>
         <ul>
-          <li>Buyer&rsquo;s remorse, change of mind, change of circumstances, or change in stable, horse, trainer, or driver;</li>
+          <li>Buyer&rsquo;s remorse, change of mind, or change of circumstances;</li>
           <li>Delays in production or shipping;</li>
           <li>Variations in color, glow, finish, or appearance inherent to handmade neon;</li>
           <li>Spelling, name, color, or design errors that appeared in a design you approved under Section 4;</li>
