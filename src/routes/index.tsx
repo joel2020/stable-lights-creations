@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
             {
               "@type": "Product",
               name: "Regular Neon Clock",
-              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, man caves, and barns.",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors. Perfect for homes, garages, businesses, and man caves.",
               brand: { "@type": "Brand", name: "Light Me Up Productions" },
               offers: { "@type": "Offer", price: "99.00", priceCurrency: "USD", availability: "https://schema.org/InStock" },
             },
@@ -69,7 +69,7 @@ function Home() {
               <span className="chrome-text">ANY SPACE</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Personalized neon clocks built around your name, logo, photo, business, team, stable, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
+              Personalized neon clocks built around your name, logo, photo, business, team, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
@@ -426,7 +426,7 @@ function Home() {
         </div>
         <h2 className="mt-4 font-display text-4xl md:text-5xl chrome-text">THE FOCAL POINT OF EVERY ROOM</h2>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-          Premium custom neon clocks that turn any wall into a statement — perfect for businesses, garages, bars, game rooms, stables, offices, and giftable moments people remember.
+          Premium custom neon clocks that turn any wall into a statement — perfect for businesses, garages, bars, game rooms, offices, and giftable moments people remember.
         </p>
       </section>
 
