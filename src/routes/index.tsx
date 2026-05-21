@@ -217,7 +217,7 @@ function Home() {
           />
         </div>
         <div className="mt-8 flex flex-col items-center gap-4 text-center">
-          <p className="text-muted-foreground max-w-md">Ready to put your stable name in lights? Build your clock now.</p>
+          <p className="text-muted-foreground max-w-md">Ready to turn your name, logo, or photo into a clock that glows? Start your build today.</p>
           <Button
             asChild
             size="lg"
@@ -235,7 +235,7 @@ function Home() {
                 }
               }}
             >
-              Customize Your Clock →
+              Start Your Custom Clock →
             </Link>
           </Button>
         </div>
