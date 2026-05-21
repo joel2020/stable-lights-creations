@@ -83,6 +83,12 @@ function Shop() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 md:px-6 pb-20 grid lg:grid-cols-[1fr,360px] gap-8 items-start">
+        {/* Mobile-only preview shown above the form so customers see the clock as they fill it in */}
+        <div className="lg:hidden rounded-2xl border border-white/10 bg-card p-6 sticky top-2 z-10 backdrop-blur">
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3 text-center">Live Preview</div>
+          <LiveClockPreview stable={stable} horse={horse} trainer={trainer} neonColor={neonColor} photoUrl={photoUrl} size={240} />
+          <p className="mt-3 text-center text-[11px] text-muted-foreground">Updates as you type & upload</p>
+        </div>
         <form onSubmit={onSubmit} className="space-y-8">
           {/* Product type */}
           <Card title="1. Choose Your Clock">
