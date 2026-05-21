@@ -284,14 +284,17 @@ function Home() {
       <section className="border-y border-white/10 bg-black/30">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
           <div className="text-center">
-            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">From the Backstretch</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl">Horsemen Talk.</h2>
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">What People Are Saying</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl">Lit Up Everywhere.</h2>
           </div>
-          <div className="mt-10 grid md:grid-cols-3 gap-5">
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { q: "Hung it in the tack room and every owner who walks in stops dead. Joe nailed our colors.", n: "Beckwith Racing Stable", c: "red" },
-              { q: "Best gift I've ever given my trainer. He almost cried. Almost.", n: "Holland Family · Owner", c: "blue" },
-              { q: "Memorial clock for our horse hangs over the office desk. Worth every penny.", n: "Hunter Myers Family", c: "green" },
+              { q: "Joe builds a beautiful clock. The detail and the glow are unreal — looks even better in person.", n: "David Miller", c: "orange" },
+              { q: "Hands down the coolest piece of memorabilia I own. Quality is top-shelf.", n: "Tim Tetrick", c: "yellow" },
+              { q: "Custom from top to bottom. Joe nailed every detail we asked for.", n: "Holland Family", c: "blue" },
+              { q: "Best gift I've ever gotten. It's the first thing everyone notices when they walk in.", n: "Burke Stable", c: "red" },
+              { q: "Hung it in the office and every visitor stops dead. Worth every penny.", n: "Beckwith Racing", c: "red" },
+              { q: "We've got Joe's clocks all over the property. They're a fan favorite.", n: "The Meadowlands", c: "green" },
             ].map((t) => (
               <figure key={t.n} className="rounded-2xl border border-white/10 bg-card p-6 flex flex-col">
                 <div className="flex gap-1 text-[var(--neon-yellow)]">{[1,2,3,4,5].map((i)=><Star key={i} className="h-4 w-4 fill-current" />)}</div>
