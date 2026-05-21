@@ -130,7 +130,7 @@ function Home() {
             title="Custom Neon Clock"
             price={125}
             tagline="Fully personalized — your name, business, logo, photo, or memorial design on the face."
-            features={["Everything in Regular", "Custom face artwork", "Stable / barn / farm name", "Horse, trainer, driver name", "Upload your racing photo"]}
+            features={["Everything in Regular", "Custom face artwork", "Your name, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
             badge="Best Seller"
             color="red"
             highlight
