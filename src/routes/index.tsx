@@ -127,9 +127,9 @@ function Home() {
             imageGlow="red"
           />
           <ProductCard
-            title="Custom Neon Stable Clock"
+            title="Custom Neon Clock"
             price={125}
-            tagline="Fully personalized — your stable name, horse, driver, colors, and photo on the face."
+            tagline="Fully personalized — your name, business, logo, photo, or memorial design on the face."
             features={["Everything in Regular", "Custom face artwork", "Stable / barn / farm name", "Horse, trainer, driver name", "Upload your racing photo"]}
             badge="Best Seller"
             color="red"
