@@ -25,9 +25,12 @@ export function LiveClockPreview({ stable, horse, trainer, neonColor, photoUrl, 
             {/* neon ring */}
             <div className={`relative h-full w-full overflow-hidden rounded-full bg-black ring-glow-${color} neon-pulse`}>
               {/* clock face */}
-              <div className="absolute inset-[8%] rounded-full bg-gradient-to-b from-zinc-900 to-black flex flex-col items-center justify-center text-center px-4">
+              <div className="absolute inset-[8%] rounded-full bg-gradient-to-b from-zinc-900 to-black flex flex-col items-center justify-center text-center px-4 overflow-hidden">
                 {photoUrl && (
-                  <img src={photoUrl} alt="" className="absolute inset-0 h-full w-full rounded-full object-cover opacity-40" />
+                  <>
+                    <img src={photoUrl} alt="Your uploaded design" className="absolute inset-0 h-full w-full rounded-full object-cover" />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
+                  </>
                 )}
                 <div className="relative">
                   {stable && (
