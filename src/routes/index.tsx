@@ -349,7 +349,7 @@ function Home() {
 
       {/* TRUST STRIP */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
-        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Garages, Businesses & Barns Across North America</div>
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Bars, Garages, Businesses & Race Tracks Across North America</div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
           {["Meadowlands","Yonkers","Red Mile","Hoosier Park","Pocono Downs","Mohawk"].map((t) => (
             <div key={t} className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text">
@@ -369,10 +369,10 @@ function Home() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-4">
           {[
-            { i: Zap, t: "Choose Your Clock", d: "Pick Regular ($99) or Custom ($125)." },
-            { i: Upload, t: "Send Your Details", d: "Upload your horse photo and stable info." },
-            { i: Palette, t: "Pick Your Colors", d: "Choose your neon glow and racing colors." },
-            { i: Truck, t: "We Build & Ship", d: "We design, build, and ship right to your barn." },
+            { i: Zap, t: "Send Us Your Idea", d: "Tell us what you want — name, logo, photo, business, team, or memorial." },
+            { i: Upload, t: "We Create the Design", d: "Joe mocks up your custom clock face and sends it over for review." },
+            { i: Palette, t: "Approve Your Look", d: "Pick your neon glow color and lock in any final tweaks." },
+            { i: Truck, t: "We Build & Ship", d: "Your one-of-a-kind clock is hand-built and shipped right to your door." },
           ].map((s, idx) => (
             <div key={s.t} className="relative rounded-2xl border border-white/10 bg-card p-6">
               <div className="absolute -top-3 left-6 rounded-full bg-[var(--neon-orange)] px-3 py-0.5 text-xs font-bold text-black">STEP {idx + 1}</div>
