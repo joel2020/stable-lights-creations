@@ -311,7 +311,7 @@ function Home() {
 
       {/* TRUST STRIP */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
-        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Built for Tracks & Barns Across North America</div>
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">Lighting Up Homes, Garages, Businesses & Barns Across North America</div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
           {["Meadowlands","Yonkers","Red Mile","Hoosier Park","Pocono Downs","Mohawk"].map((t) => (
             <div key={t} className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text">
