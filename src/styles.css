@@ -127,10 +127,11 @@
   }
   .bloom-pulse { animation: bloom-pulse 3.4s ease-in-out infinite; }
   @keyframes flash-coupon {
-    0%, 100% { opacity: 1; transform: scale(1); filter: brightness(1) drop-shadow(0 0 6px oklch(0.78 0.2 55 / 0.8)); }
-    25% { opacity: 0.85; transform: scale(1.03); filter: brightness(1.25) drop-shadow(0 0 18px oklch(0.78 0.2 55 / 1)); }
-    50% { opacity: 1; transform: scale(1); filter: brightness(1) drop-shadow(0 0 6px oklch(0.78 0.2 55 / 0.8)); }
-    75% { opacity: 0.9; transform: scale(1.02); filter: brightness(1.15) drop-shadow(0 0 14px oklch(0.78 0.2 55 / 0.95)); }
+    0%, 100% { opacity: 1; transform: scale(1); filter: brightness(1) drop-shadow(0 0 8px oklch(0.78 0.2 55 / 0.9)); }
+    20% { opacity: 0.7; transform: scale(1.06); filter: brightness(1.4) drop-shadow(0 0 28px oklch(0.78 0.2 55 / 1)); }
+    40% { opacity: 1; transform: scale(1); filter: brightness(1) drop-shadow(0 0 8px oklch(0.78 0.2 55 / 0.9)); }
+    60% { opacity: 0.85; transform: scale(1.04); filter: brightness(1.25) drop-shadow(0 0 20px oklch(0.78 0.2 55 / 0.95)); }
+    80% { opacity: 1; transform: scale(1); filter: brightness(1) drop-shadow(0 0 8px oklch(0.78 0.2 55 / 0.9)); }
   }
   .flash-coupon { animation: flash-coupon 1.4s ease-in-out infinite; }
   @keyframes coupon-border-flash {
