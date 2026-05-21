@@ -389,14 +389,23 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="font-display text-4xl md:text-5xl">Everything You Can <span className="text-[var(--neon-orange)] text-glow-orange">Customize</span></h2>
-            <p className="mt-4 text-muted-foreground">Make it yours, end-to-end. The custom build lets you control every detail.</p>
+            <p className="mt-4 text-muted-foreground">Make it yours, end-to-end. The custom build lets you control every detail of the face.</p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {["Stable / barn / farm name","Horse name","Trainer / driver name","Racing colors","Neon glow color","Upload your image","Special design notes","Memorial editions"].map((x) => (
+              {[
+                "Names & personal text",
+                "Business logos & branding",
+                "Photos (people, pets, places)",
+                "Racing graphics & stable names",
+                "Custom artwork & themes",
+                "Your colors & color combos",
+                "Background imagery",
+                "Neon glow color & style",
+              ].map((x) => (
                 <li key={x} className="flex items-start gap-2 text-sm"><Check className="h-4 w-4 mt-0.5 text-[var(--neon-orange)]" />{x}</li>
               ))}
             </ul>
             <Button asChild size="lg" className="mt-7 bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <Link to="/shop">Start Your Custom Build</Link>
+              <Link to="/shop">Create My Neon Clock</Link>
             </Button>
           </div>
           <div className="grid grid-cols-7 gap-2">
@@ -415,9 +424,9 @@ function Home() {
         <div className="flex justify-center gap-1 text-[var(--neon-yellow)]">
           {[1,2,3,4,5].map((i) => <Star key={i} className="h-5 w-5 fill-current" />)}
         </div>
-        <h2 className="mt-4 font-display text-4xl md:text-5xl chrome-text">BE THE TALK OF THE BARN AREA</h2>
+        <h2 className="mt-4 font-display text-4xl md:text-5xl chrome-text">THE FOCAL POINT OF EVERY ROOM</h2>
         <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-          Perfect for tack rooms, barns, stables, offices, and horse racing gifts. The kind of piece that gets a compliment every time someone walks in.
+          Premium custom neon clocks that turn any wall into a statement — perfect for businesses, garages, bars, game rooms, stables, offices, and giftable moments people remember.
         </p>
       </section>
 
