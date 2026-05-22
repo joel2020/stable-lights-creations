@@ -95,3 +95,37 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
 
     return session.client_secret;
   });
+
+export const getCheckoutSessionSummary = createServerFn({ method: "POST" })
+  .inputValidator((data: { sessionId: string; environment: StripeEnv }) => {
+    if (!/^cs_(test|live)_[a-zA-Z0-9]+$/.test(data.sessionId)) {
+      throw new Error("Invalid sessionId");
+    }
+    return data;
+  })
+  .handler(async ({ data }) => {
+    const stripe = createStripeClient(data.environment);
+    const session = await stripe.checkout.sessions.retrieve(data.sessionId, {
+      expand: ["line_items", "total_details.breakdown", "shipping_cost"],
+    });
+    const toMajor = (n: number | null | undefined) => (n ?? 0) / 100;
+    const currency = (session.currency ?? "usd").toUpperCase();
+    const items = (session.line_items?.data ?? []).map((li) => ({
+      description: li.description ?? "Item",
+      quantity: li.quantity ?? 1,
+      amount: toMajor(li.amount_subtotal),
+    }));
+    return {
+      currency,
+      email: session.customer_details?.email ?? null,
+      name: session.customer_details?.name ?? null,
+      items,
+      subtotal: toMajor(session.amount_subtotal),
+      shipping: toMajor(session.shipping_cost?.amount_total ?? 0),
+      tax: toMajor(session.total_details?.amount_tax ?? 0),
+      discount: toMajor(session.total_details?.amount_discount ?? 0),
+      total: toMajor(session.amount_total),
+      status: session.status,
+      paymentStatus: session.payment_status,
+    };
+  });
