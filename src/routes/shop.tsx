@@ -49,7 +49,7 @@ function Shop() {
     customerEmail: string;
     customerName: string;
     customerPhone?: string;
-    designDetails: Record<string, string>;
+    designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; notes?: string };
   }>(null);
 
   useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
