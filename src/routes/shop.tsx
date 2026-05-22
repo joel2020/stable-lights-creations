@@ -7,9 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
 import { LiveClockPreview } from "@/components/LiveClockPreview";
+import { StripeEmbeddedCheckout } from "@/components/StripeEmbeddedCheckout";
 import { Upload, Phone, Mail, Check } from "lucide-react";
 
 type Search = { type?: "regular" | "custom" };
@@ -41,6 +43,14 @@ function Shop() {
   const [horse, setHorse] = useState("");
   const [trainer, setTrainer] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [checkoutData, setCheckoutData] = useState<null | {
+    priceId: string;
+    customerEmail: string;
+    customerName: string;
+    customerPhone?: string;
+    designDetails: Record<string, string>;
+  }>(null);
 
   useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
 
@@ -58,30 +68,31 @@ function Shop() {
       toast.error("Please confirm both checkboxes to continue.");
       return;
     }
+    const email = String(fd.get("email") || "").trim();
+    const name = String(fd.get("name") || "").trim();
+    if (!email || !name) {
+      toast.error("Please fill in your name and email.");
+      return;
+    }
     setSubmitting(true);
-    // Build a mailto fallback that captures all order details until checkout backend is wired.
-    const lines: string[] = [
-      `NEW ORDER — ${summary.product} ($${summary.price} + shipping)`,
-      "",
-      `Customer: ${fd.get("name")}`,
-      `Email: ${fd.get("email")}`,
-      `Phone: ${fd.get("phone")}`,
-      `Shipping: ${fd.get("address")}`,
-      "",
-      `Name / Business / Stable: ${fd.get("stable")}`,
-      `Subtitle: ${fd.get("horse")}`,
-      `Tagline: ${fd.get("trainer")}`,
-      `Colors: ${fd.get("colors")}`,
-      `Neon Color: ${neonColor}`,
-      `Photo: ${photoName || "(none attached — will email separately)"}`,
-      "",
-      `Notes: ${fd.get("notes")}`,
-    ];
-    const body = encodeURIComponent(lines.join("\n"));
-    const subject = encodeURIComponent(`New ${summary.product} order from ${fd.get("name")}`);
-    window.location.href = `mailto:lightmeupvegas@yahoo.com?cc=josephdakuras@aol.com&subject=${subject}&body=${body}`;
-    toast.success("Opening your email to send the order details to Joe.");
-    setTimeout(() => setSubmitting(false), 1500);
+    setCheckoutData({
+      priceId: productType === "regular" ? "regular_neon_clock_price" : "custom_neon_clock_price",
+      customerEmail: email,
+      customerName: name,
+      customerPhone: String(fd.get("phone") || "") || undefined,
+      designDetails: {
+        productType,
+        stable: String(fd.get("stable") || ""),
+        horse: String(fd.get("horse") || ""),
+        trainer: String(fd.get("trainer") || ""),
+        colors: String(fd.get("colors") || ""),
+        neonColor,
+        photoName,
+        notes: String(fd.get("notes") || ""),
+      },
+    });
+    setCheckoutOpen(true);
+    setSubmitting(false);
   }
 
   return (
