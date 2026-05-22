@@ -206,7 +206,6 @@ function Shop() {
             <Button type="submit" disabled={submitting} size="lg" className="mt-6 w-full bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
               {submitting ? "Loading..." : `Continue to Checkout · $${price} + shipping`}
             </Button>
-            </Button>
             <p className="mt-3 text-xs text-muted-foreground text-center">
               Prefer to talk? <a className="text-[var(--neon-orange)] hover:underline" href="sms:+17024609190">Text Joe at 702-460-9190</a>
             </p>
