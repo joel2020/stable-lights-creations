@@ -121,9 +121,12 @@ export function Footer() {
   );
 }
 
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
+
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <PaymentTestModeBanner />
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
