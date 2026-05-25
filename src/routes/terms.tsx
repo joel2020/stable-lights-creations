@@ -5,10 +5,14 @@ export const Route = createFileRoute("/terms")({
   component: Terms,
   head: () => ({
     meta: [
-      { title: "Terms of Service & No-Refund Policy | Light Me Up Productions" },
-      { name: "description", content: "Terms of Service, sale terms, and strict no-refund policy for Light Me Up Productions custom neon clocks." },
+      { title: "Terms of Service · It's Lit Neon" },
+      { name: "description", content: "Terms of Service, sale terms, and no-refund policy for Light Me Up Productions custom neon clocks." },
+      { property: "og:title", content: "Terms of Service · It's Lit Neon" },
+      { property: "og:description", content: "Sale terms and no-refund policy for our made-to-order custom neon clocks." },
+      { property: "og:url", content: "https://itslitneon.com/terms" },
       { name: "robots", content: "index,follow" },
     ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/terms" }],
   }),
 });
 

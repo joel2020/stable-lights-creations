@@ -30,6 +30,42 @@ export const Route = createFileRoute("/shop")({
       { property: "og:url", content: "https://itslitneon.com/shop" },
     ],
     links: [{ rel: "canonical", href: "https://itslitneon.com/shop" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Product",
+              name: "Custom Neon Clock",
+              description: "Fully personalized neon wall clock featuring your name, business, logo, photo, or memorial design. Chrome border, quartz movement, hand-built one at a time.",
+              brand: { "@type": "Brand", name: "Light Me Up Productions" },
+              offers: {
+                "@type": "Offer",
+                url: "https://itslitneon.com/shop?type=custom",
+                price: "125.00",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+              },
+            },
+            {
+              "@type": "Product",
+              name: "Regular Neon Clock",
+              description: "Pre-designed neon wall clock with chrome border, quartz movement, and your choice of 7 neon glow colors.",
+              brand: { "@type": "Brand", name: "Light Me Up Productions" },
+              offers: {
+                "@type": "Offer",
+                url: "https://itslitneon.com/shop?type=regular",
+                price: "99.00",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
 });
 

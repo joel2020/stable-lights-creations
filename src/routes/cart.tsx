@@ -2,7 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/cart")({ component: Cart });
+export const Route = createFileRoute("/cart")({
+  component: Cart,
+  head: () => ({
+    meta: [
+      { title: "Cart & Checkout · It's Lit Neon" },
+      { name: "description", content: "Every It's Lit Neon clock is built to order. Start your custom neon clock design and Joe will confirm before production." },
+      { property: "og:title", content: "Cart & Checkout · It's Lit Neon" },
+      { property: "og:description", content: "Custom neon clocks are made to order — start your design and Joe will confirm before we build." },
+      { property: "og:url", content: "https://itslitneon.com/cart" },
+      { name: "robots", content: "noindex,follow" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/cart" }],
+  }),
+});
 
 function Cart() {
   return (

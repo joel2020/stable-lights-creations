@@ -13,6 +13,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
+    meta: [
+      { title: "It's Lit Neon · Custom Neon Wall Clocks" },
+      { name: "description", content: "Premium custom neon clocks personalized with your name, logo, photo, business, team, garage, or bar. Hand-built wall decor that glows." },
+      { property: "og:title", content: "It's Lit Neon · Custom Neon Wall Clocks" },
+      { property: "og:description", content: "Hand-built custom neon clocks for homes, businesses, garages, bars, and gifts." },
+      { property: "og:url", content: "https://itslitneon.com/" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -584,7 +592,10 @@ function HeroClockShowcase() {
                   key={idx}
                   src={h.src}
                   alt="Custom neon wall clock with chrome border and glowing neon ring"
+                  width={720}
+                  height={720}
                   loading="eager"
+                  {...(idx === 0 ? { fetchPriority: "high" as const } : {})}
                   className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${idx === i ? "opacity-100" : "opacity-0"}`}
                 />
               ))}

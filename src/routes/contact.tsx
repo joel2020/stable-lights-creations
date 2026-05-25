@@ -14,6 +14,22 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: "https://itslitneon.com/contact" },
     ],
     links: [{ rel: "canonical", href: "https://itslitneon.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Light Me Up Productions",
+          alternateName: "It's Lit Neon",
+          url: "https://itslitneon.com",
+          telephone: "+1-702-460-9190",
+          email: "lightmeupvegas@yahoo.com",
+          areaServed: "US",
+          priceRange: "$$",
+        }),
+      },
+    ],
   }),
 });
 

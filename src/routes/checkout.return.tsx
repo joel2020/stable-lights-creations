@@ -12,7 +12,17 @@ export const Route = createFileRoute('/checkout/return')({
     session_id: typeof s.session_id === 'string' ? s.session_id : undefined,
   }),
   component: CheckoutReturn,
-  head: () => ({ meta: [{ title: 'Order Confirmed · It\'s Lit Neon' }] }),
+  head: () => ({
+    meta: [
+      { title: "Order Confirmed · It's Lit Neon" },
+      { name: 'description', content: "Your custom neon clock order is confirmed. Here's your receipt and what happens next." },
+      { property: 'og:title', content: "Order Confirmed · It's Lit Neon" },
+      { property: 'og:description', content: 'Your custom neon clock order is confirmed.' },
+      { property: 'og:url', content: 'https://itslitneon.com/checkout/return' },
+      { name: 'robots', content: 'noindex,follow' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://itslitneon.com/checkout/return' }],
+  }),
 });
 
 function formatMoney(amount: number, currency: string) {
