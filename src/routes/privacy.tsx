@@ -5,10 +5,14 @@ export const Route = createFileRoute("/privacy")({
   component: Privacy,
   head: () => ({
     meta: [
-      { title: "Privacy Policy | Light Me Up Productions" },
+      { title: "Privacy Policy · It's Lit Neon" },
       { name: "description", content: "How Light Me Up Productions collects, uses, stores, and protects your personal information, including CCPA/CPRA and GDPR disclosures." },
+      { property: "og:title", content: "Privacy Policy · It's Lit Neon" },
+      { property: "og:description", content: "How we collect, use, and protect your personal information." },
+      { property: "og:url", content: "https://itslitneon.com/privacy" },
       { name: "robots", content: "index,follow" },
     ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/privacy" }],
   }),
 });
 

@@ -3,7 +3,20 @@ import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 
-export const Route = createFileRoute("/success")({ component: Success });
+export const Route = createFileRoute("/success")({
+  component: Success,
+  head: () => ({
+    meta: [
+      { title: "Order Received · It's Lit Neon" },
+      { name: "description", content: "Your custom neon clock request was received. Joe will reach out shortly to confirm design, shipping, and payment." },
+      { property: "og:title", content: "Order Received · It's Lit Neon" },
+      { property: "og:description", content: "Thanks for your order — Joe will be in touch to confirm your custom neon clock build." },
+      { property: "og:url", content: "https://itslitneon.com/success" },
+      { name: "robots", content: "noindex,follow" },
+    ],
+    links: [{ rel: "canonical", href: "https://itslitneon.com/success" }],
+  }),
+});
 
 function Success() {
   return (

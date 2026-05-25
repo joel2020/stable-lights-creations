@@ -8,7 +8,17 @@ export const Route = createFileRoute('/unsubscribe')({
     token: typeof s.token === 'string' ? s.token : undefined,
   }),
   component: Unsubscribe,
-  head: () => ({ meta: [{ title: 'Unsubscribe · It\'s Lit Neon' }] }),
+  head: () => ({
+    meta: [
+      { title: "Unsubscribe · It's Lit Neon" },
+      { name: 'description', content: "Unsubscribe from It's Lit Neon emails." },
+      { property: 'og:title', content: "Unsubscribe · It's Lit Neon" },
+      { property: 'og:description', content: "Manage your email preferences for It's Lit Neon." },
+      { property: 'og:url', content: 'https://itslitneon.com/unsubscribe' },
+      { name: 'robots', content: 'noindex,nofollow' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://itslitneon.com/unsubscribe' }],
+  }),
 });
 
 type State = 'loading' | 'ready' | 'already' | 'invalid' | 'submitting' | 'done' | 'error';
