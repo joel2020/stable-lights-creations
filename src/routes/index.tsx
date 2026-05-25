@@ -116,11 +116,11 @@ function Home() {
         <div className="coupon-banner rounded-2xl border-2 border-[var(--neon-orange)]/80 bg-[var(--neon-orange)]/15 px-6 py-4 text-center backdrop-blur">
           <div className="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-3">
             <span className="text-sm font-bold uppercase tracking-widest text-[var(--neon-orange)]">Limited Time Offer</span>
-            <span className="hidden sm:inline text-white/30">|</span>
+            <span className="hidden sm:inline text-white/70">|</span>
             <span className="flash-coupon font-display text-2xl tracking-wide text-[var(--neon-orange)] text-glow-orange sm:text-3xl">
               Code: BECKWITH — $5 Off
             </span>
-            <span className="hidden sm:inline text-white/30">|</span>
+            <span className="hidden sm:inline text-white/70">|</span>
             <span className="text-xs uppercase tracking-wider text-muted-foreground">Applied at checkout</span>
           </div>
         </div>
@@ -502,10 +502,10 @@ function FragmentRow({ label, reg, cus }: { label: string; reg: boolean; cus: bo
     <>
       <div className="p-4 md:p-5 border-t border-white/10 text-sm">{label}</div>
       <div className="p-4 md:p-5 border-t border-l border-white/10 text-center">
-        {reg ? <Check className="inline h-5 w-5 text-[var(--neon-green)]" /> : <span className="text-muted-foreground/40">—</span>}
+        {reg ? <Check className="inline h-5 w-5 text-[var(--neon-green)]" /> : <span className="text-muted-foreground" aria-label="Not included">—</span>}
       </div>
       <div className="p-4 md:p-5 border-t border-l border-white/10 text-center bg-[var(--neon-orange)]/5">
-        {cus ? <Check className="inline h-5 w-5 text-[var(--neon-orange)]" /> : <span className="text-muted-foreground/40">—</span>}
+        {cus ? <Check className="inline h-5 w-5 text-[var(--neon-orange)]" /> : <span className="text-muted-foreground" aria-label="Not included">—</span>}
       </div>
     </>
   );
