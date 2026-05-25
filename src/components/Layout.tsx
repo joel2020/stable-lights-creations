@@ -99,11 +99,10 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Contact Joe</div>
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Contact</div>
           <ul className="space-y-2 text-sm">
             <li><a href="sms:+17024609190" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Phone className="h-4 w-4" />Text 702-460-9190</a></li>
-            <li><a href="mailto:lightmeupvegas@yahoo.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />lightmeupvegas@yahoo.com</a></li>
-            <li><a href="mailto:josephdakuras@aol.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />josephdakuras@aol.com</a></li>
+            <li><a href="mailto:support@itslitneon.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />support@itslitneon.com</a></li>
           </ul>
         </div>
         <div>

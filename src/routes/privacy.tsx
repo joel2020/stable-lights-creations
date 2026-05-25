@@ -122,7 +122,7 @@ function Privacy() {
           and, if you are in the EEA/UK, (h) lodge a complaint with your local data-protection authority.
         </p>
         <p>
-          To exercise any of these rights, email <a href="mailto:lightmeupvegas@yahoo.com">lightmeupvegas@yahoo.com</a> with the
+          To exercise any of these rights, email <a href="mailto:support@itslitneon.com">support@itslitneon.com</a> with the
           subject line &ldquo;Privacy Request.&rdquo; We will respond within the timeframe required by applicable law. We may need
           to verify your identity before fulfilling certain requests. You may designate an authorized agent to act on your behalf
           where permitted by law.
@@ -159,7 +159,7 @@ function Privacy() {
         <h2 className="font-display text-2xl mt-6">14. Contact Us</h2>
         <p>
           Light Me Up Productions &mdash; Attn: Joseph Dakuras, Privacy Officer<br />
-          Email: <a href="mailto:lightmeupvegas@yahoo.com">lightmeupvegas@yahoo.com</a><br />
+          Email: <a href="mailto:support@itslitneon.com">support@itslitneon.com</a><br />
           Text/Phone: <a href="sms:+17024609190">702-460-9190</a>
         </p>
 

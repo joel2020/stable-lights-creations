@@ -44,7 +44,7 @@ const FAQS = [
   { q: "Is the clock indoor or outdoor?", a: "Designed for indoor display — homes, offices, bars, garages, game rooms, retail spaces, and showrooms." },
   { q: "Can I order multiple clocks for my business or team?", a: "Yes. Text Joe at 702-460-9190 for multi-clock and bulk pricing for businesses, teams, dealerships, and gift orders." },
   { q: "Refunds?", a: "Custom clocks are personalized and generally not refundable once production begins. See our Terms & Refund Policy for details, or reach out to Joe with any concerns." },
-  { q: "Where are you based?", a: "It's Lit Neon is run by Joe Dakuras at Light Me Up Productions. Reach Joe by text at 702-460-9190 or email at lightmeupvegas@yahoo.com." },
+  { q: "Where are you based?", a: "It's Lit Neon is run by Joe Dakuras at Light Me Up Productions. Reach us by text at 702-460-9190 or email at support@itslitneon.com." },
 ];
 
 function FAQ() {

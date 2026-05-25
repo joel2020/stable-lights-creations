@@ -3,7 +3,7 @@ import { createStripeClient, type StripeEnv } from '@/lib/stripe.server';
 import { enqueueTransactionalEmail } from '@/lib/email/server-send';
 
 const OPS_PRIMARY = 'support@itslitneon.com';
-const OPS_CC = 'josephdakuras@aol.com';
+const OPS_CC = 'support@itslitneon.com';
 
 function formatMoney(amount: number | null | undefined, currency: string | null | undefined): string {
   if (amount == null) return '';
