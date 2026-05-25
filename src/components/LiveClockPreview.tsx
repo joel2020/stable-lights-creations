@@ -56,7 +56,7 @@ export function LiveClockPreview({ stable, horse, trainer, neonColor, photoUrl, 
                     </div>
                   )}
                   {!stable && !horse && !trainer && (
-                    <div className="text-white/40 uppercase tracking-widest text-xs">Your Stable Name</div>
+                    <div className="text-white/75 uppercase tracking-widest text-xs">Your Stable Name</div>
                   )}
                 </div>
                 {/* hands */}
