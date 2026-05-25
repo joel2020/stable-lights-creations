@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact · Custom Neon Clock Quotes · It's Lit Neon" },
-      { name: "description", content: "Talk to Joe at It's Lit Neon. Text 702-460-9190 or email lightmeupvegas@yahoo.com to design your custom neon clock for any home, business, or gift." },
+      { name: "description", content: "Talk to Joe at It's Lit Neon. Text 702-460-9190 or email support@itslitneon.com to design your custom neon clock for any home, business, or gift." },
       { property: "og:title", content: "Contact It's Lit Neon" },
       { property: "og:description", content: "Get a custom quote, send us your logo, or ask anything. Joe answers personally." },
       { property: "og:url", content: "https://itslitneon.com/contact" },
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contact")({
           alternateName: "It's Lit Neon",
           url: "https://itslitneon.com",
           telephone: "+1-702-460-9190",
-          email: "lightmeupvegas@yahoo.com",
+          email: "support@itslitneon.com",
           areaServed: "US",
           priceRange: "$$",
         }),
@@ -52,11 +52,10 @@ function Contact() {
             <div className="mt-3 font-display text-2xl">Call</div>
             <div className="text-sm text-muted-foreground">702-460-9190</div>
           </a>
-          <a href="mailto:lightmeupvegas@yahoo.com" className="group rounded-2xl border border-white/10 bg-card p-6 hover:border-[var(--neon-orange)] hover:ring-glow-orange transition">
+          <a href="mailto:support@itslitneon.com" className="group rounded-2xl border border-white/10 bg-card p-6 hover:border-[var(--neon-orange)] hover:ring-glow-orange transition">
             <Mail className="h-7 w-7 text-[var(--neon-orange)]" />
             <div className="mt-3 font-display text-2xl">Email</div>
-            <div className="text-sm text-muted-foreground break-all">lightmeupvegas@yahoo.com</div>
-            <div className="mt-1 text-xs text-muted-foreground break-all">Alt: josephdakuras@aol.com</div>
+            <div className="text-sm text-muted-foreground break-all">support@itslitneon.com</div>
           </a>
         </div>
 
