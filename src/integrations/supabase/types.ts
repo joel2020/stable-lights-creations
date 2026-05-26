@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      custom_order_inquiries: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          logo_filename: string | null
+          logo_url: string | null
+          notes: string | null
+          phone: string
+          shipping_address: string
+          stable_name: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          logo_filename?: string | null
+          logo_url?: string | null
+          notes?: string | null
+          phone: string
+          shipping_address: string
+          stable_name?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          logo_filename?: string | null
+          logo_url?: string | null
+          notes?: string | null
+          phone?: string
+          shipping_address?: string
+          stable_name?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
