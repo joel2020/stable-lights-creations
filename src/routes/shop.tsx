@@ -284,7 +284,7 @@ function Shop() {
         <DialogContent className="max-w-3xl max-h-[92vh] overflow-y-auto p-0 bg-white text-black">
           <DialogHeader className="px-6 pt-6">
             <DialogTitle>Complete your order — {summary.product}</DialogTitle>
-            <DialogDescription>Secure payment via Stripe. $25 flat shipping & tax calculated at checkout.</DialogDescription>
+            <DialogDescription>Secure payment via Stripe. Shipping starts at $30 and is calculated at checkout.</DialogDescription>
           </DialogHeader>
           <div className="p-4">
             {checkoutData && <StripeEmbeddedCheckout {...checkoutData} />}
