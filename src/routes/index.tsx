@@ -163,7 +163,7 @@ function Home() {
           />
 
         </div>
-        <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. Shipping calculated at checkout.</p>
+        <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. U.S. shipping starts at $30; multiple clocks ship together for less. International/Canadian quoted separately.</p>
       </section>
 
       {/* USE CASES / WHO IT'S FOR */}

@@ -7,11 +7,13 @@ It's Lit Neon (itslitneon.com) sells two products: a Regular Neon Clock ($99) wi
 ## Pages
 
 - [Home](/): Brand overview, hero showcase, recent builds, and ordering options.
+- [Custom Stable Order](/custom-order): Simple manual order flow for the horse racing community — no checkout, no charge until artwork is approved. Customer submits name, contact, shipping address, stable name, and logo; Joe reviews, sends a proof, then sends an invoice for payment.
 - [Shop](/shop): Design a custom or regular neon clock — upload artwork, pick colors and neon glow, see a live preview, and check out.
 - [Gallery](/gallery): Photos of custom neon clocks built for businesses, garages, bars, and gifts.
 - [How It Works](/how-it-works): The 4-step design and build process from idea to delivery.
-- [FAQ](/faq): Answers about turnaround, artwork requirements, neon colors, shipping, and ordering.
+- [FAQ](/faq): Answers about turnaround, artwork requirements, neon colors, shipping (U.S. starts at $30; multiple clocks combined; international/Canadian quoted separately), and ordering.
 - [Contact](/contact): Text, call, or email Joe to start a custom neon clock order.
+
 
 ## Optional
 
