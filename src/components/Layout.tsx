@@ -5,12 +5,14 @@ import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/", label: "Home" },
+  { to: "/custom-order", label: "Stable Order" },
   { to: "/shop", label: "Custom Clocks" },
   { to: "/gallery", label: "Gallery" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
 ];
+
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -92,11 +94,13 @@ export function Footer() {
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Shop</div>
           <ul className="space-y-2 text-sm">
+            <li><Link to="/custom-order" className="hover:text-[var(--neon-orange)]">Stable Order (No Charge Up Front)</Link></li>
             <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Start a Custom Order</Link></li>
             <li><Link to="/gallery" className="hover:text-[var(--neon-orange)]">Gallery</Link></li>
             <li><Link to="/how-it-works" className="hover:text-[var(--neon-orange)]">How It Works</Link></li>
             <li><Link to="/faq" className="hover:text-[var(--neon-orange)]">FAQ</Link></li>
           </ul>
+
         </div>
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Contact</div>
