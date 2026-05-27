@@ -59,11 +59,26 @@ export const submitCustomOrderInquiry = createServerFn({ method: 'POST' })
           notes: data.notes,
           inquiryId: inserted.id,
         },
-        idempotencyKey: `custom-order:${inserted.id}`,
+        idempotencyKey: `custom-order-ops:${inserted.id}`,
       });
     } catch (e) {
-      console.error('Custom order email enqueue failed', e);
+      console.error('Custom order ops email enqueue failed', e);
       // Don't fail the user — we have the record.
+    }
+
+    try {
+      await enqueueTransactionalEmail({
+        templateName: 'custom-order-customer-confirmation',
+        recipientEmail: data.email,
+        templateData: {
+          fullName: data.fullName,
+          stableName: data.stableName,
+          inquiryId: inserted.id,
+        },
+        idempotencyKey: `custom-order-customer:${inserted.id}`,
+      });
+    } catch (e) {
+      console.error('Custom order customer email enqueue failed', e);
     }
 
     return { success: true, id: inserted.id };

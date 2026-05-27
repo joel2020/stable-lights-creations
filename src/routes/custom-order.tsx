@@ -115,8 +115,8 @@ function CustomOrderPage() {
         },
       });
 
-      toast.success("Order details received! Joe will be in touch shortly.");
-      navigate({ to: "/success" });
+      toast.success("Order details received! Check your email for next steps.");
+      navigate({ to: "/custom-order-confirmation" });
     } catch (err: any) {
       console.error(err);
       toast.error(err?.message || "Something went wrong. Please text Joe at 702-460-9190.");
