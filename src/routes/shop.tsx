@@ -240,10 +240,10 @@ function Shop() {
               </label>
             </div>
             <Button type="submit" disabled={submitting} size="lg" className="mt-6 w-full bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
-              {submitting ? "Loading..." : `Continue to Checkout · $${price} + shipping`}
+              {submitting ? "Loading..." : `Continue to Checkout · $${price} + $25 shipping`}
             </Button>
             <p className="mt-3 text-xs text-muted-foreground text-center">
-              Prefer to talk? <a className="text-[var(--neon-orange)] hover:underline" href="sms:+17024609190">Text Joe at 702-460-9190</a>
+              Standard $25 shipping fee applied at checkout. If actual shipping costs more, you'll get an invoice for the difference — we only charge exact shipping, not a penny more.
             </p>
           </Card>
         </form>
@@ -260,7 +260,7 @@ function Shop() {
             <div className="mt-2 font-display text-2xl">{summary.product}</div>
             <div className="mt-1 flex items-baseline gap-2">
               <span className="font-display text-4xl chrome-text">${summary.price}</span>
-              <span className="text-sm text-muted-foreground">+ shipping</span>
+              <span className="text-sm text-muted-foreground">+ $25 shipping</span>
             </div>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Check className="h-4 w-4 text-[var(--neon-green)]" /> Chrome-style border</li>
@@ -284,7 +284,7 @@ function Shop() {
         <DialogContent className="max-w-3xl max-h-[92vh] overflow-y-auto p-0 bg-white text-black">
           <DialogHeader className="px-6 pt-6">
             <DialogTitle>Complete your order — {summary.product}</DialogTitle>
-            <DialogDescription>Secure payment via Stripe. Shipping starts at $30 and is calculated at checkout.</DialogDescription>
+            <DialogDescription>Secure payment via Stripe. A standard $25 shipping fee is applied at checkout. If actual shipping costs more, you'll receive an invoice for the difference. It's Lit Neon only charges exact shipping costs — not a penny more.</DialogDescription>
           </DialogHeader>
           <div className="p-4">
             {checkoutData && <StripeEmbeddedCheckout {...checkoutData} />}

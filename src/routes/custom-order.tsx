@@ -296,7 +296,9 @@ function CustomOrderPage() {
         <div className="rounded-2xl border border-white/10 bg-card p-5 md:p-7">
           <h2 className="font-display text-2xl md:text-3xl">Shipping</h2>
           <ul className="mt-3 space-y-2 text-base md:text-lg text-muted-foreground">
-            <li>• U.S. shipping starts at <strong className="text-foreground">$30</strong>, quoted on your invoice.</li>
+            <li>• A standard <strong className="text-foreground">$25 shipping fee</strong> is billed on your invoice.</li>
+            <li>• If the actual shipping cost is more, you'll receive a <strong className="text-foreground">separate invoice for the difference</strong>.</li>
+            <li>• It's Lit Neon only charges you the <strong className="text-foreground">exact shipping cost</strong> — not a penny more.</li>
             <li>• Ordering <strong className="text-foreground">multiple clocks together</strong> is more cost-effective — we combine shipping.</li>
             <li>• International and Canadian shipping is <strong className="text-foreground">quoted separately</strong> based on destination.</li>
           </ul>
