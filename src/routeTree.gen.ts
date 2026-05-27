@@ -18,6 +18,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as CustomOrderConfirmationRouteImport } from './routes/custom-order-confirmation'
 import { Route as CustomOrderRouteImport } from './routes/custom-order'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CartRouteImport } from './routes/cart'
@@ -73,6 +74,11 @@ const GalleryRoute = GalleryRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomOrderConfirmationRoute = CustomOrderConfirmationRouteImport.update({
+  id: '/custom-order-confirmation',
+  path: '/custom-order-confirmation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomOrderRoute = CustomOrderRouteImport.update({
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/custom-order': typeof CustomOrderRoute
+  '/custom-order-confirmation': typeof CustomOrderConfirmationRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/custom-order': typeof CustomOrderRoute
+  '/custom-order-confirmation': typeof CustomOrderConfirmationRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/custom-order': typeof CustomOrderRoute
+  '/custom-order-confirmation': typeof CustomOrderConfirmationRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/how-it-works': typeof HowItWorksRoute
@@ -208,6 +217,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/contact'
     | '/custom-order'
+    | '/custom-order-confirmation'
     | '/faq'
     | '/gallery'
     | '/how-it-works'
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/contact'
     | '/custom-order'
+    | '/custom-order-confirmation'
     | '/faq'
     | '/gallery'
     | '/how-it-works'
@@ -252,6 +263,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/contact'
     | '/custom-order'
+    | '/custom-order-confirmation'
     | '/faq'
     | '/gallery'
     | '/how-it-works'
@@ -275,6 +287,7 @@ export interface RootRouteChildren {
   CartRoute: typeof CartRoute
   ContactRoute: typeof ContactRoute
   CustomOrderRoute: typeof CustomOrderRoute
+  CustomOrderConfirmationRoute: typeof CustomOrderConfirmationRoute
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   HowItWorksRoute: typeof HowItWorksRoute
@@ -356,6 +369,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-order-confirmation': {
+      id: '/custom-order-confirmation'
+      path: '/custom-order-confirmation'
+      fullPath: '/custom-order-confirmation'
+      preLoaderRoute: typeof CustomOrderConfirmationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/custom-order': {
@@ -443,6 +463,7 @@ const rootRouteChildren: RootRouteChildren = {
   CartRoute: CartRoute,
   ContactRoute: ContactRoute,
   CustomOrderRoute: CustomOrderRoute,
+  CustomOrderConfirmationRoute: CustomOrderConfirmationRoute,
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   HowItWorksRoute: HowItWorksRoute,
