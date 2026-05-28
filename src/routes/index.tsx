@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check, Building2, Wine, Wrench, Gamepad2, Trophy, Gift } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, heroClocks } from "@/lib/clocks";
+import { galleryClocks, heroClocks, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 import vegasLit from "@/assets/clock-vegas.jpg";
@@ -14,10 +14,11 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "It's Lit Neon · Custom Neon Wall Clocks" },
-      { name: "description", content: "Premium custom neon clocks personalized with your name, logo, photo, business, team, garage, or bar. Hand-built wall decor that glows." },
-      { property: "og:title", content: "It's Lit Neon · Custom Neon Wall Clocks" },
-      { property: "og:description", content: "Hand-built custom neon clocks for homes, businesses, garages, bars, and gifts." },
+      { title: "It's Lit Neon · Custom Harness Racing Stable Clocks" },
+      { name: "description", content: "Custom neon clocks for harness racing stables, owners, trainers, drivers & racetracks. Your stable name, silks colors, and racing logo — hand-built one at a time." },
+      { name: "keywords", content: "harness racing clock, stable neon clock, custom racing stable sign, harness racing gift, trainer driver gift, racetrack memorabilia" },
+      { property: "og:title", content: "Custom Harness Racing Stable Neon Clocks · It's Lit Neon" },
+      { property: "og:description", content: "Personalized neon clocks for harness racing stables, drivers, trainers, and tracks. Built one at a time." },
       { property: "og:url", content: "https://itslitneon.com/" },
     ],
     links: [{ rel: "canonical", href: "https://itslitneon.com/" }],
@@ -67,21 +68,21 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 md:px-6 md:pt-20 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/10 px-3 py-1 text-xs uppercase tracking-widest text-[var(--neon-orange)]">
-              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks · Built One at a Time
+              <Zap className="h-3.5 w-3.5" /> Built for Harness Racing Stables
             </div>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
-              <span className="chrome-text">CUSTOM NEON CLOCKS</span>
+              <span className="chrome-text">YOUR STABLE.</span>
               <br />
-              <span className="text-[var(--neon-orange)] text-glow-orange">MADE TO LIGHT UP</span>
+              <span className="text-[var(--neon-orange)] text-glow-orange">YOUR COLORS.</span>
               <br />
-              <span className="chrome-text">ANY SPACE</span>
+              <span className="chrome-text">IN NEON.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Personalized neon clocks built around your name, logo, photo, business, team, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
+              Custom neon clocks for harness racing stables, owners, trainers, drivers, and racetracks. Your stable name, your silks colors, your racing logo — hand-built one at a time. The perfect piece for the tack room, the office, or as a gift for the team.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
-                <Link to="/shop">Start Your Custom Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
+                <Link to="/shop">Design Your Stable Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 border-white/20 hover:bg-white/5 font-bold">
                 <Link to="/gallery">See Design Ideas</Link>

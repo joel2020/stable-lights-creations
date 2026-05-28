@@ -13,6 +13,25 @@ import eightBallPurple from "@/assets/clock-8ball-purple.jpg";
 import poolBallsGreen from "@/assets/clock-poolballs-green.jpg";
 import speedometerRed from "@/assets/clock-speedometer-red.jpg";
 import tungOrange from "@/assets/clock-tung-orange.jpg";
+import stableBurke from "@/assets/stable-clocks/burke.jpg";
+import stableDakuras from "@/assets/stable-clocks/dakuras.jpg";
+import stableBeckwith from "@/assets/stable-clocks/beckwith.jpg";
+import stableBalmoral from "@/assets/stable-clocks/balmoral-park.jpg";
+import stableBartlett from "@/assets/stable-clocks/bartlett.jpg";
+import stableTetrick from "@/assets/stable-clocks/tetrick.jpg";
+import stableMiller from "@/assets/stable-clocks/david-miller.jpg";
+import stableMeadowlands from "@/assets/stable-clocks/meadowlands.jpg";
+
+export const stableClocks = [
+  { src: stableBeckwith, alt: "Beckwith Racing Stable custom neon clock with red glow", caption: "Beckwith Racing Stable", color: "red" },
+  { src: stableDakuras, alt: "Dakuras Racing Stable custom neon clock with white glow", caption: "Dakuras Racing Stable", color: "white" },
+  { src: stableTetrick, alt: "Tetrick Racing Stable custom neon clock with yellow glow", caption: "Tetrick Racing Stable", color: "yellow" },
+  { src: stableMiller, alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
+  { src: stableBartlett, alt: "Bartlett Racing Stable custom neon clock with white glow", caption: "Bartlett Racing Stable", color: "white" },
+  { src: stableBurke, alt: "Burke Racing Stable custom neon clock with yellow glow", caption: "Burke Racing Stable", color: "yellow" },
+  { src: stableMeadowlands, alt: "Meadowlands Racetrack Mecca of Harness Racing custom neon clock with blue glow", caption: "Meadowlands Racetrack", color: "blue" },
+  { src: stableBalmoral, alt: "Balmoral Park 1926-2026 commemorative harness racing neon clock with yellow glow", caption: "Balmoral Park · 1926–2026", color: "yellow" },
+] as const;
 
 export const galleryClocks = [
   { src: vegas, alt: "Welcome to Las Vegas neon wall clock with blue glow", caption: "Welcome to Las Vegas · Blue", color: "blue" },
