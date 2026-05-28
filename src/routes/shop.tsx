@@ -237,8 +237,9 @@ function Shop() {
                 {photoName || "Tap to upload your logo, photo, or artwork (JPG, PNG)"}
               </label>
               <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
-                const f = e.target.files?.[0];
+                const f = e.target.files?.[0] ?? null;
                 setPhotoName(f?.name ?? "");
+                setPhotoFile(f);
                 if (photoUrl) URL.revokeObjectURL(photoUrl);
                 setPhotoUrl(f ? URL.createObjectURL(f) : null);
               }} />
