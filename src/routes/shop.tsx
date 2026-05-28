@@ -160,7 +160,20 @@ function Shop() {
         <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Design Your Custom Clock</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl">Build It. <span className="text-[var(--neon-orange)] text-glow-orange">Light It Up.</span></h1>
         <p className="mt-3 text-muted-foreground max-w-2xl">Tell us what you want — name, logo, photo, business, team, or memorial — and watch your one-of-a-kind clock come together. Joe confirms the final design before production begins.</p>
+
+        <div className="mt-6 rounded-xl border border-[var(--neon-orange)]/30 bg-[var(--neon-orange)]/5 p-4 flex items-start gap-3">
+          <AlertCircle className="h-5 w-5 text-[var(--neon-orange)] mt-0.5 shrink-0" />
+          <div className="text-sm">
+            <p className="font-semibold text-foreground">Have a complex design or need a quote first?</p>
+            <p className="text-muted-foreground mt-1">
+              For memorials, intricate logos, or anything you want Joe to review <em>before</em> paying,{" "}
+              <Link to="/custom-order" className="text-[var(--neon-orange)] underline font-semibold">start a custom order inquiry</Link>{" "}
+              — Joe approves the design first, then sends an invoice. Otherwise continue below to pay now.
+            </p>
+          </div>
+        </div>
       </section>
+
 
       <section className="mx-auto max-w-6xl px-4 md:px-6 pb-20 grid lg:grid-cols-[1fr,360px] gap-8 items-start">
         {/* Mobile-only preview shown above the form so customers see the clock as they fill it in */}
