@@ -16,6 +16,7 @@ interface Props {
   colors?: string;
   neonColor?: string;
   photoName?: string;
+  photoUrl?: string;
   notes?: string;
 }
 
