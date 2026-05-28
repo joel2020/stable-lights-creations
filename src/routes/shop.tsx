@@ -76,11 +76,19 @@ function Shop() {
   const [neonColor, setNeonColor] = useState<string>("orange");
   const [photoName, setPhotoName] = useState<string>("");
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [stable, setStable] = useState("");
   const [horse, setHorse] = useState("");
   const [trainer, setTrainer] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [checkoutData, setCheckoutData] = useState<null | {
+    priceId: string;
+    customerEmail: string;
+    customerName: string;
+    customerPhone?: string;
+    designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; photoUrl?: string; notes?: string };
+  }>(null);
   const [checkoutData, setCheckoutData] = useState<null | {
     priceId: string;
     customerEmail: string;
