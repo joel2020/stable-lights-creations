@@ -17,6 +17,23 @@ async function resolveOrCreateCustomer(
   return created.id;
 }
 
+const ALLOWED_RETURN_ORIGINS = [
+  "https://itslitneon.com",
+  "https://www.itslitneon.com",
+  "https://stable-lights-creations.lovable.app",
+  "https://id-preview--48fd46fb-3e05-4769-9f20-2432cd8a35c7.lovable.app",
+  "http://localhost:3000",
+  "http://localhost:5173",
+];
+
+function assertSafeReturnUrl(url: string) {
+  let parsed: URL;
+  try { parsed = new URL(url); } catch { throw new Error("Invalid returnUrl"); }
+  if (!ALLOWED_RETURN_ORIGINS.includes(parsed.origin)) {
+    throw new Error("Invalid returnUrl origin");
+  }
+}
+
 export const createNeonCheckoutSession = createServerFn({ method: "POST" })
   .inputValidator((data: {
     priceId: string;
@@ -39,6 +56,7 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
   }) => {
     if (!/^[a-zA-Z0-9_-]+$/.test(data.priceId)) throw new Error("Invalid priceId");
     if (!data.customerEmail || !data.customerName) throw new Error("Customer email & name required");
+    assertSafeReturnUrl(data.returnUrl);
     return data;
   })
   .handler(async ({ data }) => {
