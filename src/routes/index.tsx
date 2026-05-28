@@ -127,6 +127,48 @@ function Home() {
         </div>
       </section>
 
+      {/* STABLE CLOCKS — featured for harness racing customers */}
+      <section className="relative border-y border-[var(--neon-orange)]/30 bg-gradient-to-b from-black/60 to-black/30">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Harness Racing Stable Clocks</div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">BUILT FOR THE STABLE</h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Our most-loved builds. Stable name across the top, your horse-and-driver silhouette in the middle, "Racing Stable" arched below — finished in the neon color of your silks. A staple in tack rooms, trainer offices, and owners' dens across North America.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold shrink-0">
+              <Link to="/shop">Design My Stable Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
+            </Button>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {stableClocks.map((c) => (
+              <figure key={c.caption} className="group flex flex-col items-center">
+                <div className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
+                  <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-cover object-center" />
+                </div>
+                <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">{c.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3 text-sm">
+            {[
+              { t: "Your Stable, Your Silks", d: "Pick any of 7 neon colors to match your racing colors — red, orange, yellow, green, blue, purple, or white." },
+              { t: "Driver & Horse Artwork", d: "Classic harness racing silhouette or upload your own logo, brand, or driving photo." },
+              { t: "Tack Room Ready", d: "20\" chrome bezel, quartz movement, on/off neon switch. Built one at a time, ships in 2–3 weeks." },
+            ].map((b) => (
+              <div key={b.t} className="rounded-xl border border-white/10 bg-card/60 p-4">
+                <div className="font-display text-lg text-[var(--neon-orange)]">{b.t}</div>
+                <p className="mt-1 text-muted-foreground">{b.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRODUCTS */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="max-w-3xl">
@@ -179,12 +221,12 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { i: Building2, c: "orange", t: "Business & Logo Clocks", d: "Branded wall decor for offices, studios, salons, barbershops, gyms, and retail floors." },
+              { i: Trophy, c: "orange", t: "Harness Racing Stables & Tracks", d: "Stable names, driver/trainer tributes, racetrack memorabilia, and silks-color builds for owners, trainers, drivers, and grooms." },
+              { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, retirements, weddings, and tribute pieces that last a lifetime." },
+              { i: Building2, c: "yellow", t: "Business & Logo Clocks", d: "Branded wall decor for offices, studios, salons, barbershops, gyms, and retail floors." },
               { i: Wine, c: "red", t: "Bars, Restaurants & Cafés", d: "Statement pieces for bars, lounges, diners, breweries, and coffee shops." },
-              { i: Wrench, c: "yellow", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
+              { i: Wrench, c: "green", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
               { i: Gamepad2, c: "purple", t: "Game Rooms, Man Caves & Home Bars", d: "Personalized clocks for basements, dens, pool rooms, and home theaters." },
-              { i: Trophy, c: "green", t: "Sports Teams, Clubs & Hobbies", d: "Team logos, club names, hobby shops, and collectibles that show off your passion." },
-              { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, weddings, and tribute pieces that last a lifetime." },
             ].map((u) => (
               <div key={u.t} className="rounded-2xl border border-white/10 bg-card p-5 hover:border-white/30 transition">
                 <div className={`grid h-10 w-10 place-items-center rounded-full ring-glow-${u.c} bg-black`}>
