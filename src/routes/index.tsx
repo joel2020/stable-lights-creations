@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check, Building2, Wine, Wrench, Gamepad2, Trophy, Gift } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, heroClocks, stableClocks } from "@/lib/clocks";
+import { galleryClocks, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 
@@ -48,15 +48,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const HERO_ROTATION = [
-  { src: heroClocks[0], color: "blue" },
-  { src: heroClocks[1], color: "green" },
-  { src: heroClocks[2], color: "red" },
-  { src: heroClocks[3], color: "red" },
-  { src: heroClocks[4], color: "green" },
-  { src: heroClocks[5], color: "red" },
-  { src: heroClocks[6], color: "blue" },
-] as const;
+const HERO_ROTATION = stableClocks.slice(0, 9);
 
 function Home() {
   return (
