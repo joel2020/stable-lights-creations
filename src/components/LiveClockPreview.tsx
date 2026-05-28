@@ -16,9 +16,10 @@ export function LiveClockPreview({ stable, horse, trainer, neonColor, photoUrl, 
         className="pointer-events-none absolute inset-[-22%] rounded-full bloom-pulse blur-3xl"
         style={{ background: `radial-gradient(circle, var(--neon-${color}) 0%, transparent 62%)` }}
       />
-      {/* outer chrome */}
+      {/* outer chrome — tinted with neon */}
       <div className="absolute inset-0 rounded-full p-[6px] chrome-spin"
-        style={{ background: "conic-gradient(from 0deg, #1a1a1f, #f4f6fa, #6a6f78, #e8eaf0, #2a2a31, #f4f6fa, #1a1a1f)" }}>
+        style={{ background: `conic-gradient(from 0deg, #1a1a1f, var(--neon-${color}), #6a6f78, var(--neon-${color}), #2a2a31, var(--neon-${color}), #1a1a1f)` }}>
+
         <div className="relative h-full w-full rounded-full bg-black p-[3px]">
           <div className="relative h-full w-full rounded-full p-[8px]"
             style={{ background: "linear-gradient(145deg, #2a2a31 0%, #cfd3da 35%, #6a6f78 55%, #e8eaf0 80%, #1a1a1f 100%)" }}>
