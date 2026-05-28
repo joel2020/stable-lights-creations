@@ -194,13 +194,13 @@ function Home() {
           <ProductCard
             title="Custom Neon Clock"
             price={125}
-            tagline="Fully personalized — your name, logo, photo, business, team, or memorial design on the face."
-            features={["Everything in Regular", "Custom face artwork", "Your name, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
+            tagline="Fully personalized — your stable name, logo, horse photo, driver artwork, business, team, or memorial design on the face."
+            features={["Everything in Regular", "Custom face artwork", "Your name, stable, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
             badge="Best Seller"
             color="red"
             highlight
-            image={vegasLit}
-            imageUnlit={cocacolaLit}
+            image={stableClocks[0].src}
+            imageUnlit={stableClocks[9].src}
             imageGlow="blue"
           />
 
