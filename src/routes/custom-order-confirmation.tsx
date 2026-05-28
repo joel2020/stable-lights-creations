@@ -63,7 +63,7 @@ function CustomOrderConfirmationPage() {
           ))}
         </ol>
         <p className="mt-4 text-sm text-muted-foreground">
-          Heads up: a standard $25 shipping fee is included on the invoice. If actual postage is higher, you'll get a separate invoice for the exact difference — not a penny more.
+          Heads up: a standard $29 shipping fee is included on the invoice. If actual postage is higher, you'll get a separate invoice for the exact difference — not a penny more.
         </p>
       </section>
 
