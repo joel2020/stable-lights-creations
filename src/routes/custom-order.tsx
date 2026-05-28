@@ -66,7 +66,7 @@ function CustomOrderPage() {
 
   async function uploadLogo(file: File): Promise<{ url: string; filename: string } | null> {
     const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(-80);
-    const path = `${Date.now()}-${crypto.randomUUID()}-${safeName}`;
+    const path = `inquiries/${Date.now()}-${crypto.randomUUID()}-${safeName}`;
     const { error } = await supabase.storage
       .from("custom-order-logos")
       .upload(path, file, { upsert: false, contentType: file.type || undefined });
