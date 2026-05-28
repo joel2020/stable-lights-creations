@@ -163,7 +163,7 @@ function Home() {
           />
 
         </div>
-        <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. A standard $25 shipping fee is applied at checkout. If actual shipping is more, you'll get an invoice for the difference — we only charge exact shipping costs, not a penny more. Multiple clocks ship together for less. International/Canadian quoted separately.</p>
+        <p className="mt-4 text-center text-sm text-muted-foreground">Prices shown plus shipping. A standard $29 shipping fee is applied at checkout. If actual shipping is more, you'll get an invoice for the difference — we only charge exact shipping costs, not a penny more. Multiple clocks ship together for less. International/Canadian quoted separately.</p>
       </section>
 
       {/* USE CASES / WHO IT'S FOR */}

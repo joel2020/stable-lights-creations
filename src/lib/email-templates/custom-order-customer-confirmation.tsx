@@ -27,7 +27,7 @@ const STEPS = [
   {
     n: '4',
     title: 'We build and ship it',
-    body: 'Hand-built, packed carefully, and shipped to your door. Standard $25 shipping is on the invoice — if actual postage is more, you\'ll get a separate invoice for the exact difference (not a penny more).',
+    body: 'Hand-built, packed carefully, and shipped to your door. Standard $29 shipping is on the invoice — if actual postage is more, you\'ll get a separate invoice for the exact difference (not a penny more).',
   },
 ];
 
