@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
-import vegasLit from "@/assets/clock-vegas.jpg";
-import cocacolaLit from "@/assets/clock-cocacola.jpg";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
@@ -195,13 +194,13 @@ function Home() {
           <ProductCard
             title="Custom Neon Clock"
             price={125}
-            tagline="Fully personalized — your name, logo, photo, business, team, or memorial design on the face."
-            features={["Everything in Regular", "Custom face artwork", "Your name, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
+            tagline="Fully personalized — your stable name, logo, horse photo, driver artwork, business, team, or memorial design on the face."
+            features={["Everything in Regular", "Custom face artwork", "Your name, stable, business, or logo", "Memorial & gift designs", "Upload your own photo"]}
             badge="Best Seller"
             color="red"
             highlight
-            image={vegasLit}
-            imageUnlit={cocacolaLit}
+            image={stableClocks[0].src}
+            imageUnlit={stableClocks[9].src}
             imageGlow="blue"
           />
 
@@ -319,8 +318,8 @@ function Home() {
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { src: vegasLit, label: "Las Vegas · Blue Neon", alt: "Custom blue neon Las Vegas clock on wall" },
-              { src: cocacolaLit, label: "Coca-Cola · Green Neon", alt: "Custom green neon Coca-Cola themed clock" },
+              { src: stableClocks[9].src, label: "Burke Racing Stable · Installed", alt: "Burke Racing Stable neon clock installed on a stable wall" },
+              { src: stableClocks[1].src, label: "Meadowlands Racetrack · Blue Neon", alt: "Meadowlands Racetrack custom blue neon clock" },
             ].map((s) => (
               <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
                 <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
