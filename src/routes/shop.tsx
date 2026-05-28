@@ -12,7 +12,8 @@ import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
 import { LiveClockPreview } from "@/components/LiveClockPreview";
 import { StripeEmbeddedCheckout } from "@/components/StripeEmbeddedCheckout";
-import { Upload, Phone, Mail, Check } from "lucide-react";
+import { Upload, Phone, Mail, Check, AlertCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type Search = { type?: "regular" | "custom" };
 
@@ -75,6 +76,7 @@ function Shop() {
   const [neonColor, setNeonColor] = useState<string>("orange");
   const [photoName, setPhotoName] = useState<string>("");
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [stable, setStable] = useState("");
   const [horse, setHorse] = useState("");
   const [trainer, setTrainer] = useState("");
@@ -85,7 +87,7 @@ function Shop() {
     customerEmail: string;
     customerName: string;
     customerPhone?: string;
-    designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; notes?: string };
+    designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; photoUrl?: string; notes?: string };
   }>(null);
 
   useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
@@ -111,6 +113,26 @@ function Shop() {
       return;
     }
     setSubmitting(true);
+
+    // Upload photo/logo to storage so Joe actually receives it.
+    let uploadedPhotoUrl: string | undefined;
+    if (photoFile) {
+      try {
+        const ext = (photoFile.name.split(".").pop() || "bin").toLowerCase();
+        const safeName = photoFile.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 80);
+        const path = `shop/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeName}`;
+        const { error: upErr } = await supabase.storage
+          .from("custom-order-logos")
+          .upload(path, photoFile, { contentType: photoFile.type || `image/${ext}`, upsert: false });
+        if (upErr) throw upErr;
+        const { data: pub } = supabase.storage.from("custom-order-logos").getPublicUrl(path);
+        uploadedPhotoUrl = pub.publicUrl;
+      } catch (err) {
+        console.error("Photo upload failed", err);
+        toast.error("We couldn't upload your photo. You can continue and email it to support@itslitneon.com, or try again.");
+      }
+    }
+
     setCheckoutData({
       priceId: productType === "regular" ? "regular_neon_clock_price" : "custom_neon_clock_price",
       customerEmail: email,
@@ -124,6 +146,7 @@ function Shop() {
         colors: String(fd.get("colors") || ""),
         neonColor,
         photoName,
+        photoUrl: uploadedPhotoUrl,
         notes: String(fd.get("notes") || ""),
       },
     });
@@ -137,7 +160,20 @@ function Shop() {
         <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Design Your Custom Clock</div>
         <h1 className="mt-2 font-display text-5xl md:text-6xl">Build It. <span className="text-[var(--neon-orange)] text-glow-orange">Light It Up.</span></h1>
         <p className="mt-3 text-muted-foreground max-w-2xl">Tell us what you want — name, logo, photo, business, team, or memorial — and watch your one-of-a-kind clock come together. Joe confirms the final design before production begins.</p>
+
+        <div className="mt-6 rounded-xl border border-[var(--neon-orange)]/30 bg-[var(--neon-orange)]/5 p-4 flex items-start gap-3">
+          <AlertCircle className="h-5 w-5 text-[var(--neon-orange)] mt-0.5 shrink-0" />
+          <div className="text-sm">
+            <p className="font-semibold text-foreground">Have a complex design or need a quote first?</p>
+            <p className="text-muted-foreground mt-1">
+              For memorials, intricate logos, or anything you want Joe to review <em>before</em> paying,{" "}
+              <Link to="/custom-order" className="text-[var(--neon-orange)] underline font-semibold">start a custom order inquiry</Link>{" "}
+              — Joe approves the design first, then sends an invoice. Otherwise continue below to pay now.
+            </p>
+          </div>
+        </div>
       </section>
+
 
       <section className="mx-auto max-w-6xl px-4 md:px-6 pb-20 grid lg:grid-cols-[1fr,360px] gap-8 items-start">
         {/* Mobile-only preview shown above the form so customers see the clock as they fill it in */}
@@ -214,8 +250,9 @@ function Shop() {
                 {photoName || "Tap to upload your logo, photo, or artwork (JPG, PNG)"}
               </label>
               <input id="photo" name="photo" type="file" accept="image/*" className="hidden" onChange={(e) => {
-                const f = e.target.files?.[0];
+                const f = e.target.files?.[0] ?? null;
                 setPhotoName(f?.name ?? "");
+                setPhotoFile(f);
                 if (photoUrl) URL.revokeObjectURL(photoUrl);
                 setPhotoUrl(f ? URL.createObjectURL(f) : null);
               }} />

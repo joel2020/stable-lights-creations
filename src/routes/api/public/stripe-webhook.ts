@@ -81,7 +81,7 @@ export const Route = createFileRoute('/api/public/stripe-webhook')({
           shippingAddress,
           stable: meta.stable, horse: meta.horse, trainer: meta.trainer,
           colors: meta.colors, neonColor: meta.neonColor,
-          photoName: meta.photoName, notes: meta.notes,
+          photoName: meta.photoName, photoUrl: meta.photoUrl, notes: meta.notes,
         };
 
         const results = await Promise.allSettled([

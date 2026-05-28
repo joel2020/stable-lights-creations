@@ -31,6 +31,7 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
       colors?: string;
       neonColor?: string;
       photoName?: string;
+      photoUrl?: string;
       notes?: string;
     };
     returnUrl: string;
@@ -89,6 +90,7 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
         colors: trunc(data.designDetails.colors),
         neonColor: trunc(data.designDetails.neonColor, 50),
         photoName: trunc(data.designDetails.photoName, 200),
+        photoUrl: trunc(data.designDetails.photoUrl, 480),
         notes: trunc(data.designDetails.notes),
       },
     });
