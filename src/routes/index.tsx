@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Zap, Upload, Palette, Truck, Phone, Star, Check, Building2, Wine, Wrench, Gamepad2, Trophy, Gift } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, heroClocks } from "@/lib/clocks";
+import { galleryClocks, heroClocks, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 import vegasLit from "@/assets/clock-vegas.jpg";
@@ -14,10 +14,11 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "It's Lit Neon · Custom Neon Wall Clocks" },
-      { name: "description", content: "Premium custom neon clocks personalized with your name, logo, photo, business, team, garage, or bar. Hand-built wall decor that glows." },
-      { property: "og:title", content: "It's Lit Neon · Custom Neon Wall Clocks" },
-      { property: "og:description", content: "Hand-built custom neon clocks for homes, businesses, garages, bars, and gifts." },
+      { title: "It's Lit Neon · Custom Harness Racing Stable Clocks" },
+      { name: "description", content: "Custom neon clocks for harness racing stables, owners, trainers, drivers & racetracks. Your stable name, silks colors, and racing logo — hand-built one at a time." },
+      { name: "keywords", content: "harness racing clock, stable neon clock, custom racing stable sign, harness racing gift, trainer driver gift, racetrack memorabilia" },
+      { property: "og:title", content: "Custom Harness Racing Stable Neon Clocks · It's Lit Neon" },
+      { property: "og:description", content: "Personalized neon clocks for harness racing stables, drivers, trainers, and tracks. Built one at a time." },
       { property: "og:url", content: "https://itslitneon.com/" },
     ],
     links: [{ rel: "canonical", href: "https://itslitneon.com/" }],
@@ -67,21 +68,21 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 md:px-6 md:pt-20 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/10 px-3 py-1 text-xs uppercase tracking-widest text-[var(--neon-orange)]">
-              <Zap className="h-3.5 w-3.5" /> Custom Neon Clocks · Built One at a Time
+              <Zap className="h-3.5 w-3.5" /> Built for Harness Racing Stables
             </div>
             <h1 className="mt-5 font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl">
-              <span className="chrome-text">CUSTOM NEON CLOCKS</span>
+              <span className="chrome-text">YOUR STABLE.</span>
               <br />
-              <span className="text-[var(--neon-orange)] text-glow-orange">MADE TO LIGHT UP</span>
+              <span className="text-[var(--neon-orange)] text-glow-orange">YOUR COLORS.</span>
               <br />
-              <span className="chrome-text">ANY SPACE</span>
+              <span className="chrome-text">IN NEON.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-              Personalized neon clocks built around your name, logo, photo, business, team, garage, bar, or favorite design. A bold custom piece that tells time, tells your story, and instantly becomes the focal point of the room.
+              Custom neon clocks for harness racing stables, owners, trainers, drivers, and racetracks. Your stable name, your silks colors, your racing logo — hand-built one at a time. The perfect piece for the tack room, the office, or as a gift for the team.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12">
-                <Link to="/shop">Start Your Custom Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
+                <Link to="/shop">Design Your Stable Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 border-white/20 hover:bg-white/5 font-bold">
                 <Link to="/gallery">See Design Ideas</Link>
@@ -122,6 +123,48 @@ function Home() {
             </span>
             <span className="hidden sm:inline text-white/70">|</span>
             <span className="text-xs uppercase tracking-wider text-muted-foreground">Applied at checkout</span>
+          </div>
+        </div>
+      </section>
+
+      {/* STABLE CLOCKS — featured for harness racing customers */}
+      <section className="relative border-y border-[var(--neon-orange)]/30 bg-gradient-to-b from-black/60 to-black/30">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Harness Racing Stable Clocks</div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">BUILT FOR THE STABLE</h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Our most-loved builds. Stable name across the top, your horse-and-driver silhouette in the middle, "Racing Stable" arched below — finished in the neon color of your silks. A staple in tack rooms, trainer offices, and owners' dens across North America.
+              </p>
+            </div>
+            <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold shrink-0">
+              <Link to="/shop">Design My Stable Clock <ArrowRight className="ml-1 h-5 w-5" /></Link>
+            </Button>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {stableClocks.map((c) => (
+              <figure key={c.caption} className="group flex flex-col items-center">
+                <div className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
+                  <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-cover object-center" />
+                </div>
+                <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">{c.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3 text-sm">
+            {[
+              { t: "Your Stable, Your Silks", d: "Pick any of 7 neon colors to match your racing colors — red, orange, yellow, green, blue, purple, or white." },
+              { t: "Driver & Horse Artwork", d: "Classic harness racing silhouette or upload your own logo, brand, or driving photo." },
+              { t: "Tack Room Ready", d: "20\" chrome bezel, quartz movement, on/off neon switch. Built one at a time, ships in 2–3 weeks." },
+            ].map((b) => (
+              <div key={b.t} className="rounded-xl border border-white/10 bg-card/60 p-4">
+                <div className="font-display text-lg text-[var(--neon-orange)]">{b.t}</div>
+                <p className="mt-1 text-muted-foreground">{b.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -178,12 +221,12 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { i: Building2, c: "orange", t: "Business & Logo Clocks", d: "Branded wall decor for offices, studios, salons, barbershops, gyms, and retail floors." },
+              { i: Trophy, c: "orange", t: "Harness Racing Stables & Tracks", d: "Stable names, driver/trainer tributes, racetrack memorabilia, and silks-color builds for owners, trainers, drivers, and grooms." },
+              { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, retirements, weddings, and tribute pieces that last a lifetime." },
+              { i: Building2, c: "yellow", t: "Business & Logo Clocks", d: "Branded wall decor for offices, studios, salons, barbershops, gyms, and retail floors." },
               { i: Wine, c: "red", t: "Bars, Restaurants & Cafés", d: "Statement pieces for bars, lounges, diners, breweries, and coffee shops." },
-              { i: Wrench, c: "yellow", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
+              { i: Wrench, c: "green", t: "Garages, Auto Shops & Dealerships", d: "Custom logos, classic builds, and shop signage that glow above the lift." },
               { i: Gamepad2, c: "purple", t: "Game Rooms, Man Caves & Home Bars", d: "Personalized clocks for basements, dens, pool rooms, and home theaters." },
-              { i: Trophy, c: "green", t: "Sports Teams, Clubs & Hobbies", d: "Team logos, club names, hobby shops, and collectibles that show off your passion." },
-              { i: Gift, c: "blue", t: "Personalized Gifts & Memorials", d: "Birthdays, anniversaries, weddings, and tribute pieces that last a lifetime." },
             ].map((u) => (
               <div key={u.t} className="rounded-2xl border border-white/10 bg-card p-5 hover:border-white/30 transition">
                 <div className={`grid h-10 w-10 place-items-center rounded-full ring-glow-${u.c} bg-black`}>
