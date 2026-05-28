@@ -34,6 +34,7 @@ const OrderNotification = ({
   colors = '',
   neonColor = '',
   photoName = '',
+  photoUrl = '',
   notes = '',
 }: Props) => (
   <Html lang="en" dir="ltr">
