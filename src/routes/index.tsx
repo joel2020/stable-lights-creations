@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 import { galleryClocks, heroClocks, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
-import vegasLit from "@/assets/clock-vegas.jpg";
-import cocacolaLit from "@/assets/clock-cocacola.jpg";
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
