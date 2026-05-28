@@ -60,7 +60,13 @@ const OrderNotification = ({
           <Row label="Tagline" value={trainer} />
           <Row label="Customer colors" value={colors} />
           <Row label="Neon glow" value={neonColor} />
-          <Row label="Photo uploaded" value={photoName || '(none — ask customer to email)'} />
+          <Row label="Photo file" value={photoName || '(none uploaded)'} />
+          {photoUrl ? (
+            <Text style={row}>
+              <span style={rowLabel}>Photo link:</span>{' '}
+              <a href={photoUrl} style={{ color: '#c2410c', wordBreak: 'break-all' }}>{photoUrl}</a>
+            </Text>
+          ) : null}
           <Row label="Notes" value={notes} />
         </Section>
 
