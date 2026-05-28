@@ -12,7 +12,8 @@ import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
 import { LiveClockPreview } from "@/components/LiveClockPreview";
 import { StripeEmbeddedCheckout } from "@/components/StripeEmbeddedCheckout";
-import { Upload, Phone, Mail, Check } from "lucide-react";
+import { Upload, Phone, Mail, Check, AlertCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type Search = { type?: "regular" | "custom" };
 
