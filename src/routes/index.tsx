@@ -621,8 +621,9 @@ function HeroClockShowcase() {
         style={{ background: `radial-gradient(circle, var(--neon-${active.color}) 0%, transparent 62%)` }}
       />
       {/* outer chrome bezel — slow rotation */}
-      <div className="absolute inset-0 rounded-full p-[7px] chrome-spin"
-        style={{ background: "conic-gradient(from 0deg, #1a1a1f, #f4f6fa, #6a6f78, #e8eaf0, #2a2a31, #f4f6fa, #1a1a1f)" }}>
+      <div className="absolute inset-0 rounded-full p-[7px] chrome-spin transition-[background] duration-700"
+        style={{ background: `conic-gradient(from 0deg, #1a1a1f, var(--neon-${active.color}), #6a6f78, var(--neon-${active.color}), #2a2a31, var(--neon-${active.color}), #1a1a1f)` }}>
+
         <div className="relative h-full w-full rounded-full bg-black p-[3px]">
           {/* inner chrome ring (static) */}
           <div className="relative h-full w-full overflow-hidden rounded-full p-[10px]"
