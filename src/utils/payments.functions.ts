@@ -73,7 +73,7 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
       shipping_options: [{
         shipping_rate_data: {
           type: "fixed_amount",
-          fixed_amount: { amount: 2500, currency: "usd" },
+          fixed_amount: { amount: 2900, currency: "usd" },
           display_name: "Flat-rate shipping",
           tax_behavior: "exclusive",
         },
