@@ -318,8 +318,8 @@ function Home() {
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             {[
-              { src: vegasLit, label: "Las Vegas · Blue Neon", alt: "Custom blue neon Las Vegas clock on wall" },
-              { src: cocacolaLit, label: "Coca-Cola · Green Neon", alt: "Custom green neon Coca-Cola themed clock" },
+              { src: stableClocks[9].src, label: "Burke Racing Stable · Installed", alt: "Burke Racing Stable neon clock installed on a stable wall" },
+              { src: stableClocks[1].src, label: "Meadowlands Racetrack · Blue Neon", alt: "Meadowlands Racetrack custom blue neon clock" },
             ].map((s) => (
               <figure key={s.label} className="group relative overflow-hidden rounded-2xl border border-white/10">
                 <img src={s.src} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
