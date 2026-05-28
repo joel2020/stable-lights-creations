@@ -113,6 +113,26 @@ function Shop() {
       return;
     }
     setSubmitting(true);
+
+    // Upload photo/logo to storage so Joe actually receives it.
+    let uploadedPhotoUrl: string | undefined;
+    if (photoFile) {
+      try {
+        const ext = (photoFile.name.split(".").pop() || "bin").toLowerCase();
+        const safeName = photoFile.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 80);
+        const path = `shop/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safeName}`;
+        const { error: upErr } = await supabase.storage
+          .from("custom-order-logos")
+          .upload(path, photoFile, { contentType: photoFile.type || `image/${ext}`, upsert: false });
+        if (upErr) throw upErr;
+        const { data: pub } = supabase.storage.from("custom-order-logos").getPublicUrl(path);
+        uploadedPhotoUrl = pub.publicUrl;
+      } catch (err) {
+        console.error("Photo upload failed", err);
+        toast.error("We couldn't upload your photo. You can continue and email it to support@itslitneon.com, or try again.");
+      }
+    }
+
     setCheckoutData({
       priceId: productType === "regular" ? "regular_neon_clock_price" : "custom_neon_clock_price",
       customerEmail: email,
@@ -126,6 +146,7 @@ function Shop() {
         colors: String(fd.get("colors") || ""),
         neonColor,
         photoName,
+        photoUrl: uploadedPhotoUrl,
         notes: String(fd.get("notes") || ""),
       },
     });
