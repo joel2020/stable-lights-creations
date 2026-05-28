@@ -89,13 +89,6 @@ function Shop() {
     customerPhone?: string;
     designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; photoUrl?: string; notes?: string };
   }>(null);
-  const [checkoutData, setCheckoutData] = useState<null | {
-    priceId: string;
-    customerEmail: string;
-    customerName: string;
-    customerPhone?: string;
-    designDetails: { productType: string; stable?: string; horse?: string; trainer?: string; colors?: string; neonColor?: string; photoName?: string; notes?: string };
-  }>(null);
 
   useEffect(() => () => { if (photoUrl) URL.revokeObjectURL(photoUrl); }, [photoUrl]);
 
