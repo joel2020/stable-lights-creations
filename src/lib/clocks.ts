@@ -22,6 +22,30 @@ export const stableClocks = [
   { src: stableBurkeRoom, alt: "Burke Racing Stable neon clock installed on a tack room wall", caption: "Burke Racing Stable · Installed", color: "yellow" },
 ] as const;
 
+import davidMillerReal from "@/assets/custom-builds/david-miller-real.jpg.asset.json";
+import beckwithReal from "@/assets/custom-builds/beckwith-real.jpg.asset.json";
+import tungSahur from "@/assets/custom-builds/tung-sahur.jpg.asset.json";
+import untouchablesTruck from "@/assets/custom-builds/untouchables-truck.jpg.asset.json";
+import hollandReal from "@/assets/custom-builds/holland-real.jpg.asset.json";
+import cocaCola from "@/assets/custom-builds/coca-cola.jpg.asset.json";
+import mountainDew from "@/assets/custom-builds/mountain-dew.jpg.asset.json";
+import kyleBusch from "@/assets/custom-builds/kyle-busch.jpg.asset.json";
+import untouchablesClassics from "@/assets/custom-builds/untouchables-classics.jpg.asset.json";
+import collectionLineup from "@/assets/custom-builds/collection-lineup.jpg.asset.json";
+
+export const latestBuilds = [
+  { src: cocaCola.url, alt: "Enjoy Coca-Cola custom neon clock with red glow", caption: "Enjoy Coca-Cola", color: "red" },
+  { src: mountainDew.url, alt: "Mountain Dew custom neon clock with green glow", caption: "Mountain Dew", color: "green" },
+  { src: kyleBusch.url, alt: "Kyle Busch #18 tribute custom neon clock with yellow glow", caption: "Kyle Busch · #18 Tribute", color: "yellow" },
+  { src: untouchablesTruck.url, alt: "Untouchables Rod & Muscle custom truck neon clock with blue glow", caption: "Untouchables Rod & Muscle", color: "blue" },
+  { src: untouchablesClassics.url, alt: "Untouchables Rod & Muscle classic cars custom neon clock with red glow", caption: "Untouchables · Classics", color: "red" },
+  { src: tungSahur.url, alt: "Tung Tung Tung Sahur custom character neon clock with yellow glow", caption: "Custom Character Build", color: "yellow" },
+  { src: davidMillerReal.url, alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
+  { src: beckwithReal.url, alt: "Beckwith Racing Stable custom neon clock with red glow", caption: "Beckwith Racing Stable", color: "red" },
+  { src: hollandReal.url, alt: "Holland Racing Stable custom neon clock with blue glow", caption: "Holland Racing Stable", color: "blue" },
+  { src: collectionLineup.url, alt: "Lineup of custom neon clocks in blue, red, yellow, and purple", caption: "Custom Build Lineup", color: "purple" },
+] as const;
+
 export const galleryClocks = stableClocks;
 
 export const heroClocks = [
