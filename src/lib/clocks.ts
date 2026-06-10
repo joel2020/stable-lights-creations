@@ -22,31 +22,52 @@ export const stableClocks = [
   { src: stableBurkeRoom, alt: "Burke Racing Stable neon clock installed on a tack room wall", caption: "Burke Racing Stable · Installed", color: "yellow" },
 ] as const;
 
-import davidMillerReal from "@/assets/custom-builds/david-miller-real.jpg.asset.json";
-import beckwithReal from "@/assets/custom-builds/beckwith-real.jpg.asset.json";
-import tungSahur from "@/assets/custom-builds/tung-sahur.jpg.asset.json";
-import untouchablesTruck from "@/assets/custom-builds/untouchables-truck.jpg.asset.json";
-import hollandReal from "@/assets/custom-builds/holland-real.jpg.asset.json";
-import cocaCola from "@/assets/custom-builds/coca-cola.jpg.asset.json";
-import mountainDew from "@/assets/custom-builds/mountain-dew.jpg.asset.json";
-import kyleBusch from "@/assets/custom-builds/kyle-busch.jpg.asset.json";
-import untouchablesClassics from "@/assets/custom-builds/untouchables-classics.jpg.asset.json";
-import collectionLineup from "@/assets/custom-builds/collection-lineup.jpg.asset.json";
-
 export const latestBuilds = [
-  { src: cocaCola.url, alt: "Enjoy Coca-Cola custom neon clock with red glow", caption: "Enjoy Coca-Cola", color: "red" },
-  { src: mountainDew.url, alt: "Mountain Dew custom neon clock with green glow", caption: "Mountain Dew", color: "green" },
-  { src: kyleBusch.url, alt: "Kyle Busch #18 tribute custom neon clock with yellow glow", caption: "Kyle Busch · #18 Tribute", color: "yellow" },
-  { src: untouchablesTruck.url, alt: "Untouchables Rod & Muscle custom truck neon clock with blue glow", caption: "Untouchables Rod & Muscle", color: "blue" },
-  { src: untouchablesClassics.url, alt: "Untouchables Rod & Muscle classic cars custom neon clock with red glow", caption: "Untouchables · Classics", color: "red" },
-  { src: tungSahur.url, alt: "Tung Tung Tung Sahur custom character neon clock with yellow glow", caption: "Custom Character Build", color: "yellow" },
-  { src: davidMillerReal.url, alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
-  { src: beckwithReal.url, alt: "Beckwith Racing Stable custom neon clock with red glow", caption: "Beckwith Racing Stable", color: "red" },
-  { src: hollandReal.url, alt: "Holland Racing Stable custom neon clock with blue glow", caption: "Holland Racing Stable", color: "blue" },
-  { src: collectionLineup.url, alt: "Lineup of custom neon clocks in blue, red, yellow, and purple", caption: "Custom Build Lineup", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-01.jpg", alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-02.jpg", alt: "Beckwith Racing Stable custom neon clock with red glow", caption: "Beckwith Racing Stable", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-03.jpg", alt: "Kyle Busch tribute custom neon clock with yellow glow", caption: "Kyle Busch · #18 Tribute", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-04.jpg", alt: "Untouchables Rod & Muscle custom neon clock with blue glow", caption: "Untouchables Rod & Muscle", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-05.jpg", alt: "Blue custom neon clock in packaging", caption: "Blue Glow Build", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-06.jpg", alt: "Enjoy Coca-Cola custom neon clock with red glow", caption: "Enjoy Coca-Cola", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-07.jpg", alt: "Mountain Dew custom neon clock with green glow", caption: "Mountain Dew", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-08.jpg", alt: "Kyle Busch tribute custom neon clock with yellow glow", caption: "Kyle Busch · Gold Ring", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-09.jpg", alt: "Untouchables Rod & Muscle custom neon clock with red glow", caption: "Untouchables · Classics", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-10.jpg", alt: "Lineup of custom neon clocks in blue, red, yellow, and purple", caption: "Custom Build Lineup", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-11.jpg", alt: "Montana Services custom neon clock with red glow", caption: "Montana Services", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-12.jpg", alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-13.jpg", alt: "Kyle Busch tribute neon clock with yellow glow", caption: "Kyle Busch Tribute", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-14.jpg", alt: "Fox custom neon clock with orange glow", caption: "Fox Custom Clock", color: "orange" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-15.jpg", alt: "Yellow fox custom neon clock on display wall", caption: "Fox Display Build", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-16.jpg", alt: "Coastal Motors custom neon clock with red glow", caption: "Coastal Motors", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-17.jpg", alt: "Kyle Busch tribute custom neon clock with yellow glow", caption: "Kyle Busch · Yellow Glow", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-18.jpg", alt: "Speedometer custom neon clock with red glow", caption: "Speedometer Build", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-19.jpg", alt: "Tung Tung Tung Sahur custom neon clock with orange glow", caption: "Custom Character Build", color: "orange" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-20.jpg", alt: "Kyle Busch tribute custom neon clock with yellow glow", caption: "Kyle Busch · Gold Ring", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-21.jpg", alt: "Harley-Davidson custom neon clock with orange glow", caption: "Harley-Davidson", color: "orange" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-22.jpg", alt: "Fox custom neon clock with white glow", caption: "Fox White Glow", color: "white" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-23.jpg", alt: "Blue custom neon clock wrapped for delivery", caption: "Blue Glow Delivery", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-24.jpg", alt: "Dartboard custom neon clock with green glow", caption: "Dartboard Clock", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-25.jpg", alt: "Classic car custom neon clock with orange glow", caption: "Classic Car Build", color: "orange" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-26.jpg", alt: "Montana Services custom neon clock on display wall", caption: "Montana Services", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-27.jpg", alt: "High Life custom neon clock with green glow", caption: "High Life", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-28.jpg", alt: "Kyle Busch tribute custom neon clock on display wall", caption: "Kyle Busch Display", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-29.jpg", alt: "Lady Luck custom neon clock with red glow", caption: "Lady Luck", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-30.jpg", alt: "Fox custom neon clock with green glow", caption: "Fox Green Glow", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-31.jpg", alt: "Fox custom neon clock with green glow", caption: "Fox Custom Build", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-32.jpg", alt: "Pool ball custom neon clock with green glow", caption: "Pool Ball Clock", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-33.jpg", alt: "Kyle Busch tribute custom neon clock on display wall", caption: "Kyle Busch Display", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-34.jpg", alt: "General Chevrolet Parts custom neon clock with blue glow", caption: "Chevrolet Parts", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-35.jpg", alt: "David Miller Racing Stable custom neon clock with purple glow", caption: "David Miller Racing Stable", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-36.jpg", alt: "Lineup of custom neon clocks with racing stable designs", caption: "Stable Clock Lineup", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-37.jpg", alt: "Las Vegas custom neon clock with blue glow", caption: "Las Vegas", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-38.jpg", alt: "Kyle Busch tribute custom neon clock display pair", caption: "Kyle Busch Pair", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-39.jpg", alt: "Amoco custom neon clock with orange glow", caption: "Amoco", color: "orange" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-40.jpg", alt: "Race car custom neon clock with blue glow", caption: "Blue Race Car Build", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-41.jpg", alt: "Enjoy Coca-Cola custom neon clock with green glow", caption: "Coca-Cola Green Glow", color: "green" },
 ] as const;
 
 export const galleryClocks = stableClocks;
+export const homepageLatestBuilds = latestBuilds.slice(0, 15);
 
 export const heroClocks = [
   stableHolland,

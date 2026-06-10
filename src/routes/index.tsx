@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, stableClocks, latestBuilds } from "@/lib/clocks";
+import { galleryClocks, homepageLatestBuilds, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 
@@ -570,7 +570,7 @@ function Home() {
           </div>
 
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {latestBuilds.map((c) => (
+            {homepageLatestBuilds.map((c) => (
               <figure key={c.caption + c.src} className="group flex flex-col items-center">
                 <div
                   className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}
