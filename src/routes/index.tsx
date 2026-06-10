@@ -235,8 +235,9 @@ function Home() {
                     src={c.src}
                     alt={c.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-contain object-center p-2"
                   />
+
                 </div>
                 <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">
                   {c.caption}
