@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/Layout";
-import { galleryClocks } from "@/lib/clocks";
+import { galleryClocks, latestBuilds } from "@/lib/clocks";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/gallery")({
@@ -26,12 +26,37 @@ function Gallery() {
         <p className="mt-3 max-w-2xl text-muted-foreground">A look at custom neon clocks we've built — businesses, bars, garages, gifts, and more. Yours is next.</p>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 md:px-6 pb-12">
+        <div className="mb-5 flex items-end justify-between gap-4">
+          <div>
+            <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Latest Custom Builds</div>
+            <h2 className="mt-1 font-display text-3xl md:text-4xl">Fresh off the bench</h2>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {latestBuilds.map((c) => (
+            <figure key={c.caption + c.src} className="group flex flex-col items-center">
+              <div className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
+                <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-contain object-center p-2" />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">{c.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 md:px-6 pb-16">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-5">
+          <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Stable Clocks</div>
+          <h2 className="mt-1 font-display text-3xl md:text-4xl">Built for the barn</h2>
+        </div>
+        <div className="grid gap-4 sm:gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {galleryClocks.map((c) => (
-            <figure key={c.caption} className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color}`}>
-              <img src={c.src} alt={c.alt} loading="lazy" className="aspect-square w-full object-cover transition group-hover:scale-105" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-4 text-sm font-semibold">{c.caption}</figcaption>
+            <figure key={c.caption} className="group flex flex-col items-center">
+              <div className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}>
+                <img src={c.src} alt={c.alt} loading="lazy" className="h-full w-full object-contain object-center p-2" />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">{c.caption}</figcaption>
             </figure>
           ))}
         </div>
