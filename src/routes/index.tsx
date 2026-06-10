@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, stableClocks } from "@/lib/clocks";
+import { galleryClocks, stableClocks, latestBuilds } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 
@@ -544,6 +544,53 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* LATEST CUSTOM BUILDS */}
+      <section className="border-b border-white/10 bg-black/30">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-3xl">
+              <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">
+                Latest Custom Builds
+              </div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">
+                FRESH OFF THE BENCH
+              </h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                The newest custom neon clocks out of the shop — brands, tributes, garages, and
+                one-of-a-kind pieces shipped to real customers.
+              </p>
+            </div>
+            <Link
+              to="/gallery"
+              className="text-sm font-semibold text-[var(--neon-orange)] hover:underline"
+            >
+              View full gallery →
+            </Link>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            {latestBuilds.map((c) => (
+              <figure key={c.caption + c.src} className="group flex flex-col items-center">
+                <div
+                  className={`relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-black ring-glow-${c.color} transition-transform duration-300 group-hover:-translate-y-1`}
+                >
+                  <img
+                    src={c.src}
+                    alt={c.alt}
+                    loading="lazy"
+                    className="h-full w-full object-contain object-center p-2"
+                  />
+                </div>
+                <figcaption className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-white/80">
+                  {c.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* COMPARE */}
       <section className="mx-auto max-w-5xl px-4 md:px-6 py-16 md:py-20">
