@@ -24,6 +24,7 @@ const ALLOWED_RETURN_ORIGINS = [
   "https://id-preview--48fd46fb-3e05-4769-9f20-2432cd8a35c7.lovable.app",
   "http://localhost:3000",
   "http://localhost:5173",
+  "http://127.0.0.1:8080",
 ];
 
 function assertSafeReturnUrl(url: string) {
@@ -110,6 +111,54 @@ export const createNeonCheckoutSession = createServerFn({ method: "POST" })
         photoName: trunc(data.designDetails.photoName, 200),
         photoUrl: trunc(data.designDetails.photoUrl, 480),
         notes: trunc(data.designDetails.notes),
+      },
+    });
+
+    return session.client_secret;
+  });
+
+export const createManualInvoiceCheckoutSession = createServerFn({ method: "POST" })
+  .inputValidator((data: {
+    invoiceCode: string;
+    returnUrl: string;
+    environment: StripeEnv;
+  }) => {
+    if (data.invoiceCode !== "ILN-2026-0611-12") throw new Error("Invalid invoice code");
+    assertSafeReturnUrl(data.returnUrl);
+    return data;
+  })
+  .handler(async ({ data }) => {
+    const stripe = createStripeClient(data.environment);
+
+    const session = await stripe.checkout.sessions.create({
+      line_items: [{
+        price_data: {
+          currency: "usd",
+          unit_amount: 14900,
+          product_data: {
+            name: "It's Lit Neon Custom Neon Clock",
+            description: "12-clock custom order invoice ILN-2026-0611-12. Shipping, if needed, may be billed separately after final address confirmation.",
+          },
+        },
+        quantity: 12,
+      }],
+      mode: "payment",
+      ui_mode: "embedded_page",
+      return_url: data.returnUrl,
+      customer_creation: "always",
+      customer_update: { name: "auto", address: "auto", shipping: "auto" },
+      shipping_address_collection: { allowed_countries: ["US", "CA"] },
+      phone_number_collection: { enabled: true },
+      automatic_tax: { enabled: true },
+      payment_intent_data: {
+        description: "Invoice ILN-2026-0611-12 · 12 custom neon clocks",
+      },
+      metadata: {
+        invoiceCode: "ILN-2026-0611-12",
+        source: "manual_stripe_invoice",
+        productType: "Custom Neon Clock",
+        quantity: "12",
+        unitPrice: "149.00",
       },
     });
 

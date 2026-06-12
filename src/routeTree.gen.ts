@@ -24,6 +24,7 @@ import { Route as CustomOrderRouteImport } from './routes/custom-order'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InvoiceInvoiceCodeRouteImport } from './routes/invoice.$invoiceCode'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as CheckoutReturnRouteImport } from './routes/checkout.return'
 import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
@@ -110,6 +111,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvoiceInvoiceCodeRoute = InvoiceInvoiceCodeRouteImport.update({
+  id: '/invoice/$invoiceCode',
+  path: '/invoice/$invoiceCode',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   id: '/email/unsubscribe',
   path: '/email/unsubscribe',
@@ -183,6 +189,7 @@ export interface FileRoutesByFullPath {
   '/admin/orders': typeof AdminOrdersRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/invoice/$invoiceCode': typeof InvoiceInvoiceCodeRoute
   '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
@@ -210,6 +217,7 @@ export interface FileRoutesByTo {
   '/admin/orders': typeof AdminOrdersRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/invoice/$invoiceCode': typeof InvoiceInvoiceCodeRoute
   '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
@@ -238,6 +246,7 @@ export interface FileRoutesById {
   '/admin/orders': typeof AdminOrdersRoute
   '/checkout/return': typeof CheckoutReturnRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
+  '/invoice/$invoiceCode': typeof InvoiceInvoiceCodeRoute
   '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
@@ -267,6 +276,7 @@ export interface FileRouteTypes {
     | '/admin/orders'
     | '/checkout/return'
     | '/email/unsubscribe'
+    | '/invoice/$invoiceCode'
     | '/api/public/stripe-webhook'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
@@ -294,6 +304,7 @@ export interface FileRouteTypes {
     | '/admin/orders'
     | '/checkout/return'
     | '/email/unsubscribe'
+    | '/invoice/$invoiceCode'
     | '/api/public/stripe-webhook'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
@@ -321,6 +332,7 @@ export interface FileRouteTypes {
     | '/admin/orders'
     | '/checkout/return'
     | '/email/unsubscribe'
+    | '/invoice/$invoiceCode'
     | '/api/public/stripe-webhook'
     | '/lovable/email/suppression'
     | '/lovable/email/auth/preview'
@@ -349,6 +361,7 @@ export interface RootRouteChildren {
   AdminOrdersRoute: typeof AdminOrdersRoute
   CheckoutReturnRoute: typeof CheckoutReturnRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
+  InvoiceInvoiceCodeRoute: typeof InvoiceInvoiceCodeRoute
   ApiPublicStripeWebhookRoute: typeof ApiPublicStripeWebhookRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
@@ -465,6 +478,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/invoice/$invoiceCode': {
+      id: '/invoice/$invoiceCode'
+      path: '/invoice/$invoiceCode'
+      fullPath: '/invoice/$invoiceCode'
+      preLoaderRoute: typeof InvoiceInvoiceCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/email/unsubscribe': {
       id: '/email/unsubscribe'
       path: '/email/unsubscribe'
@@ -557,6 +577,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminOrdersRoute: AdminOrdersRoute,
   CheckoutReturnRoute: CheckoutReturnRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
+  InvoiceInvoiceCodeRoute: InvoiceInvoiceCodeRoute,
   ApiPublicStripeWebhookRoute: ApiPublicStripeWebhookRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
@@ -568,3 +589,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
