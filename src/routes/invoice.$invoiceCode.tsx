@@ -6,6 +6,9 @@ import { getStripe, getStripeEnvironment } from "@/lib/stripe";
 import { createManualInvoiceCheckoutSession } from "@/utils/payments.functions";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+
+const markWeaverStripeInvoiceUrl = import.meta.env.VITE_MARK_WEAVER_STRIPE_INVOICE_URL as string | undefined;
 
 export const Route = createFileRoute("/invoice/$invoiceCode")({
   component: InvoiceCheckout,
@@ -118,11 +121,22 @@ function InvoiceStripeCheckout({ invoiceCode }: { invoiceCode: string }) {
     return (
       <div className="flex min-h-[560px] items-center justify-center p-8 text-center">
         <div className="max-w-sm">
-          <h2 className="text-2xl font-bold text-black">Stripe checkout is being finalized</h2>
+          <h2 className="text-2xl font-bold text-black">Open the secure Stripe invoice</h2>
           <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-            Please contact Joe before forwarding this invoice link. The order summary is ready,
-            but the live Stripe payment connection needs to be confirmed first.
+            This order is ready to pay through Stripe&apos;s hosted invoice page. Please confirm with Joe
+            before forwarding this invoice link.
           </p>
+          {markWeaverStripeInvoiceUrl ? (
+            <Button asChild className="mt-6">
+              <a href={markWeaverStripeInvoiceUrl} target="_blank" rel="noreferrer">
+                Pay Securely on Stripe
+              </a>
+            </Button>
+          ) : (
+            <p className="mt-5 text-xs text-neutral-500">
+              Stripe invoice link is not configured yet.
+            </p>
+          )}
         </div>
       </div>
     );
