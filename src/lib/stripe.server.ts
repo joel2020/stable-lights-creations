@@ -6,6 +6,11 @@ const getEnv = (key: string): string => {
   return value;
 };
 
+const getOptionalEnv = (key: string): string | undefined => {
+  const value = process.env[key];
+  return value || undefined;
+};
+
 export type StripeEnv = 'sandbox' | 'live';
 
 const GATEWAY_STRIPE_BASE = 'https://connector-gateway.lovable.dev/stripe';
@@ -17,6 +22,16 @@ export function getConnectionApiKey(env: StripeEnv): string {
 }
 
 export function createStripeClient(env: StripeEnv): Stripe {
+  const directApiKey = env === 'sandbox'
+    ? getOptionalEnv('STRIPE_SANDBOX_SECRET_KEY') || getOptionalEnv('STRIPE_SECRET_KEY')
+    : getOptionalEnv('STRIPE_LIVE_SECRET_KEY') || getOptionalEnv('STRIPE_SECRET_KEY');
+
+  if (directApiKey) {
+    return new Stripe(directApiKey, {
+      apiVersion: '2026-03-25.dahlia',
+    });
+  }
+
   const connectionApiKey = getConnectionApiKey(env);
   const lovableApiKey = getEnv('LOVABLE_API_KEY');
 

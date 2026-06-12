@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EmbeddedCheckout, EmbeddedCheckoutProvider } from "@stripe/react-stripe-js";
+import { useEffect, useState } from "react";
 import { PageShell } from "@/components/Layout";
 import { getStripe, getStripeEnvironment } from "@/lib/stripe";
 import { createManualInvoiceCheckoutSession } from "@/utils/payments.functions";
@@ -20,21 +21,6 @@ export const Route = createFileRoute("/invoice/$invoiceCode")({
 function InvoiceCheckout() {
   const { invoiceCode } = Route.useParams();
   const isKnownInvoice = invoiceCode === "ILN-2026-0611-12";
-
-  const fetchClientSecret = async () => {
-    if (!isKnownInvoice) throw new Error("Invoice not found");
-
-    const clientSecret = await createManualInvoiceCheckoutSession({
-      data: {
-        invoiceCode,
-        returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
-        environment: getStripeEnvironment(),
-      },
-    });
-
-    if (!clientSecret) throw new Error("Unable to open Stripe invoice checkout");
-    return clientSecret;
-  };
 
   return (
     <PageShell>
@@ -81,9 +67,7 @@ function InvoiceCheckout() {
 
         <div className="min-h-[620px] rounded-lg border border-white/10 bg-white p-2 text-black shadow-2xl">
           {isKnownInvoice ? (
-            <EmbeddedCheckoutProvider stripe={getStripe()} options={{ fetchClientSecret }}>
-              <EmbeddedCheckout />
-            </EmbeddedCheckoutProvider>
+            <InvoiceStripeCheckout invoiceCode={invoiceCode} />
           ) : (
             <div className="flex min-h-[560px] items-center justify-center p-8 text-center">
               <div>
@@ -95,5 +79,69 @@ function InvoiceCheckout() {
         </div>
       </section>
     </PageShell>
+  );
+}
+
+function InvoiceStripeCheckout({ invoiceCode }: { invoiceCode: string }) {
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function createSession() {
+      try {
+        const secret = await createManualInvoiceCheckoutSession({
+          data: {
+            invoiceCode,
+            returnUrl: `${window.location.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+            environment: getStripeEnvironment(),
+          },
+        });
+
+        if (!secret) throw new Error("Unable to open Stripe invoice checkout");
+        if (isMounted) setClientSecret(secret);
+      } catch (err) {
+        console.error("Unable to load Stripe invoice checkout", err);
+        if (isMounted) setError(true);
+      }
+    }
+
+    createSession();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [invoiceCode]);
+
+  if (error) {
+    return (
+      <div className="flex min-h-[560px] items-center justify-center p-8 text-center">
+        <div className="max-w-sm">
+          <h2 className="text-2xl font-bold text-black">Stripe checkout is being finalized</h2>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+            Please contact Joe before forwarding this invoice link. The order summary is ready,
+            but the live Stripe payment connection needs to be confirmed first.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!clientSecret) {
+    return (
+      <div className="flex min-h-[560px] items-center justify-center p-8 text-center">
+        <div className="max-w-sm">
+          <h2 className="text-2xl font-bold text-black">Preparing secure checkout</h2>
+          <p className="mt-3 text-sm text-neutral-600">Connecting to Stripe...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <EmbeddedCheckoutProvider stripe={getStripe()} options={{ clientSecret }}>
+      <EmbeddedCheckout />
+    </EmbeddedCheckoutProvider>
   );
 }
