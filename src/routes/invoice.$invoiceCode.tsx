@@ -49,17 +49,33 @@ function InvoiceCheckout() {
               </div>
               <div className="flex justify-between gap-4">
                 <span>Unit price</span>
-                <span className="tabular-nums">$149.00</span>
+                <span className="tabular-nums">$125.00</span>
               </div>
               <div className="flex justify-between gap-4 font-semibold">
                 <span>Clock subtotal</span>
-                <span className="tabular-nums">$1,788.00</span>
+                <span className="tabular-nums">$1,500.00</span>
+              </div>
+              <div className="flex justify-between gap-4">
+                <span>Custom design @ $25 each</span>
+                <span className="tabular-nums">FREE NO CHARGE</span>
+              </div>
+              <div className="flex justify-between gap-4">
+                <span>Shipping</span>
+                <span className="tabular-nums">$90.00</span>
+              </div>
+              <div className="flex justify-between gap-4">
+                <span>Tax and other charges</span>
+                <span className="tabular-nums">$0.00</span>
+              </div>
+              <div className="flex justify-between gap-4 pt-2 text-base font-bold">
+                <span>Total due</span>
+                <span className="tabular-nums">$1,590.00</span>
               </div>
             </div>
             <Separator className="my-4" />
             <p className="text-xs leading-relaxed text-muted-foreground">
-              Sales tax may be calculated by Stripe based on the billing/shipping details entered at checkout.
-              Shipping, if needed beyond this clock subtotal, may be handled separately after final address confirmation.
+              Due upon receipt. Once payment is received, your clocks will move into production and be
+              shipped within 72 hours. No tax or additional charges.
             </p>
           </div>
 
@@ -93,6 +109,8 @@ function InvoiceStripeCheckout({ invoiceCode }: { invoiceCode: string }) {
     let isMounted = true;
 
     async function createSession() {
+      if (markWeaverStripeInvoiceUrl) return;
+
       try {
         const secret = await createManualInvoiceCheckoutSession({
           data: {
@@ -116,6 +134,24 @@ function InvoiceStripeCheckout({ invoiceCode }: { invoiceCode: string }) {
       isMounted = false;
     };
   }, [invoiceCode]);
+
+  if (markWeaverStripeInvoiceUrl) {
+    return (
+      <div className="flex min-h-[560px] items-center justify-center p-8 text-center">
+        <div className="max-w-sm">
+          <h2 className="text-2xl font-bold text-black">Open the secure Stripe invoice</h2>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+            Mark Weaver&apos;s custom order invoice is ready to pay through Stripe&apos;s hosted invoice page.
+          </p>
+          <Button asChild className="mt-6">
+            <a href={markWeaverStripeInvoiceUrl} target="_blank" rel="noreferrer">
+              Pay Securely on Stripe
+            </a>
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     return (

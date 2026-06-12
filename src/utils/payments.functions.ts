@@ -134,13 +134,23 @@ export const createManualInvoiceCheckoutSession = createServerFn({ method: "POST
       line_items: [{
         price_data: {
           currency: "usd",
-          unit_amount: 14900,
+          unit_amount: 12500,
           product_data: {
             name: "It's Lit Neon Custom Neon Clock",
-            description: "12-clock custom order invoice ILN-2026-0611-12. Shipping, if needed, may be billed separately after final address confirmation.",
+            description: "12-clock custom order invoice ILN-2026-0611-12. Custom artwork and design are included free of charge.",
           },
         },
         quantity: 12,
+      }, {
+        price_data: {
+          currency: "usd",
+          unit_amount: 9000,
+          product_data: {
+            name: "Shipping",
+            description: "Flat shipping charge for invoice ILN-2026-0611-12.",
+          },
+        },
+        quantity: 1,
       }],
       mode: "payment",
       ui_mode: "embedded_page",
@@ -149,16 +159,20 @@ export const createManualInvoiceCheckoutSession = createServerFn({ method: "POST
       customer_update: { name: "auto", address: "auto", shipping: "auto" },
       shipping_address_collection: { allowed_countries: ["US", "CA"] },
       phone_number_collection: { enabled: true },
-      automatic_tax: { enabled: true },
+      automatic_tax: { enabled: false },
       payment_intent_data: {
-        description: "Invoice ILN-2026-0611-12 · 12 custom neon clocks",
+        description: "Invoice ILN-2026-0611-12 · 12 custom neon clocks plus shipping",
       },
       metadata: {
         invoiceCode: "ILN-2026-0611-12",
         source: "manual_stripe_invoice",
         productType: "Custom Neon Clock",
         quantity: "12",
-        unitPrice: "149.00",
+        unitPrice: "125.00",
+        designLine: "Custom design @ $25 each - FREE NO CHARGE",
+        shipping: "90.00",
+        tax: "0.00",
+        total: "1590.00",
       },
     });
 
