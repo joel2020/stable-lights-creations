@@ -67,6 +67,12 @@ function InvoiceCheckout() {
                 <span>Tax and other charges</span>
                 <span className="tabular-nums">$0.00</span>
               </div>
+              <div className="flex justify-between gap-4">
+                <span>Ship to</span>
+                <span className="max-w-[52%] text-right tabular-nums">
+                  1040 Skyline Dr, Canonsburg, PA 15317
+                </span>
+              </div>
               <div className="flex justify-between gap-4 pt-2 text-base font-bold">
                 <span>Total due</span>
                 <span className="tabular-nums">$1,590.00</span>
@@ -75,7 +81,7 @@ function InvoiceCheckout() {
             <Separator className="my-4" />
             <p className="text-xs leading-relaxed text-muted-foreground">
               Due upon receipt. Once payment is received, your clocks will move into production and be
-              shipped within 72 hours. No tax or additional charges.
+              shipped within 72 hours, excluding weekends and holidays. No tax or additional charges.
             </p>
           </div>
 
