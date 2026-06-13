@@ -11,6 +11,9 @@ import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
+const siteUrl = "https://itslitneon.com";
+const socialImageUrl = `${siteUrl}/images/custom-builds/its-lit-neon-gallery-03.jpg`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -79,10 +82,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0a0a14" },
       { property: "og:site_name", content: "It's Lit Neon" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "It's Lit Neon · Custom Neon Wall Clocks" },
+      { property: "og:description", content: "Shop custom neon clocks personalized with your name, logo, photo, business, team, garage, or bar." },
+      { property: "og:image", content: socialImageUrl },
+      { property: "og:image:alt", content: "Custom neon wall clock glowing on display" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "It's Lit Neon · Custom Neon Wall Clocks" },
+      { name: "twitter:description", content: "Shop custom neon clocks personalized with your name, logo, photo, business, team, garage, or bar." },
+      { name: "twitter:image", content: socialImageUrl },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" },
