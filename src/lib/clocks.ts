@@ -64,6 +64,18 @@ export const latestBuilds = [
   { src: "/images/custom-builds/its-lit-neon-gallery-39.jpg", alt: "Amoco custom neon clock with orange glow", caption: "Amoco", color: "orange" },
   { src: "/images/custom-builds/its-lit-neon-gallery-40.jpg", alt: "Race car custom neon clock with blue glow", caption: "Blue Race Car Build", color: "blue" },
   { src: "/images/custom-builds/its-lit-neon-gallery-41.jpg", alt: "Enjoy Coca-Cola custom neon clock with green glow", caption: "Coca-Cola Green Glow", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-42.jpg", alt: "Burke Racing Stable custom neon clock with yellow glow", caption: "Burke Racing Stable", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-43.jpg", alt: "No Recall Racing custom neon clock with yellow glow", caption: "No Recall Racing", color: "yellow" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-44.jpg", alt: "Greg & Taylor Luther custom neon clock with blue glow", caption: "Greg & Taylor Luther", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-45.jpg", alt: "Luther Racing custom neon clock with blue glow", caption: "Luther Racing", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-46.jpg", alt: "Weaver Bruscemi custom neon clock with red glow", caption: "Weaver Bruscemi", color: "red" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-47.jpg", alt: "Weaver Bruscemi custom neon clock with blue glow", caption: "Weaver Bruscemi", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-48.jpg", alt: "Alto Piano custom neon clock with purple glow", caption: "Alto Piano", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-49.jpg", alt: "Towns Auto custom neon clock with blue glow", caption: "Towns Auto", color: "blue" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-50.jpg", alt: "Daddy Watches Over Me memorial custom neon clock with green glow", caption: "Daddy Watches Over Me", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-51.jpg", alt: "Bub Forever Remembered memorial custom neon clock with green glow", caption: "‘Bub’ Forever Remembered", color: "green" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-52.jpg", alt: "More Than Brothers Turley Racing custom neon clock with purple glow", caption: "More Than Brothers · Turley Racing", color: "purple" },
+  { src: "/images/custom-builds/its-lit-neon-gallery-53.jpg", alt: "Kyle Busch number 18 tribute custom neon clock with yellow glow", caption: "Kyle Busch · #18", color: "yellow" },
 ] as const;
 
 export const galleryClocks = stableClocks;
