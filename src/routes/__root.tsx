@@ -12,7 +12,7 @@ import { Toaster } from "@/components/ui/sonner";
 import appCss from "../styles.css?url";
 
 const siteUrl = "https://itslitneon.com";
-const socialImageUrl = `${siteUrl}/images/custom-builds/its-lit-neon-gallery-03.jpg`;
+const socialImageUrl = `${siteUrl}/images/custom-builds/its-lit-neon-gallery-01.jpg`;
 
 function NotFoundComponent() {
   return (

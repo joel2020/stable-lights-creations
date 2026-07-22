@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/Layout";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/faq")({
@@ -57,14 +56,14 @@ function FAQ() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 md:px-6 pb-16">
-        <Accordion type="single" collapsible>
+        <div className="divide-y divide-white/10">
           {FAQS.map((f) => (
-            <AccordionItem key={f.q} value={f.q} className="border-white/10">
-              <AccordionTrigger className="text-left font-semibold text-base">{f.q}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
-            </AccordionItem>
+            <div key={f.q} className="py-5">
+              <h2 className="font-semibold text-base">{f.q}</h2>
+              <p className="mt-2 text-muted-foreground">{f.a}</p>
+            </div>
           ))}
-        </Accordion>
+        </div>
 
         <div className="mt-10 rounded-2xl border border-white/10 bg-card p-6 text-center">
           <h2 className="font-display text-2xl">Still have questions?</h2>

@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/custom-order", label: "Stable Order" },
-  { to: "/shop", label: "Custom Clocks" },
+  { to: "/shop", label: "Order & Pay Now" },
+  { to: "/custom-order", label: "Get a Free Proof First" },
   { to: "/gallery", label: "Gallery" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/faq", label: "FAQ" },
@@ -94,8 +94,8 @@ export function Footer() {
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Shop</div>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/custom-order" className="hover:text-[var(--neon-orange)]">Stable Order (No Charge Up Front)</Link></li>
-            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Start a Custom Order</Link></li>
+            <li><Link to="/shop" className="hover:text-[var(--neon-orange)]">Order & Pay Now</Link></li>
+            <li><Link to="/custom-order" className="hover:text-[var(--neon-orange)]">Get a Free Proof First (No Charge Up Front)</Link></li>
             <li><Link to="/gallery" className="hover:text-[var(--neon-orange)]">Gallery</Link></li>
             <li><Link to="/how-it-works" className="hover:text-[var(--neon-orange)]">How It Works</Link></li>
             <li><Link to="/faq" className="hover:text-[var(--neon-orange)]">FAQ</Link></li>
