@@ -151,6 +151,7 @@ function Shop() {
       },
     });
     setCheckoutOpen(true);
+    (window as any).fbq?.("track", "InitiateCheckout", { value: price + 29, currency: "USD" });
     setSubmitting(false);
   }
 
@@ -266,6 +267,10 @@ function Shop() {
 
           {/* Confirm */}
           <Card title="4. Confirm">
+            <p className="mb-4 rounded-lg border border-[var(--neon-green)]/30 bg-[var(--neon-green)]/10 p-3 text-sm">
+              <span className="font-semibold">You approve the exact design before Joe builds.</span>{" "}
+              Nothing is made until you sign off on your proof — so your clock is never a surprise.
+            </p>
             <div className="space-y-3">
               <label className="flex items-start gap-3 text-sm">
                 <Checkbox name="ownership" id="ownership" className="mt-0.5" />
@@ -281,6 +286,9 @@ function Shop() {
             </Button>
             <p className="mt-3 text-xs text-muted-foreground text-center">
               Standard $29 shipping fee applied at checkout. If actual shipping costs more, you'll get an invoice for the difference — we only charge exact shipping, not a penny more.
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground text-center">
+              Joe hand-builds every clock one at a time — current turnaround is 2–3 weeks from design approval.
             </p>
           </Card>
         </form>

@@ -45,7 +45,7 @@ export function Header() {
             <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
           </Button>
           <Button asChild size="sm" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-            <Link to="/shop">Start Your Custom Clock</Link>
+            <Link to="/custom-order">Get My Free Proof</Link>
           </Button>
         </div>
         <button className="lg:hidden p-2 -mr-2" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -71,7 +71,7 @@ export function Header() {
                 <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
               </Button>
               <Button asChild className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-                <Link to="/shop" onClick={() => setOpen(false)}>Start Your Custom Clock</Link>
+                <Link to="/custom-order" onClick={() => setOpen(false)}>Get My Free Proof</Link>
               </Button>
             </div>
           </div>

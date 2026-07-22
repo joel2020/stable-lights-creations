@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
@@ -38,6 +39,12 @@ function CheckoutReturn() {
     enabled: !!session_id,
     staleTime: Infinity,
   });
+
+  useEffect(() => {
+    if (summary) {
+      (window as any).fbq?.('track', 'Purchase', { value: summary.total, currency: summary.currency || 'USD' });
+    }
+  }, [summary]);
 
   return (
     <PageShell>

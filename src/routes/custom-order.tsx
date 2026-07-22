@@ -116,6 +116,7 @@ function CustomOrderPage() {
       });
 
       toast.success("Order details received! Check your email for next steps.");
+      (window as any).fbq?.("track", "Lead");
       navigate({ to: "/custom-order-confirmation" });
     } catch (err: any) {
       console.error(err);

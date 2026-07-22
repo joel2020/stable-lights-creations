@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { galleryClocks, homepageLatestBuilds, stableClocks } from "@/lib/clocks";
+import { galleryClocks, homepageLatestBuilds, latestBuilds, stableClocks } from "@/lib/clocks";
 import regularLit from "@/assets/clock-regular-plain.jpg";
 import regularUnlit from "@/assets/clock-regular-plain.jpg";
 
@@ -123,8 +123,8 @@ function Home() {
                 size="lg"
                 className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12"
               >
-                <Link to="/shop">
-                  Design Your Stable Clock <ArrowRight className="ml-1 h-5 w-5" />
+                <Link to="/custom-order">
+                  Get My Free Design Proof <ArrowRight className="ml-1 h-5 w-5" />
                 </Link>
               </Button>
               <Button
@@ -136,6 +136,9 @@ function Home() {
                 <Link to="/gallery">See Design Ideas</Link>
               </Button>
             </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Free design proof — you approve the exact look before Joe builds. Nothing is made until you say go.
+            </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Check className="h-4 w-4 text-[var(--neon-green)]" /> Quartz movement
@@ -200,8 +203,8 @@ function Home() {
               size="lg"
               className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold shrink-0"
             >
-              <Link to="/shop">
-                Design My Stable Clock <ArrowRight className="ml-1 h-5 w-5" />
+              <Link to="/custom-order">
+                Get My Free Design Proof <ArrowRight className="ml-1 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -386,7 +389,7 @@ function Home() {
               size="lg"
               className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold"
             >
-              <Link to="/shop">Design My Clock</Link>
+              <Link to="/custom-order">Get My Free Design Proof</Link>
             </Button>
           </div>
         </div>
@@ -455,7 +458,7 @@ function Home() {
             className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold text-base h-12 px-8 shadow-[0_0_20px_rgba(251,146,60,0.35)]"
           >
             <Link
-              to="/shop"
+              to="/custom-order"
               data-track="video-cta-customize"
               onClick={() => {
                 if (typeof window !== "undefined" && "gtag" in window) {
@@ -466,7 +469,7 @@ function Home() {
                 }
               }}
             >
-              Start Your Custom Clock →
+              Get My Free Design Proof →
             </Link>
           </Button>
         </div>
@@ -514,7 +517,7 @@ function Home() {
                 <figcaption className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                   <span className="font-display text-xl md:text-2xl">{s.label}</span>
                   <Link
-                    to="/shop"
+                    to="/custom-order"
                     className="rounded-full bg-[var(--neon-orange)] px-4 py-2 text-xs font-bold text-black hover:bg-[var(--neon-orange)]/90"
                   >
                     Build Yours →
@@ -634,6 +637,77 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="mx-auto max-w-3xl px-4 md:px-6 mt-6 text-center">
+          <p className="text-sm text-muted-foreground">
+            <span className="text-foreground font-semibold">Zero-risk ordering:</span> you approve the exact design before Joe builds — nothing is made until you say go. Every clock is hand-built one at a time; current turnaround is 2–3 weeks from design approval.
+          </p>
+        </div>
+      </section>
+
+      {/* TEAM & STABLE ORDERS */}
+      <section className="border-b border-white/10 bg-gradient-to-b from-black/50 to-black/20">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">
+                Team & Stable Orders
+              </div>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl chrome-text">
+                ONE FOR THE BARN. ONE FOR EVERY OWNER.
+              </h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                Stables order in batches — trainer gifts, owner thank-yous, end-of-season awards,
+                and track memorabilia. Joe has shipped a dozen clocks to a single stable. Multiple
+                clocks ship together, so the per-clock shipping cost drops with every clock you add.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-green)]" />
+                  <span>Each clock personalized — one design for the team or a different name on every face</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-green)]" />
+                  <span>Combined shipping on multi-clock orders — you only ever pay exact shipping cost</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-green)]" />
+                  <span>Premium tribute editions available from $149.99</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--neon-green)]" />
+                  <span>Free proofs for every design in the order before anything is built</span>
+                </li>
+              </ul>
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold"
+                >
+                  <a href="sms:+17024609190">Text Joe for Team Pricing</a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-white/20 font-bold">
+                  <Link to="/custom-order">Start With a Free Proof</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {latestBuilds.slice(0, 4).map((c) => (
+                <div
+                  key={c.src}
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-black"
+                >
+                  <img
+                    src={c.src}
+                    alt={c.alt}
+                    loading="lazy"
+                    className="aspect-square w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* TESTIMONIALS */}
@@ -710,10 +784,10 @@ function Home() {
       {/* TRUST STRIP */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-12">
         <div className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
-          Lighting Up Homes, Bars, Garages & Businesses Across North America
+          Hanging in Tack Rooms, Barns, Garages & Businesses Across North America
         </div>
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-center">
-          {["Las Vegas", "Los Angeles", "Chicago", "Miami", "Houston", "Denver"].map((t) => (
+          {["Meadowlands", "Burke Racing", "David Miller", "Tetrick Racing", "Balmoral Park", "Holland Racing"].map((t) => (
             <div
               key={t}
               className="rounded-lg border border-white/10 bg-black/40 py-3 px-2 font-display text-sm md:text-base tracking-wider chrome-text"
@@ -800,7 +874,7 @@ function Home() {
               size="lg"
               className="mt-7 bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold"
             >
-              <Link to="/shop">Create My Neon Clock</Link>
+              <Link to="/custom-order">Create My Neon Clock — Free Proof</Link>
             </Button>
           </div>
           <div className="grid grid-cols-7 gap-2">
@@ -881,7 +955,7 @@ function Home() {
               size="lg"
               className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold h-12"
             >
-              <Link to="/shop">Start Your Custom Clock</Link>
+              <Link to="/custom-order">Get My Free Design Proof</Link>
             </Button>
             <Button
               asChild
@@ -891,10 +965,13 @@ function Home() {
             >
               <a href="sms:+17024609190">
                 <Phone className="mr-1 h-5 w-5" />
-                Get a Custom Quote
+                Text Joe a Question
               </a>
             </Button>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Free proof first — you approve the exact design before anything is built.
+          </p>
         </div>
       </section>
     </PageShell>
