@@ -35,7 +35,7 @@ function Success() {
             <Link to="/gallery">See more builds</Link>
           </Button>
           <Button asChild variant="outline" className="border-white/20">
-            <a href="sms:+17024609190">Text Joe 702-460-9190</a>
+            <a href="sms:+17024609190">Call or Text 702-460-9190</a>
           </Button>
         </div>
       </section>

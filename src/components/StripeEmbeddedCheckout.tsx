@@ -53,9 +53,9 @@ export function StripeEmbeddedCheckout(props: Props) {
       <div className="rounded-xl border border-red-300 bg-red-50 p-6 text-center">
         <p className="font-semibold text-red-950">We couldn't start the secure checkout.</p>
         <p className="mt-2 text-sm text-red-900/80">
-          Your card was not charged. Please try again — or text Joe at{" "}
+          Your card was not charged. Please try again — or call or text{" "}
           <a href="sms:+17024609190" className="underline font-semibold">702-460-9190</a>{" "}
-          and he'll send you a secure payment link directly.
+          and we'll send you a secure payment link directly.
         </p>
         <button
           onClick={() => { setError(null); setRetryKey((k) => k + 1); }}

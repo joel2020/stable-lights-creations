@@ -120,7 +120,7 @@ function CustomOrderPage() {
       navigate({ to: "/custom-order-confirmation" });
     } catch (err: any) {
       console.error(err);
-      toast.error(err?.message || "Something went wrong. Please text Joe at 702-460-9190.");
+      toast.error(err?.message || "Something went wrong. Please call or text 702-460-9190.");
     } finally {
       setSubmitting(false);
     }

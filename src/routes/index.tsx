@@ -684,7 +684,7 @@ function Home() {
                   size="lg"
                   className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold"
                 >
-                  <a href="sms:+17024609190">Text Joe for Team Pricing</a>
+                  <a href="sms:+17024609190">Call or Text for Team Pricing</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white/20 font-bold">
                   <Link to="/custom-order">Start With a Free Proof</Link>
@@ -965,7 +965,7 @@ function Home() {
             >
               <a href="sms:+17024609190">
                 <Phone className="mr-1 h-5 w-5" />
-                Text Joe a Question
+                Call or Text Us
               </a>
             </Button>
           </div>

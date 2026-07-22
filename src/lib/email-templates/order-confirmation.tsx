@@ -57,7 +57,7 @@ const OrderConfirmation = ({
           the high-resolution file so Joe can use it for your build.
         </Text>
         <Text style={text}>
-          Questions? Text Joe at <strong>702-460-9190</strong> or email{' '}
+          Questions? Call or text <strong>702-460-9190</strong> or email{' '}
           <a href="mailto:support@itslitneon.com" style={link}>support@itslitneon.com</a>.
         </Text>
         <Text style={footer}>— The {SITE_NAME} Team</Text>

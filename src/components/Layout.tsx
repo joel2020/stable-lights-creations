@@ -42,7 +42,7 @@ export function Header() {
         </nav>
         <div className="hidden md:flex items-center gap-2">
           <Button asChild variant="outline" size="sm" className="border-[var(--neon-orange)]/50 hover:bg-[var(--neon-orange)]/10">
-            <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
+            <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Call or Text</a>
           </Button>
           <Button asChild size="sm" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
             <Link to="/custom-order">Get My Free Proof</Link>
@@ -68,7 +68,7 @@ export function Header() {
             ))}
             <div className="grid grid-cols-2 gap-2 pt-2">
               <Button asChild variant="outline" className="border-[var(--neon-orange)]/50">
-                <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Text Joe</a>
+                <a href="sms:+17024609190"><Phone className="mr-1 h-4 w-4" />Call or Text</a>
               </Button>
               <Button asChild className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
                 <Link to="/custom-order" onClick={() => setOpen(false)}>Get My Free Proof</Link>
@@ -105,7 +105,7 @@ export function Footer() {
         <div>
           <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)] mb-3">Contact</div>
           <ul className="space-y-2 text-sm">
-            <li><a href="sms:+17024609190" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Phone className="h-4 w-4" />Text 702-460-9190</a></li>
+            <li><a href="sms:+17024609190" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Phone className="h-4 w-4" />Call or Text 702-460-9190</a></li>
             <li><a href="mailto:support@itslitneon.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />support@itslitneon.com</a></li>
           </ul>
         </div>
