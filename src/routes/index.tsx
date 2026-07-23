@@ -6,7 +6,7 @@ import {
   Upload,
   Palette,
   Truck,
-  Phone,
+  Mail,
   Star,
   Check,
   Building2,
@@ -684,7 +684,7 @@ function Home() {
                   size="lg"
                   className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold"
                 >
-                  <a href="sms:+17024609190">Call or Text for Team Pricing</a>
+                  <a href="mailto:support@itslitneon.com">Email Us for Team Pricing</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-white/20 font-bold">
                   <Link to="/custom-order">Start With a Free Proof</Link>
@@ -963,9 +963,9 @@ function Home() {
               variant="outline"
               className="h-12 border-white/20 hover:bg-white/5 font-bold"
             >
-              <a href="sms:+17024609190">
-                <Phone className="mr-1 h-5 w-5" />
-                Call or Text Us
+              <a href="mailto:support@itslitneon.com">
+                <Mail className="mr-1 h-5 w-5" />
+                Email Us
               </a>
             </Button>
           </div>

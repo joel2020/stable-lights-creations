@@ -20,7 +20,7 @@ export const submitCustomOrderInquiry = createServerFn({ method: 'POST' })
     const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     if (!supabaseUrl || !supabaseServiceKey) {
-      throw new Error('Server is not configured to receive orders. Please call or text 702-460-9190.');
+      throw new Error('Server is not configured to receive orders. Please email support@itslitneon.com.');
     }
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
@@ -41,7 +41,7 @@ export const submitCustomOrderInquiry = createServerFn({ method: 'POST' })
 
     if (error || !inserted) {
       console.error('Custom order insert failed', error);
-      throw new Error('We could not save your order. Please call or text 702-460-9190.');
+      throw new Error('We could not save your order. Please email support@itslitneon.com.');
     }
 
     try {

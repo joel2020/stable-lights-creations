@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { NEON_COLORS } from "@/lib/clocks";
 import { LiveClockPreview } from "@/components/LiveClockPreview";
 import { StripeEmbeddedCheckout } from "@/components/StripeEmbeddedCheckout";
-import { Upload, Phone, Mail, Check, AlertCircle } from "lucide-react";
+import { Upload, Mail, Check, AlertCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 type Search = { type?: "regular" | "custom" };
@@ -317,7 +317,7 @@ function Shop() {
           <div className="rounded-2xl border border-white/10 bg-card p-6">
             <div className="text-xs uppercase tracking-widest text-[var(--neon-orange)]">Need Help?</div>
             <div className="mt-3 space-y-2 text-sm">
-              <a href="sms:+17024609190" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Phone className="h-4 w-4" />Call or Text 702-460-9190</a>
+              <a href="mailto:support@itslitneon.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />support@itslitneon.com</a>
               <a href="mailto:support@itslitneon.com" className="flex items-center gap-2 hover:text-[var(--neon-orange)]"><Mail className="h-4 w-4" />support@itslitneon.com</a>
             </div>
             <Link to="/gallery" className="mt-4 block text-sm font-semibold text-[var(--neon-orange)] hover:underline">See more builds →</Link>

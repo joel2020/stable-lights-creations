@@ -228,8 +228,7 @@ function Terms() {
         <h2 className="font-display text-2xl mt-6">19. Contact</h2>
         <p>
           Light Me Up Productions &mdash; Attn: Joseph Dakuras<br />
-          Email: <a href="mailto:support@itslitneon.com">support@itslitneon.com</a><br />
-          Text/Phone: <a href="sms:+17024609190">702-460-9190</a>
+          Email: <a href="mailto:support@itslitneon.com">support@itslitneon.com</a>
         </p>
 
         <p className="text-xs text-muted-foreground mt-8">

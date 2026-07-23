@@ -110,7 +110,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "Light Me Up Productions",
               alternateName: "It's Lit Neon",
               url: "https://itslitneon.com",
-              telephone: "+1-702-460-9190",
               email: "support@itslitneon.com",
             },
             {

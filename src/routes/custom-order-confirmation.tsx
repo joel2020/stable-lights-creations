@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Check, Mail, Phone, ShieldCheck } from "lucide-react";
+import { Check, Mail, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/custom-order-confirmation")({
   component: CustomOrderConfirmationPage,
@@ -71,14 +71,11 @@ function CustomOrderConfirmationPage() {
         <div className="rounded-2xl border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/5 p-5 md:p-7">
           <h2 className="font-display text-2xl md:text-3xl">Need to add something?</h2>
           <p className="mt-2 text-base md:text-lg text-muted-foreground">
-            Forgot a photo or want to add a note? Reach Joe directly — replies usually come the same day.
+            Forgot a photo or want to add a note? Email us directly — replies usually come the same day.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5 grid gap-3 sm:grid-cols-1">
             <Button asChild size="lg" className="h-14 text-base bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <a href="tel:+17024609190"><Phone className="mr-2 h-5 w-5" /> Call Joe · 702-460-9190</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="h-14 text-base border-[var(--neon-orange)]/60">
-              <a href="mailto:support@itslitneon.com"><Mail className="mr-2 h-5 w-5" /> support@itslitneon.com</a>
+              <a href="mailto:support@itslitneon.com"><Mail className="mr-2 h-5 w-5" /> Email support@itslitneon.com</a>
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">

@@ -41,9 +41,9 @@ const FAQS = [
   { q: "What kind of photo or logo file should I send?", a: "Anything sharp and well-lit works best — high-res logos, product photos, family photos, headshots, or vector files. We'll let you know if anything needs to be re-sent before production." },
   { q: "Can I do a memorial or gift clock?", a: "Absolutely. We've built memorial, anniversary, wedding, and birthday editions before — just include the wording and any photos in your custom notes." },
   { q: "Is the clock indoor or outdoor?", a: "Designed for indoor display — homes, offices, bars, garages, game rooms, retail spaces, and showrooms." },
-  { q: "Can I order multiple clocks for my business or team?", a: "Yes. Call or text 702-460-9190 for multi-clock and bulk pricing for businesses, teams, dealerships, and gift orders." },
+  { q: "Can I order multiple clocks for my business or team?", a: "Yes. Email support@itslitneon.com for multi-clock and bulk pricing for businesses, teams, dealerships, and gift orders." },
   { q: "Refunds?", a: "Custom clocks are personalized and generally not refundable once production begins. See our Terms & Refund Policy for details, or reach out to Joe with any concerns." },
-  { q: "Where are you based?", a: "It's Lit Neon is run by Joe Dakuras at Light Me Up Productions. Reach us by text at 702-460-9190 or email at support@itslitneon.com." },
+  { q: "Where are you based?", a: "It's Lit Neon is run by Light Me Up Productions. Reach us by email at support@itslitneon.com." },
 ];
 
 function FAQ() {
@@ -70,7 +70,7 @@ function FAQ() {
           <p className="mt-1 text-sm text-muted-foreground">Call or text us directly — fastest way to get an answer or a custom quote.</p>
           <div className="mt-4 flex flex-col sm:flex-row justify-center gap-3">
             <Button asChild className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <a href="sms:+17024609190">Call or Text 702-460-9190</a>
+              <a href="mailto:support@itslitneon.com">Email support@itslitneon.com</a>
             </Button>
             <Button asChild variant="outline" className="border-white/20">
               <Link to="/contact">Contact Page</Link>

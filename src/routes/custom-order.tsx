@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
-import { Upload, Check, ShieldCheck, Phone, Mail, ImageIcon } from "lucide-react";
+import { Upload, Check, ShieldCheck, Mail, ImageIcon } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { submitCustomOrderInquiry } from "@/lib/custom-order.functions";
 
@@ -120,7 +120,7 @@ function CustomOrderPage() {
       navigate({ to: "/custom-order-confirmation" });
     } catch (err: any) {
       console.error(err);
-      toast.error(err?.message || "Something went wrong. Please call or text 702-460-9190.");
+      toast.error(err?.message || "Something went wrong. Please email support@itslitneon.com.");
     } finally {
       setSubmitting(false);
     }
@@ -309,16 +309,13 @@ function CustomOrderPage() {
       {/* Reassurance / contact */}
       <section className="mx-auto max-w-3xl px-4 md:px-6 pt-6 pb-12">
         <div className="rounded-2xl border border-[var(--neon-orange)]/40 bg-[var(--neon-orange)]/5 p-5 md:p-7">
-          <h2 className="font-display text-2xl md:text-3xl">Prefer to talk to a person?</h2>
+          <h2 className="font-display text-2xl md:text-3xl">Prefer to talk it through?</h2>
           <p className="mt-2 text-base md:text-lg text-muted-foreground">
-            Totally fine. Joe will walk you through the whole thing — design, pricing, and shipping. No tech, no checkout, no pressure.
+            Totally fine. Email us and we'll walk you through the whole thing — design, pricing, and shipping. No tech, no checkout, no pressure.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5 grid gap-3 sm:grid-cols-1">
             <Button asChild size="lg" className="h-14 text-base bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <a href="tel:+17024609190"><Phone className="mr-2 h-5 w-5" /> Call Joe · 702-460-9190</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="h-14 text-base border-[var(--neon-orange)]/60">
-              <a href="mailto:support@itslitneon.com"><Mail className="mr-2 h-5 w-5" /> support@itslitneon.com</a>
+              <a href="mailto:support@itslitneon.com"><Mail className="mr-2 h-5 w-5" /> Email support@itslitneon.com</a>
             </Button>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">

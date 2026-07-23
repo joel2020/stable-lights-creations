@@ -62,9 +62,8 @@ const CustomOrderCustomerConfirmation = ({ fullName = '', stableName = '', inqui
 
         <Hr style={hr} />
 
-        <Heading as="h2" style={h2}>Need to reach Joe?</Heading>
+        <Heading as="h2" style={h2}>Need to reach us?</Heading>
         <Text style={text}>
-          Call or text: <strong>702-460-9190</strong><br />
           Email: <strong>support@itslitneon.com</strong>
         </Text>
         <Text style={text}>

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Zap, Upload, Palette, Truck, Phone } from "lucide-react";
+import { Zap, Upload, Palette, Truck, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/how-it-works")({
   component: HowItWorks,
@@ -54,10 +54,10 @@ function HowItWorks() {
           <p className="mt-2 text-muted-foreground">Send us your name, logo, or photo and we'll turn it into a clock that glows.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
             <Button asChild size="lg" className="bg-[var(--neon-orange)] text-black hover:bg-[var(--neon-orange)]/90 font-bold">
-              <Link to="/shop">Start Your Custom Clock</Link>
+              <Link to="/custom-order">Get My Free Design Proof</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/20 font-bold">
-              <a href="sms:+17024609190"><Phone className="mr-1 h-5 w-5" />Get a Custom Quote</a>
+              <a href="mailto:support@itslitneon.com"><Mail className="mr-1 h-5 w-5" />Email a Question</a>
             </Button>
           </div>
         </div>
