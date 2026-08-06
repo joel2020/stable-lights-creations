@@ -3,11 +3,45 @@
   "redirects": [
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "itslitneon.com"
+        }
+      ],
       "destination": "https://www.itslitneonlv.com",
       "statusCode": 308
     },
     {
       "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "itslitneon.com"
+        }
+      ],
+      "destination": "https://www.itslitneonlv.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.itslitneon.com"
+        }
+      ],
+      "destination": "https://www.itslitneonlv.com",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.itslitneon.com"
+        }
+      ],
       "destination": "https://www.itslitneonlv.com/:path*",
       "statusCode": 308
     }
