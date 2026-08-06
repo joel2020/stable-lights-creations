@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.itslitneonlv.com",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://www.itslitneonlv.com/:path*",
+      "statusCode": 308
+    }
+  ]
+}
